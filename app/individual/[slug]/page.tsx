@@ -2,9 +2,7 @@ import InnerDetails from '@/components/innerDetail'
 import React from 'react'
 
 type PageProps = {
-    params: {
-        slug: string
-    }
+    params: Promise<{ slug: string }>
 }
 
 export default async function Individual({params}: PageProps) {
