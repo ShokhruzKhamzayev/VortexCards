@@ -29,7 +29,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
   return (
     <>
     <FloatingNav navItems={navItems}/>
-        <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
+        <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter">
             <div className="banner relative">
                 <div className='w-full h-[200px] rounded-t-[20px] relative'>
@@ -65,7 +65,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     Email
                 </a>
                 <a href={`tel:${person.telephoneNumber}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto hover:grayscale-75'>
                         <IoCall size={25} color='white' />
                     </div>
                     Call
@@ -118,23 +118,23 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 SHARE
             </Share>
         </div>
-        <button className='w-full flex justify-center items-center p-[0.75rem] bg-slate-500 rounded-[15px] mt-[10px] text-white border-b-[2px] border-white'>
+        <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] bg-slate-500 rounded-[15px] mt-[10px] text-white border-b-[2px] border-white'>
             Website
-        </button>
+        </a>
         <div className="carousel">
             <EmblaCarousel/>
         </div>
-        <InfoInnerDetail Icon={<GoOrganization />}>
+        <InfoInnerDetail Icon={<GoOrganization size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
         </InfoInnerDetail>
-        <InfoInnerDetail Icon={<BiUser />}>
+        <InfoInnerDetail Icon={<BiUser size={30}/>}>
             <div dangerouslySetInnerHTML={indTemp}></div>
         </InfoInnerDetail>
-        <InfoInnerDetail Icon={<FaRegShareFromSquare />}>
+        <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <Share classname='w-full rounded-[12px]'>
                 SHARE MY INFO
             </Share>
-            <a className='bg-transparent border border-slate-100 rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="#">GET YOUR CONTACT CARD</a>
+            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="#">GET YOUR CONTACT CARD</a>
         </InfoInnerDetail>
         </div>
     </div>
