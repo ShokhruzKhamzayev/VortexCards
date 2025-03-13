@@ -7,13 +7,11 @@ import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
-import { EmblaCarousel } from './ui/carousel'
 import CustomImage from './ui/customImage'
 
 import { FloatingNav } from './ui/floating-navbar'
 import Share from './share'
-import Link from 'next/link'
-  
+import {EmblaCarousel} from './ui/carousel'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -122,7 +120,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             Website
         </a>
         <div className="carousel">
-            <EmblaCarousel/>
+            <EmblaCarousel  />
         </div>
         <InfoInnerDetail Icon={<GoOrganization size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
