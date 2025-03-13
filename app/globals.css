@@ -129,3 +129,15 @@
   max-width: 90%;
   margin: 0px auto;
 }
+
+/* ! Carousel styles */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
