@@ -25,10 +25,33 @@ export async function fetchSpecIndividual(slug: string) {
                 avatar {
                     url
                 }
+                aboutIndividual {
+                    html
+                }
             }
         }
     `
 
     const data = await client.request<{individual: InnerDetailTypo}>(myQuery)
+    return data
+}
+
+export async function fetchAllIndividuals() {
+    const myQuery = gql`
+        query MyQuery {
+            individuals {
+                fullName
+                organization {
+                name
+                }
+                avatar {
+                url
+                }
+                slug
+            }
+        }
+    `
+
+    const data = await client.request<{individuals: InnerDetailTypo[]}>(myQuery)
     return data
 }

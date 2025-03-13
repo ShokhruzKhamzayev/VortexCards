@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 export function EmblaCarousel() {  
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, duration: 1000, align: 'center' }, [Autoplay()])
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'center' }, [Autoplay({delay: 2500})])
 
     useEffect(() => {
         if(emblaApi) {
@@ -18,6 +18,12 @@ export function EmblaCarousel() {
     <div className="embla__slide">Slide 1</div>       
      <div className="embla__slide">Slide 2</div>        
      <div className="embla__slide">Slide 3</div>     
+     <div className="embla__slide">Slide 1</div>       
+     <div className="embla__slide">Slide 2</div>        
+     <div className="embla__slide">Slide 3</div>
+     <div className="embla__slide">Slide 1</div>       
+     <div className="embla__slide">Slide 2</div>        
+     <div className="embla__slide">Slide 3</div>
       </div>    
       </div>  
     )}

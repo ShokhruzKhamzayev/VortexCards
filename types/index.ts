@@ -13,5 +13,9 @@ export interface InnerDetailTypo {
     location: string,
     avatar: {
         url: string
-    }
+    },
+    aboutIndividual: {
+        html: HTMLElement
+    },
+    slug: string
 }

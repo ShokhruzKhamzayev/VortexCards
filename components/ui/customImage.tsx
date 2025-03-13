@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function CustomImage({ src, alt, classname }: {
     src: StaticImageData | string,
     alt: string,
-    classname: string
+    classname?: string
 }) {
     const [loading, setLoading] = useState(true)
     return (

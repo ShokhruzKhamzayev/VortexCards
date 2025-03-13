@@ -1,16 +1,18 @@
-import { BiHome, BiShare } from 'react-icons/bi'
+import { fetchSpecIndividual } from '@/lib'
+import { BiHome, BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegHandshake } from 'react-icons/fa6'
+import { FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare } from 'react-icons/fa6'
+import { GoOrganization } from "react-icons/go"
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
-import { Button } from './ui/button'
-import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer'
+import InfoInnerDetail from './infoInnerDetail'
 import { EmblaCarousel } from './ui/carousel'
-import { fetchSpecIndividual } from '@/lib'
 import CustomImage from './ui/customImage'
-import ThemeSwitcher from './themeSwitcher'
+
 import { FloatingNav } from './ui/floating-navbar'
+import Share from './share'
+import Link from 'next/link'
   
 
 export default async function InnerDetails({slug}: {slug: string}) {
@@ -18,14 +20,16 @@ export default async function InnerDetails({slug}: {slug: string}) {
     const navItems = [
         {
             name: 'Home',
-            icon: <BiHome/>,
+            icon: <BiHome size={25}/>,
             link:'/'
         }
     ]
+    const temp = {__html: person.organization.aboutOrganization.html}
+    const indTemp = {__html: person.aboutIndividual.html}
   return (
     <>
     <FloatingNav navItems={navItems}/>
-        <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-lg shadow-slate-800 dark:shadow-slate-200'>
+        <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter">
             <div className="banner relative">
                 <div className='w-full h-[200px] rounded-t-[20px] relative'>
@@ -33,8 +37,8 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 </div>
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
-                <div className='relative w-[140px] h-[140px] rounded-full '>
-                <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border border-white'/>
+                <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
+                    <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border border-white'/>
                 </div>
                 </div>
                 <a href='/' className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
@@ -109,28 +113,29 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <RiContactsBook3Fill />
                 ADD TO CONTACTS
             </button>
-            <Drawer>
-                <DrawerTrigger className='flex items-center gap-[15px] w-[30%] bg-slate-500 rounded-r-[15px] p-[0.75rem] justify-center text-white border-b-[2px] border-white'>
-                    <BiShare/>
-                    SHARE
-                </DrawerTrigger>
-                <DrawerContent className='max-w-[500px] mx-auto'>
-                <DrawerHeader>
-                <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                <DrawerDescription>This action cannot be undone.</DrawerDescription>
-                </DrawerHeader>
-                <DrawerFooter>
-                <Button>Submit</Button>
-                </DrawerFooter>
-            </DrawerContent>
-            </Drawer>
+            <Share classname='w-[30%] rounded-r-[15px]'>
+                <BiShare/>
+                SHARE
+            </Share>
         </div>
         <button className='w-full flex justify-center items-center p-[0.75rem] bg-slate-500 rounded-[15px] mt-[10px] text-white border-b-[2px] border-white'>
             Website
         </button>
-        </div>
         <div className="carousel">
             <EmblaCarousel/>
+        </div>
+        <InfoInnerDetail Icon={<GoOrganization />}>
+            <div dangerouslySetInnerHTML={temp}></div>
+        </InfoInnerDetail>
+        <InfoInnerDetail Icon={<BiUser />}>
+            <div dangerouslySetInnerHTML={indTemp}></div>
+        </InfoInnerDetail>
+        <InfoInnerDetail Icon={<FaRegShareFromSquare />}>
+            <Share classname='w-full rounded-[12px]'>
+                SHARE MY INFO
+            </Share>
+            <a className='bg-transparent border border-slate-100 rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="#">GET YOUR CONTACT CARD</a>
+        </InfoInnerDetail>
         </div>
     </div>
     </>
