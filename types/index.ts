@@ -20,7 +20,8 @@ export interface InnerDetailTypo {
     slug: string,
     secondaryColor: {
         hex: string
-    }
+    },
+    videos: string
 }
 
 export interface OrganizationTypo {
@@ -42,5 +43,6 @@ export interface OrganizationTypo {
   instagram: string,
   secondaryColor: {
     hex: string
-  }
+  },
+  videos: string
 }

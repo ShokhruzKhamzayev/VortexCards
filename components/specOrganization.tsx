@@ -1,7 +1,7 @@
 import { fetchSpecOrganization } from '@/lib'
 import { BiHome, BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare } from 'react-icons/fa6'
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
@@ -119,12 +119,19 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white' style={{backgroundColor: organization.secondaryColor.hex}}>
             Website
         </a>
-        <div className="carousel">
-            <EmblaCarousel  />
-        </div>
         <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
         </InfoInnerDetail>
+        <InfoInnerDetail Icon={<FaMedal size={30}/>}>
+                    <div className="carousel">
+                        <EmblaCarousel type='photo' size='0 0 33.333%' />
+                    </div>
+                </InfoInnerDetail>
+        <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
+                    <div className="carousel">
+                        <EmblaCarousel type='video' data={organization?.videos} size='0 0 100%' />
+                    </div>
+                </InfoInnerDetail>
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
             <div className='grid grid-cols-2 md:grid-cols-3'>
                 {

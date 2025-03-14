@@ -32,6 +32,7 @@ export async function fetchSpecIndividual(slug: string) {
                 secondaryColor {
                     hex
                     }
+                videos
             }
         }
     `
@@ -108,6 +109,7 @@ export async function fetchSpecOrganization(slug: string) {
                 secondaryColor {
                     hex
                     }
+                videos
             }
         }
     `
