@@ -12,6 +12,8 @@ import Link from 'next/link'
 import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
+import { MdPhotoLibrary } from 'react-icons/md'
+import GalleryView from './galleryView'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
@@ -123,7 +125,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
         </InfoInnerDetail>
-        <InfoInnerDetail Icon={<BiUser/>}>
+        <InfoInnerDetail Icon={<BiUser size={30}/>}>
             <div className='grid grid-cols-2 md:grid-cols-3'>
                 {
                     organization.individual.map(person => (
@@ -136,6 +138,9 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     ))
                 }
             </div>
+        </InfoInnerDetail>
+        <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>
+                    <GalleryView/>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>

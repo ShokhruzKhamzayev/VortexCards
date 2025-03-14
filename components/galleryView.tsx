@@ -32,6 +32,7 @@ export default function App() {
   }, []);
 
   return (
+    // @ts-ignore
       <RViewerJS className="grid grid-cols-2 gap-[20px]">
         {images.map((img, idx) => (
           <img className="w-[full]" src={img} alt="example" key={`images_${idx}`} />
