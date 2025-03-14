@@ -26,6 +26,8 @@ export default async function InnerDetails({slug}: {slug: string}) {
         }
     ]
     const temp = {__html: organization.aboutOrganization.html}
+    const videos = organization.videos.split(',')
+
   return (
     <>
     <FloatingNav navItems={navItems}/>
@@ -129,7 +131,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                     <div className="carousel">
-                        <EmblaCarousel type='video' data={organization?.videos} size='0 0 100%' />
+                        <EmblaCarousel type='video' data={videos} size='0 0 100%' />
                     </div>
                 </InfoInnerDetail>
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
