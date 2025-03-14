@@ -12,6 +12,7 @@ import CustomImage from './ui/customImage'
 import { FloatingNav } from './ui/floating-navbar'
 import Share from './share'
 import {EmblaCarousel} from './ui/carousel'
+import Link from 'next/link'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -40,7 +41,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 </div>
                 </div>
                 <a href='/' className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
-                    <div className='bg-slate-700 p-[15px] rounded-full'>
+                    <div className='p-[15px] rounded-full' style={{backgroundColor: person.secondaryColor.hex}}>
                         <FaLocationDot color='white' />
                     </div>
                     <p className='text-[11px]'>Location</p>
@@ -52,54 +53,54 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className="posAndLinks">
             <div className='text-center space-y-[15px] mt-[90px]'>
                 <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{person.fullName}</h1>
-                <h3 className='text-[#f9bf41] text-[15px] '>{person.organization.name}</h3>
+                <Link href={`/organization/${person.organization.slug}`} className='text-[#f9bf41] text-[15px] block'>{person.organization.name}</Link>
                 <h3 className='text-[.875rem] leading-[1.25rem]'>{person.position}</h3>
             </div>
             <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
-                <a href={`${person}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto hover:bg-slate-400'>
+                <a href={`${person}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:bg-slate-400'>
                     <IoMdMail size={25} color='white' />
                     </div>
                     Email
                 </a>
-                <a href={`tel:${person.telephoneNumber}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto hover:grayscale-75'>
+                <a href={`tel:${person.telephoneNumber}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75'>
                         <IoCall size={25} color='white' />
                     </div>
                     Call
                 </a>
-                <a href={`${person}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`${person}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <FaRegCalendar size={25} color='white' />
                     </div>
                     Calendar
                 </a>
-                <a href={`${person}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`${person}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <FaRegHandshake size={25} color='white' />
                     </div>
                     Connect
                 </a>
-                <a href={`${person}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`${person}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <FaLinkedinIn size={25} color='white' />
                     </div>
                     Linkedin
                 </a>
-                <a href={`https://instagram.com/${person.instagram}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`https://instagram.com/${person.instagram}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <FaInstagram size={25} color='white' />
                     </div>
                     Instagram
                 </a>
-                <a href={`${person}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`${person}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <IoLogoYoutube size={25} color='white' />
                     </div>
                     Youtube
                 </a>
-                <a href={`${person}`} className="email text-center text-[">
-                    <div className='bg-slate-600 p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`${person}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <BsTelegram size={25} color='white' />
                     </div>
                     Telegram
@@ -107,16 +108,16 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </div>
         </div>
         <div className="share flex justify-between gap-[2px] mt-[20px]">
-            <button className='flex items-center gap-[0.5rem] w-[70%] bg-slate-500 rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white'>
+            <button className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white' style={{backgroundColor: person.secondaryColor.hex}}>
                 <RiContactsBook3Fill />
                 ADD TO CONTACTS
             </button>
-            <Share classname='w-[30%] rounded-r-[15px]'>
+            <Share secColor={person.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                 <BiShare/>
                 SHARE
             </Share>
         </div>
-        <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] bg-slate-500 rounded-[15px] mt-[10px] text-white border-b-[2px] border-white'>
+        <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white' style={{backgroundColor: person.secondaryColor.hex}}>
             Website
         </a>
         <div className="carousel">
@@ -129,10 +130,12 @@ export default async function InnerDetails({slug}: {slug: string}) {
             <div dangerouslySetInnerHTML={indTemp}></div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
-            <Share classname='w-full rounded-[12px]'>
+            <div className='pt-[10px]'>
+            <Share secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
                 SHARE MY INFO
             </Share>
             <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="#">GET YOUR CONTACT CARD</a>
+            </div>
         </InfoInnerDetail>
         </div>
     </div>

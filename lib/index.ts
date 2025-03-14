@@ -1,4 +1,4 @@
-import { InnerDetailTypo } from '@/types'
+import { InnerDetailTypo, OrganizationTypo } from '@/types'
 import {GraphQLClient, gql} from 'graphql-request'
 
 const client = new GraphQLClient(process.env.DATABASE_API!)
@@ -13,6 +13,7 @@ export async function fetchSpecIndividual(slug: string) {
                 aboutOrganization {
                     html
                 }
+                slug
                 }
                 position
                 email
@@ -28,6 +29,9 @@ export async function fetchSpecIndividual(slug: string) {
                 aboutIndividual {
                     html
                 }
+                secondaryColor {
+                    hex
+                    }
             }
         }
     `
@@ -55,3 +59,59 @@ export async function fetchAllIndividuals() {
     const data = await client.request<{individuals: InnerDetailTypo[]}>(myQuery)
     return data
 }
+
+export async function fetchAllOrganizations() {
+    const myQuery = gql`
+        query MyQuery {
+            organizations {
+                name
+                slug
+                avatar {
+                url
+                }
+                fieldOfOrganization
+            }
+        }
+    `
+
+    const data = await client.request<{organizations: OrganizationTypo[]}>(myQuery)
+    return data
+}
+
+export async function fetchSpecOrganization(slug: string) {
+    const myQuery = gql`
+        query MyQuery {
+            organization(where: {slug: "${slug}"}) {
+                name
+                location
+                individual {
+                fullName
+                slug
+                avatar {
+                    url
+                }
+                }
+                avatar {
+                url
+                }
+                calendar
+                instagram
+                email
+                fieldOfOrganization
+                telegram
+                telephoneNumber
+                website
+                youtube
+                aboutOrganization{
+                    html
+                }
+                secondaryColor {
+                    hex
+                    }
+            }
+        }
+    `
+
+    const data = await client.request<{organization: OrganizationTypo}>(myQuery)
+    return data
+} 

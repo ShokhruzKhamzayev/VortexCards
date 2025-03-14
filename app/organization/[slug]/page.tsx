@@ -1,5 +1,12 @@
-export default function Organization() {
+import InnerOrganization from "@/components/specOrganization"
+
+type PageProps = {
+  params: Promise<{ slug: string }>
+}
+
+export default async function Organization({params}: PageProps) {
+  const {slug} = await params
   return (
-    <div>Organization</div>
+    <InnerOrganization slug={slug}/>
   )
 }

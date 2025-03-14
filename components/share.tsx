@@ -2,13 +2,14 @@ import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, D
 
 import { Button } from './ui/button'
 
-export default function Share({children, classname}: {
+export default function Share({children, classname, secColor}: {
     children: React.ReactNode,
-    classname?: string
+    classname?: string,
+    secColor: string
 }) {
   return (
     <Drawer>
-        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} bg-slate-500 p-[0.75rem] justify-center text-white border-b-[2px] border-white cursor-pointer`}>
+        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} p-[0.75rem] justify-center text-white border-b-[2px] border-white cursor-pointer`} style={{backgroundColor: secColor}}>
             {children}
         </DrawerTrigger>
             <DrawerContent className='max-w-[500px] mx-auto'>
