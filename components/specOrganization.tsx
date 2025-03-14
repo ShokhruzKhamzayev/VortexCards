@@ -1,18 +1,17 @@
 import { fetchSpecOrganization } from '@/lib'
 import { BiHome, BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare } from 'react-icons/fa6'
-import { GoOrganization } from "react-icons/go"
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
+import Link from 'next/link'
 import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
-import Link from 'next/link'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
@@ -25,16 +24,13 @@ export default async function InnerDetails({slug}: {slug: string}) {
         }
     ]
     const temp = {__html: organization.aboutOrganization.html}
-
-    const secColor = '#fff'
   return (
     <>
     <FloatingNav navItems={navItems}/>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter">
             <div className="banner relative">
-                <div className='w-full h-[200px] rounded-t-[20px] relative'>
-                <div className='w-full h-[200px] rounded-t-[20px] bg-slate-400'></div>
+                <div className='w-full h-[200px] rounded-0 md:rounded-t-[20px] relative bg-slate-400'>
                 </div>
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
@@ -124,7 +120,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className="carousel">
             <EmblaCarousel  />
         </div>
-        <InfoInnerDetail Icon={<GoOrganization size={30}/>}>
+        <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<BiUser/>}>

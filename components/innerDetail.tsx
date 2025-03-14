@@ -1,18 +1,19 @@
 import { fetchSpecIndividual } from '@/lib'
 import { BiHome, BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare } from 'react-icons/fa6'
-import { GoOrganization } from "react-icons/go"
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
+import { MdPhotoLibrary } from "react-icons/md"
 import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
-import { FloatingNav } from './ui/floating-navbar'
-import Share from './share'
-import {EmblaCarousel} from './ui/carousel'
 import Link from 'next/link'
+import GalleryView from './galleryView'
+import Share from './share'
+import { EmblaCarousel } from './ui/carousel'
+import { FloatingNav } from './ui/floating-navbar'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -31,8 +32,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter">
             <div className="banner relative">
-                <div className='w-full h-[200px] rounded-t-[20px] relative'>
-                <div className='w-full h-[200px] rounded-t-[20px] bg-slate-400'></div>
+                <div className='w-full h-[200px] rounded-0 md:rounded-t-[20px] relative bg-slate-400'>
                 </div>
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
@@ -120,14 +120,24 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white' style={{backgroundColor: person.secondaryColor.hex}}>
             Website
         </a>
-        <div className="carousel">
-            <EmblaCarousel  />
-        </div>
-        <InfoInnerDetail Icon={<GoOrganization size={30}/>}>
+        <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
+        </InfoInnerDetail>
+        <InfoInnerDetail Icon={<FaMedal size={30}/>}>
+            <div className="carousel">
+                <EmblaCarousel  />
+            </div>
+        </InfoInnerDetail>
+        <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
+            <div className="carousel">
+                <EmblaCarousel  />
+            </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
             <div dangerouslySetInnerHTML={indTemp}></div>
+        </InfoInnerDetail>
+        <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>
+            <GalleryView/>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>
