@@ -8,7 +8,7 @@ export default async function Individual() {
   const {individuals} = await fetchAllIndividuals()
   return (
     <div className="lg:max-w-[1100px] mx-auto max-w-[90%] my-[20px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
         {
           individuals.map(person => (
             <Link href={`/individual/${person.slug}`} key={person.slug} className="border border-slate-700 dark:border-white py-[10px] px-[15px] rounded-[15px] text-center">

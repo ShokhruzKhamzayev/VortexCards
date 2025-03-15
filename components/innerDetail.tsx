@@ -74,7 +74,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     </div>
                     Call
                 </a>
-                <a href={`${person}`} className="email text-center">
+                <a href={`#`} className="email text-center">
                     <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <FaRegCalendar size={25} color='white' />
                     </div>
