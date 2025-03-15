@@ -1,21 +1,20 @@
 'use client'
 
 import {
-    EmailIcon,
-    EmailShareButton
+  EmailShareButton
 } from 'next-share'
 
 import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer'
 
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { FaShareAlt } from "react-icons/fa"
 import { FaRegCopy } from 'react-icons/fa6'
 import { TiMessages } from "react-icons/ti"
-import { FaShareAlt } from "react-icons/fa";
 
+import { MdEmail } from 'react-icons/md'
 import { toast } from 'sonner'
 import CustomImage from './ui/customImage'
-import { MdEmail } from 'react-icons/md'
 export default function Share({children, classname, secColor, fullName}: {
     children: React.ReactNode,
     classname?: string,
@@ -64,10 +63,10 @@ export default function Share({children, classname, secColor, fullName}: {
 
   return (
     <Drawer>
-        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} p-[0.75rem] justify-center text-white border-b-[2px] border-white cursor-pointer`} style={{backgroundColor: secColor}}>
+        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} p-[0.75rem] justify-center text-white dark border-b-[2px] border-white cursor-pointer`} style={{backgroundColor: secColor}}>
             {children}
         </DrawerTrigger>
-        <DrawerContent className='max-w-[500px] mx-auto text-center pb-[10px]'>
+        <DrawerContent className='max-w-[500px] mx-auto text-center pb-[10px] min-h-[94dvh] md:min-h-[97dvh]'>
             <DrawerHeader className='space-y-[20px]'>
                 <DrawerTitle className='text-[25px] font-semibold'>{fullName}</DrawerTitle>
                     <div className='relative w-[300px] h-[300px] overflow-hidden mx-auto'>
@@ -83,32 +82,31 @@ export default function Share({children, classname, secColor, fullName}: {
                 <div className='flex justify-between items-center px-[30px]'>
                 <button
                     onClick={handleSmsShare}
-                    className="text-white px-4 py-2 rounded-lg text-center"
+                    className="text-center cursor-pointer"
                     >
-                    <div className='p-[10px] rounded-full w-fit mx-auto' style={{backgroundColor: secColor}}>
-                        <TiMessages size={32}/> 
+                    <div className='p-[10px] rounded-full w-fit mx-auto' style={{backgroundColor: secColor, color: 'white'}}>
+                        <TiMessages size={32} className='text-white'/> 
                     </div>
-                    <span className='my-[10px] block'>SMS orqali</span>              
+                    <p className='my-[10px] block text-black dark:text-white'>SMS orqali</p>              
                 </button>
                 <EmailShareButton
                     url={customLink}
                     subject={fullName}
                     body="body"
                 >
-                    <div className='p-[10px] rounded-full w-fit mx-auto' style={{backgroundColor: secColor}}>
-                        <MdEmail size={32}/>
+                    <div className='p-[10px] rounded-full w-fit mx-auto cursor-pointer' style={{backgroundColor: secColor}}>
+                        <MdEmail size={32} className='text-white' />
                     </div>
-                    <span className='my-[10px] block'>Email orqali</span>
+                    <p className='my-[10px] block text-black dark:text-white '>Email orqali</p>
                 </EmailShareButton>
                 <button
                     onClick={handleShare}
                     disabled={!isShareSupported}
-                    className="text-white"
-                     text-center>
+                    className="cursor-pointer">
                         <div className='p-[10px] rounded-full w-fit mx-auto' style={{backgroundColor: secColor}}>
-                            <FaShareAlt size={32}/>
+                            <FaShareAlt size={32} className='text-white'/>
                         </div>
-                        <span className='my-[10px] block'>Boshqalar</span>
+                        <p className='my-[10px] block text-black dark:text-white '>Boshqalar</p>
                     </button>
                 </div>
             </DrawerFooter>

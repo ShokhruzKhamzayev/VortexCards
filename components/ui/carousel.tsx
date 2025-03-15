@@ -10,7 +10,6 @@ export function EmblaCarousel({size, data, type}: {
   data?: any,
   type: "video" | "photo"
 }) {  
-  console.log(data)
   const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000})])
   return (    
   <div className="embla overflow-hidden" ref={emblaRef}>      

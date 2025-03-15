@@ -9,15 +9,14 @@ import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
 import Link from 'next/link'
+import { MdPhotoLibrary } from 'react-icons/md'
+import GalleryView from './galleryView'
 import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
-import { MdPhotoLibrary } from 'react-icons/md'
-import GalleryView from './galleryView'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
-    console.log(organization)
     const navItems = [
         {
             name: 'Home',

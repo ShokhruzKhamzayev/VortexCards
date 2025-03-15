@@ -25,7 +25,6 @@ export default function App() {
             .then((blob) => URL.createObjectURL(blob));
         })
       );
-      console.log(imgs);
       setImages(imgs);
     }
     fetchData();
