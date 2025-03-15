@@ -45,7 +45,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border border-white'/>
                 </div>
                 </div>
-                <a href='/' className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
+                <a href={person.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                     <div className='p-[15px] rounded-full' style={{backgroundColor: person.secondaryColor.hex}}>
                         <FaLocationDot color='white' />
                     </div>
