@@ -1,40 +1,23 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import RViewerJS from "viewerjs-react";
 import "viewerjs-react/dist/index.css";
+import CustomImage from "./ui/customImage";
 
-const imagesList = [
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400"
-];
-
-export default function App() {
-  const [images, setImages] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      const imgs: any = await Promise.all(
-        imagesList.map((url) => {
-          return fetch(url)
-            .then((res) => res.blob())
-            .then((blob) => URL.createObjectURL(blob));
-        })
-      );
-      setImages(imgs);
-    }
-    fetchData();
-  }, []);
+export default function App({photos}: {
+  photos: {
+    url: string
+  }[]
+}) {
 
   return (
     // @ts-ignore
       <RViewerJS className="grid grid-cols-2 gap-[20px]">
-        {images.map((img, idx) => (
-          <img className="w-[full]" src={img} alt="example" key={`images_${idx}`} />
+        {photos.map((img, idx) => (
+          <div key={`images_${idx}`} className="relative w-full h-[150px] overflow-hidden">
+            <CustomImage src={img.url} alt="example" classname="object-contain"  />
+          </div>
         ))}
       </RViewerJS>
   );

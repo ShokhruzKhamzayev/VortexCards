@@ -33,6 +33,19 @@ export async function fetchSpecIndividual(slug: string) {
                     hex
                     }
                 videos
+                websiteUrl
+                banner {
+                url
+                }
+                contactDownload {
+                        url
+                }
+                partnersLogo {
+                url
+                }
+                projects {
+                    url
+                }
             }
         }
     `
@@ -110,6 +123,16 @@ export async function fetchSpecOrganization(slug: string) {
                     hex
                     }
                 videos
+                websiteUrl
+                banner {
+                url
+                }
+                contactNumber{
+                        url
+                }
+                projects {
+                    url
+                }
             }
         }
     `

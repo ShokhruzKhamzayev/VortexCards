@@ -21,7 +21,20 @@ export interface InnerDetailTypo {
     secondaryColor: {
         hex: string
     },
-    videos: string
+    videos: string,
+    websiteUrl: string
+    banner: {
+      url: string
+    }
+    contactDownload: {
+			url: string
+    },
+    partnersLogo: {
+      url: string
+    }[],
+    projects: {
+      url: string
+    }[]
 }
 
 export interface OrganizationTypo {
@@ -44,5 +57,15 @@ export interface OrganizationTypo {
   secondaryColor: {
     hex: string
   },
-  videos: string
+  videos: string,
+  websiteUrl: string
+  banner: {
+    url: string
+  }
+  contactNumber: {
+    url: string
+  },
+  projects: {
+    url: string
+  }[]
 }

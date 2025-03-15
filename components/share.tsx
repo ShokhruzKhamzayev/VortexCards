@@ -63,21 +63,19 @@ export default function Share({children, classname, secColor, fullName}: {
 
   return (
     <Drawer>
-        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} p-[0.75rem] justify-center text-white dark border-b-[2px] border-white cursor-pointer`} style={{backgroundColor: secColor}}>
+        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} p-[0.75rem] justify-center text-white dark border-b-[2px] border-white cursor-pointer hover:grayscale-75 transition-all duration-200`} style={{backgroundColor: secColor}}>
             {children}
         </DrawerTrigger>
-        <DrawerContent className='max-w-[500px] mx-auto text-center pb-[10px] min-h-[94dvh] md:min-h-[97dvh]'>
-            <DrawerHeader className='space-y-[20px]'>
+        <DrawerContent className='max-w-[500px] mx-auto text-center min-h-fit'>
+            <DrawerHeader className='space-y-[20px] pb-[50px]'>
                 <DrawerTitle className='text-[25px] font-semibold'>{fullName}</DrawerTitle>
-                    <div className='relative w-[300px] h-[300px] overflow-hidden mx-auto'>
+                    <div className='relative max-w-full w-[250px] h-[250px] overflow-hidden mx-auto'>
                         <CustomImage src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${customLink}`} alt='qr code of the profile'/>
                     </div>
                 <DrawerDescription onClick={copylink} className='flex items-center gap-[10px] justify-center'>
                         <FaRegCopy />
                         Nusxalash
                 </DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
                 <h3 className='text-center font-medium text-[16px] mb-[20px]'>Vizitkani ulashish</h3>
                 <div className='flex justify-between items-center px-[30px]'>
                 <button
@@ -109,7 +107,7 @@ export default function Share({children, classname, secColor, fullName}: {
                         <p className='my-[10px] block text-black dark:text-white '>Boshqalar</p>
                     </button>
                 </div>
-            </DrawerFooter>
+            </DrawerHeader>
         </DrawerContent>
     </Drawer>  
     )

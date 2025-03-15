@@ -14,6 +14,7 @@ import GalleryView from './galleryView'
 import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
+import ConnectClient from './connectClient'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
@@ -57,50 +58,45 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <h3 className='text-[#f9bf41] text-[15px] '>{organization.fieldOfOrganization}</h3>
             </div>
             <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
-                <a href={`${organization}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:bg-slate-400'>
+                <a href={`mailto:${organization.email}`} className="email text-center">
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <IoMdMail size={25} color='white' />
                     </div>
                     Email
                 </a>
                 <a href={`tel:${organization.telephoneNumber}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75'>
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                         <IoCall size={25} color='white' />
                     </div>
                     Call
                 </a>
                 <a href={`${organization}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <FaRegCalendar size={25} color='white' />
                     </div>
                     Calendar
                 </a>
-                <a href={`${organization}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
-                    <FaRegHandshake size={25} color='white' />
-                    </div>
-                    Connect
-                </a>
-                <a href={`${organization}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
+                <ConnectClient person={organization} />
+                <a href={`https://www.linkedin.com/in/${organization}`} className="email text-center">
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <FaLinkedinIn size={25} color='white' />
                     </div>
                     Linkedin
                 </a>
                 <a href={`https://instagram.com/${organization.instagram}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <FaInstagram size={25} color='white' />
                     </div>
                     Instagram
                 </a>
-                <a href={`${organization}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`https://www.youtube.com/@${organization.youtube}`} className="email text-center">
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <IoLogoYoutube size={25} color='white' />
                     </div>
                     Youtube
                 </a>
-                <a href={`${organization}`} className="email text-center">
-                    <div style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
+                <a href={`https://t.me/${organization.telegram}`} className="email text-center">
+                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <BsTelegram size={25} color='white' />
                     </div>
                     Telegram
@@ -108,7 +104,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </div>
         </div>
         <div className="share flex justify-between gap-[2px] mt-[20px]">
-            <button className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white' style={{backgroundColor: organization.secondaryColor.hex}}>
+            <button className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
                 <RiContactsBook3Fill />
                 ADD TO CONTACTS
             </button>
@@ -117,17 +113,12 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 SHARE
             </Share>
         </div>
-        <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white' style={{backgroundColor: organization.secondaryColor.hex}}>
+        <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
             Website
         </a>
         <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
             <div dangerouslySetInnerHTML={temp}></div>
         </InfoInnerDetail>
-        <InfoInnerDetail Icon={<FaMedal size={30}/>}>
-                    <div className="carousel">
-                        <EmblaCarousel type='photo' size='0 0 33.333%' />
-                    </div>
-                </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                     <div className="carousel">
                         <EmblaCarousel type='video' data={videos} size='0 0 100%' />
@@ -136,19 +127,19 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
             <div className='grid grid-cols-2 md:grid-cols-3'>
                 {
-                    organization.individual.map(person => (
-                        <Link href={`/individual/${person.slug}`} key={person.slug} className='w-full space-y-[10px]'>
+                    organization.individual.map(organization => (
+                        <Link href={`/individual/${organization.slug}`} key={organization.slug} className='w-full space-y-[10px]'>
                             <div className='relative w-[100px] h-[100px] overflow-hidden mx-auto'>
-                                <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border border-white object-contain'/>
+                                <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border border-white object-contain'/>
                             </div>
-                            <h1 className='text-center text-yellow-500 text-[13px] font-medium'>{person.fullName}</h1>
+                            <h1 className='text-center text-yellow-500 text-[13px] font-medium'>{organization.fullName}</h1>
                         </Link>
                     ))
                 }
             </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>
-                    <GalleryView/>
+            <GalleryView photos={organization.projects}/>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>
