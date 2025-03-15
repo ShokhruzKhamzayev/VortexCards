@@ -4,6 +4,8 @@ import "./globals.css";
 import Provider from "@/provider/themeProvider";
 import Nextloader from 'nextjs-toploader'
 
+import {Toaster} from 'sonner'
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ['400', '500', '600', '700', '800', '900']
@@ -25,6 +27,7 @@ export default function RootLayout({
         className={`${poppins.className} antialiased`}
       >
         <Nextloader showSpinner={false} />
+        <Toaster position="bottom-center"/>
         <Provider>
           {children}
         </Provider>

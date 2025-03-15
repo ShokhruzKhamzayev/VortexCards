@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [{
       hostname: 'ap-south-1.graphassets.com',
       protocol: 'https'
+    }, {
+      hostname: 'api.qrserver.com',
+      protocol: 'https'
     }]
   }
 };

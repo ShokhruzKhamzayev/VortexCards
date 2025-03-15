@@ -14,6 +14,7 @@ import GalleryView from './galleryView'
 import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
+import ConnectClient from './connectClient'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -26,6 +27,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
     ]
     const temp = {__html: person.organization.aboutOrganization.html}
     const indTemp = {__html: person.aboutIndividual.html}
+   
 
     const videos = person.videos.split(',')
   return (
@@ -77,12 +79,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     </div>
                     Calendar
                 </a>
-                <a href={`${person}`} className="email text-center">
-                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
-                    <FaRegHandshake size={25} color='white' />
-                    </div>
-                    Connect
-                </a>
+                <ConnectClient person={person} />
                 <a href={`${person}`} className="email text-center">
                     <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto'>
                     <FaLinkedinIn size={25} color='white' />
@@ -114,7 +111,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <RiContactsBook3Fill />
                 ADD TO CONTACTS
             </button>
-            <Share secColor={person.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
+            <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                 <BiShare/>
                 SHARE
             </Share>
@@ -143,7 +140,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>
-            <Share secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
+            <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
                 SHARE MY INFO
             </Share>
             <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="#">GET YOUR CONTACT CARD</a>

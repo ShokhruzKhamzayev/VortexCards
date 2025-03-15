@@ -113,7 +113,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <RiContactsBook3Fill />
                 ADD TO CONTACTS
             </button>
-            <Share secColor={organization.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
+            <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                 <BiShare/>
                 SHARE
             </Share>
@@ -153,7 +153,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>
-                <Share secColor={organization.secondaryColor.hex} classname='w-full rounded-[12px]'>
+                <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-full rounded-[12px]'>
                     SHARE MY INFO
                 </Share>
                 <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="#">GET YOUR CONTACT CARD</a>
