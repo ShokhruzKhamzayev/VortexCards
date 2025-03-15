@@ -46,6 +46,7 @@ export async function fetchSpecIndividual(slug: string) {
                 projects {
                     url
                 }
+                textForConnection
             }
         }
     `
@@ -133,6 +134,7 @@ export async function fetchSpecOrganization(slug: string) {
                 projects {
                     url
                 }
+                textForConnection
             }
         }
     `

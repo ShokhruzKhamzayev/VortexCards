@@ -34,7 +34,8 @@ export interface InnerDetailTypo {
     }[],
     projects: {
       url: string
-    }[]
+    }[],
+    textForConnection: string
 }
 
 export interface OrganizationTypo {
@@ -67,5 +68,6 @@ export interface OrganizationTypo {
   },
   projects: {
     url: string
-  }[]
+  }[],
+  textForConnection: string
 }

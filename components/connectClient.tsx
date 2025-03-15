@@ -8,7 +8,7 @@ export default function ConnectClient({person}: {
     person: InnerDetailTypo | OrganizationTypo
 }) {
     const handleSmsShare = () => {
-        const message = encodeURIComponent("Hey! Check out this cool website: " + window.location.href);
+        const message = encodeURIComponent(person.textForConnection + " " + window.location.href);
         const smsUrl = `sms:?&body=${message}`;
         window.location.href = smsUrl;
       };
