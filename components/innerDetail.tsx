@@ -121,7 +121,10 @@ export default async function InnerDetails({slug}: {slug: string}) {
             Website
         </a>
         <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
+        <div>
+            <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
             <div dangerouslySetInnerHTML={temp}></div>
+        </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaMedal size={30}/>}>
             <div className="carousel">
@@ -137,7 +140,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div>
             <h1 className='text-center font-medium text-[20px] mb-[15px]'>{person.fullName}</h1>
             <div dangerouslySetInnerHTML={indTemp}></div>
-
         </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>

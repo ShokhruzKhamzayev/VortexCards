@@ -120,7 +120,10 @@ export default async function InnerDetails({slug}: {slug: string}) {
             Website
         </a>
         <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
+        <div>
+            <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
             <div dangerouslySetInnerHTML={temp}></div>
+        </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                     <div className="carousel">
