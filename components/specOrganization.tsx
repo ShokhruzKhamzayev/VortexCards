@@ -15,6 +15,7 @@ import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
 import ConnectClient from './connectClient'
+import Image from 'next/image'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
@@ -34,8 +35,10 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter">
             <div className="banner relative">
-                <div className='w-full h-[200px] rounded-0 md:rounded-t-[20px] relative bg-slate-400'>
+                <div className='w-full h-[200px] relative'>
+                <Image src={organization.banner.url} alt='banner of the profile' fill className='rounded-0 md:rounded-t-[20px]'/>
                 </div>
+                
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                 <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
@@ -104,16 +107,16 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </div>
         </div>
         <div className="share flex justify-between gap-[2px] mt-[20px]">
-            <button className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
+            <a href={organization.contactNumber.url} download={organization.contactNumber.url} className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
                 <RiContactsBook3Fill />
                 ADD TO CONTACTS
-            </button>
+            </a>
             <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                 <BiShare/>
                 SHARE
             </Share>
         </div>
-        <a href='https://vortexhub.uz' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
+        <a href={`https://${organization.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
             Website
         </a>
         <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>

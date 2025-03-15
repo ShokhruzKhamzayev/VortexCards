@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { YouTubeEmbed } from '@next/third-parties/google'
 import CustomImage from './customImage'
+import Image from 'next/image'
 
 export function EmblaCarousel({size, data, type, photos}: {
   size: string,
@@ -14,21 +15,23 @@ export function EmblaCarousel({size, data, type, photos}: {
     url: string
   }[]
 }) {  
-  const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000, stopOnInteraction: false})])
+  const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000})])
   return (    
   <div className="embla overflow-hidden" ref={emblaRef}>      
   <div className="embla__container flex">   
       {
         type === 'video' ? (
             data.map((content: any, idx: number) => (
-              <div className="embla__slide" key={idx} style={{flex: size}}>
+              <div className="embla__slide w-full px-[30px]" key={idx} style={{flex: size}}>
                 <YouTubeEmbed videoid={content} key={idx}/>        
               </div>     
             ))
         ) : (
           photos?.map(photo => (
-            <div key={photo.url} className="embla__slide relative max-w-[90%] mx-auto h-[150px]" style={{flex: size}}>
-              <CustomImage src={photo.url} alt='photo of partners' classname='object-contain' />
+            <div key={photo.url} className="embla__slide w-full px-[5px]" style={{flex: size}}>
+              <div className='relative w-full h-[150px]'>
+                <Image fill src={photo.url} alt='photo of partners' className='object-contain' />
+              </div>
             </div>
           ))
         )

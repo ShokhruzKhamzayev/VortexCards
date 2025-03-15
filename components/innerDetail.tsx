@@ -37,8 +37,8 @@ export default async function InnerDetails({slug}: {slug: string}) {
     <FloatingNav navItems={navItems}/>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter w-full">
-            <div className="banner relative w-full h-[200px]">
-                <Image src={person.banner.url} fill alt='banner for profile'/>
+            <div className="w-full h-[200px]  relative">
+                <Image src={person.banner.url} fill alt='banner for profile' className='rounded-0 md:rounded-t-[20px]'/>
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                 <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
@@ -134,7 +134,11 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
+        <div>
+            <h1 className='text-center font-medium text-[20px] mb-[15px]'>{person.fullName}</h1>
             <div dangerouslySetInnerHTML={indTemp}></div>
+
+        </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>
             <GalleryView photos={person.projects}/>
