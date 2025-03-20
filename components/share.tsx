@@ -53,7 +53,7 @@ export default function Share({children, classname, secColor, fullName}: {
     };
   
     const pathname = usePathname() || '';
-    const customLink = `https://uzconnect.vercel.app${pathname}`
+    const customLink = `https://cards.vortexhub.uz${pathname}`
     
     const copylink = (e: any) => {
         navigator.clipboard.writeText(customLink)

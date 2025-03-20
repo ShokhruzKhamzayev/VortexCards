@@ -1,21 +1,21 @@
 import { fetchSpecOrganization } from '@/lib'
 import { BiHome, BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { MdPhotoLibrary } from 'react-icons/md'
+import ConnectClient from './connectClient'
 import GalleryView from './galleryView'
 import Share from './share'
 import { EmblaCarousel } from './ui/carousel'
 import { FloatingNav } from './ui/floating-navbar'
-import ConnectClient from './connectClient'
-import Image from 'next/image'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
