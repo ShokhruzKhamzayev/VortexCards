@@ -55,44 +55,6 @@ export async function fetchSpecIndividual(slug: string) {
     return data
 }
 
-export async function fetchAllIndividuals() {
-    const myQuery = gql`
-        query MyQuery {
-            individuals {
-                fullName
-                organization {
-                name
-                }
-                avatar {
-                url
-                }
-                slug
-            }
-        }
-    `
-
-    const data = await client.request<{individuals: InnerDetailTypo[]}>(myQuery)
-    return data
-}
-
-export async function fetchAllOrganizations() {
-    const myQuery = gql`
-        query MyQuery {
-            organizations {
-                name
-                slug
-                avatar {
-                url
-                }
-                fieldOfOrganization
-            }
-        }
-    `
-
-    const data = await client.request<{organizations: OrganizationTypo[]}>(myQuery)
-    return data
-}
-
 export async function fetchSpecOrganization(slug: string) {
     const myQuery = gql`
         query MyQuery {
