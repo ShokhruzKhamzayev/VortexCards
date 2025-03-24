@@ -4,13 +4,13 @@ import ThemeSwitcher from "./themeSwitcher";
 
 export default function Header() {
   return (
-    <header className="custom-container flex justify-between items-center py-[15px] border-b border-slate-500 dark:border-slate-200">
+    <header className="custom-container flex justify-between items-center py-[15px] border-b border-slate-200">
         <div className="flex items-center gap-[20px]">
             <Image src={'/logo.jpg'} alt="the brand logo" width={100} height={100} className="rounded-[12px]"/>
             <Nav/>
         </div>
         <div className="flex items-center gap-[15px]">
-            <a href="tell:+998919866898">+998919866898</a>
+            <a href="tell:+998919866898" className="bg-[#ca65ce] rounded-[12px] py-[10px] px-[15px]">+998919866898</a>
             <ThemeSwitcher/>
         </div>
     </header>

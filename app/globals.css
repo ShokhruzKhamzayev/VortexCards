@@ -134,4 +134,5 @@
   background: rgb(158,62,204);
   background: linear-gradient(161deg, rgba(158,62,204,1) 0%, rgba(126,12,175,1) 20%, rgba(215,61,160,1) 61%, rgba(255,125,43,1) 100%);
   color: white;
+  border-radius: 0px 0px 20px 20px;
 }

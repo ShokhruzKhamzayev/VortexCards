@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Nav() {
   return (
-    <nav className="space-x-[20px]">
+    <nav className="space-x-[20px] hidden lg:block">
         <Link href={'/'}>Bosh sahifa</Link>
         <Link href={'/'}>Xarakterli</Link>
         <Link href={'/'}>Tariflar</Link>
