@@ -6,6 +6,8 @@ import Cards from '../public/cards.png'
 import InfoEntry from "@/components/infoEntry";
 import UsersInfo from "@/components/usersInfo";
 import { Features } from "@/components/features";
+import InfoPartTwo from "@/components/infoP2";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -44,6 +46,8 @@ export default function Home() {
       <InfoEntry/>
       <UsersInfo/>
       <Features/>
+      <InfoPartTwo/>
+      <Testimonials/>
     </div>
   );
 }

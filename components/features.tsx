@@ -52,7 +52,7 @@ const items = [
     title: "The Power of Communication",
     description:
       "Understand the impact of effective communication in our lives.",
-    header: <Image src={'/qr.png'} alt="sticker" width={250} height={100} />,
+    header: <Image src={'/contact.png'} alt="sticker" width={150} height={150} />,
     icon: <FaInstagram className="h-4 w-4 text-neutral-500" />,
   },
   {

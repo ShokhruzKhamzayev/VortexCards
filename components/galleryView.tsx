@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import RViewerJS from "viewerjs-react";
 import "viewerjs-react/dist/index.css";
 import CustomImage from "./ui/customImage";

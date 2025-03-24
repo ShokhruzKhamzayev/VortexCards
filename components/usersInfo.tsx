@@ -2,7 +2,6 @@
 
 import Autoplay from "embla-carousel-autoplay"
 import useEmblaCarousel from "embla-carousel-react"
-import Image from "next/image"
 import CustomImage from "./ui/customImage"
 import Link from "next/link"
 
@@ -51,7 +50,7 @@ export default function UsersInfo() {
                     users.map((user, idx) => (
                         <div className="embla__slide w-full bg-[#1f1e20] rounded-[12px] pt-[20px] px-[30px] mx-[30px] text-center flex-[0_0_98%] md:flex-[0_0_48.333%] lg:flex-[0_0_30.333%]" key={idx}>
                             <h1 className="mb-[10px] font-medium text-[20px]">{user.title}</h1>
-                            <div className="w-full h-[400px] relative">
+                            <div className="w-full h-[400px] relative overflow-hidden">
                                 <CustomImage src={user.image} alt={user.title} classname="object-contain"/>
                             </div>
                         </div> 
