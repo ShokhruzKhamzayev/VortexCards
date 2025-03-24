@@ -5,6 +5,7 @@ import Link from "next/link";
 import Cards from '../public/cards.png'
 import InfoEntry from "@/components/infoEntry";
 import UsersInfo from "@/components/usersInfo";
+import { Features } from "@/components/features";
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
     </div>
       <InfoEntry/>
       <UsersInfo/>
+      <Features/>
     </div>
   );
 }
