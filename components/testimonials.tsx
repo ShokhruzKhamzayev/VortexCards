@@ -53,17 +53,17 @@ export default function Testimonials() {
             <div className="embla__container flex mt-[30px]">
                 {
                     testimonials.map((testimonial, idx) => (
-                        <div key={idx} className="embla__slide flex-[0_0_98%] md:flex-[0_0_48.333%] lg:flex-[0_0_25%] mx-[30px] bg-[#f5f5f7]">
-                            <div className="w-full flex ">
+                        <div key={idx} className="embla__slide flex-[0_0_98%] md:flex-[0_0_48.333%] lg:flex-[0_0_25%] mx-[30px] bg-[#f5f5f7] py-[10px] px-[15px] rounded-[16px]">
+                            <div className="w-full flex items-center gap-[10px]">
                                 <div className="relative w-[70px] h-[70px]">
                                     <CustomImage src={testimonial.img} alt={testimonial.fullName} classname="rounded-full "/>
                                 </div>
                                 <div>
-                                    <h3>{testimonial.fullName}</h3>
-                                    <p>{testimonial.position}</p>
+                                    <h3 className="text-[16px] font-semibold">{testimonial.fullName}</h3>
+                                    <p className="text-[14px] font-medium">{testimonial.position}</p>
                                 </div>
                             </div>
-                            <p className="italic">{`"${testimonial.comment}"`}</p>
+                            <p className="italic mt-[15px]">{`"${testimonial.comment}"`}</p>
                         </div>
                     ))
                 }

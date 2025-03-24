@@ -8,6 +8,7 @@ import UsersInfo from "@/components/usersInfo";
 import { Features } from "@/components/features";
 import InfoPartTwo from "@/components/infoP2";
 import Testimonials from "@/components/testimonials";
+import Pricing from "@/components/pricing";
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
       <Features/>
       <InfoPartTwo/>
       <Testimonials/>
+      <Pricing/>
     </div>
   );
 }
