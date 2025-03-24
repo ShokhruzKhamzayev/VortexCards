@@ -1,10 +1,8 @@
 'use client'
 
-import React from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import { YouTubeEmbed } from '@next/third-parties/google'
-import CustomImage from './customImage'
+import Autoplay from 'embla-carousel-autoplay'
+import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 
 export function EmblaCarousel({size, data, type, photos}: {
