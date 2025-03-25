@@ -17,7 +17,7 @@ export default function Home() {
     <div>
     <div className="custom_bg rounded-b-[20px]">
       <Header/>
-      <main className="custom-container py-[50px] flex items-center flex-col gap-[30px] lg:gap-0 lg:flex-row">
+      <main id="main" className="custom-container py-[50px] flex items-center flex-col gap-[30px] lg:gap-0 lg:flex-row">
         <div className="space-y-[20px] isolate z-[20] w-full lg:w-[60%]">
           <h1 className="text-[26px] md:text-[35px] lg:text-[55px] font-semibold ">Sizga kerak bo'ladigan so'ngi tashrif qog'ozi!</h1>
           <p className="uppercase text-[19px] md:text-[23px] ">BIRINCHI MULOQOT NUQTASIDA O‘ZINGIZNI BRENDLANG, POZITSIYALANG VA AJRATING.</p>

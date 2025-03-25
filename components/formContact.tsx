@@ -3,6 +3,8 @@
 import {z} from 'zod'
 import {useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
+import axios  from 'axios'
 
 const formSchema = z.object({
     fullName: z.string().min(3),
@@ -15,8 +17,20 @@ export default function FormContact() {
     const {handleSubmit, formState: {errors}, reset, register} = useForm({resolver: zodResolver(formSchema)})
 
     function submit(data: Form) {
-      console.log(data)
-      reset()
+      const template = `📩 New Message from VortexCards received! ✅%0A
+👤 Name: ${data.fullName}%0A
+📞 Number: ${data.number}`
+try {
+  const status = axios.post(`https://api.telegram.org/bot${process.env.NEXT_PUBLIC_telegram_api!}/sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHAT_ID!}&text=${template}`, template)
+  toast.promise(status, {
+      success: 'Sent',
+      loading: 'Loading...',
+      error: 'Something went wrong'
+  })
+  reset()
+} catch (err) {
+  console.log(err)
+}
     }
   return (
     <form action={'#'} onSubmit={handleSubmit(submit)} className='flex flex-col gap-[15px]'>

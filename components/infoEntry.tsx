@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function InfoEntry() {
   return (
-    <div className="custom-container flex justify-between items-center py-[80px] flex-col lg:flex-row">
+    <div className="custom-container flex justify-between items-center py-[80px] flex-col lg:flex-row" id="info">
         <div className="relative w-full lg:w-[47%]">
             <YouTubeEmbed videoid="D6qS1eJBARs"/>
         </div>

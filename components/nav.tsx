@@ -6,12 +6,12 @@ export default function Nav({className}: {
 }) {
   return (
     <nav className={cn("space-x-[20px] hidden lg:flex", className)}>
-        <Link href={'/'}>Bosh sahifa</Link>
-        <Link href={'/'}>Xarakterli</Link>
-        <Link href={'/'}>Tariflar</Link>
-        <Link href={'/'}>Mijozlar</Link>
-        <Link href={'/'}>Qanday foydalanish kerak</Link>
-        <Link href={'/'}>Kontaktlar</Link>
+        <Link href={'#main'}>Bosh sahifa</Link>
+        <Link href={'#info'}>Xarakterli</Link>
+        <Link href={'#users'}>Mijozlar</Link>
+        <Link href={'#plans'}>Tariflar</Link>
+        <Link href={'#usage'}>Qanday foydalanish kerak</Link>
+        <Link href={'#contact'}>Kontaktlar</Link>
     </nav>
   )
 }

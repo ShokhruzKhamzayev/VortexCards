@@ -4,7 +4,7 @@ import CustomImage from "./ui/customImage";
 
 export default function Contact() {
   return (
-    <div className="my-[60px]">
+    <div className="my-[60px]" id="contact">
         <div className="flex custom-container custom_bg pt-[40px] px-[20px] lg:pl-[50px] rounded-[20px] items-end justify-between flex-col lg:flex-row">
           <div className="pb-[30px] w-full lg:w-1/2">
               <h1 className="text-[25px] font-semibold lg:text-balance mb-[40px] text-center lg:text-left">Ilova haqida ko'proq ma'lumot olish uchun biz bilan bog'laning</h1>
