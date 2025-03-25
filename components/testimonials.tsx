@@ -46,7 +46,7 @@ const testimonials = [
 export default function Testimonials() {
     const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000})])
   return (
-    <div className="py-[40px]">
+    <div className="py-[40px] mb-[50px]">
         <h1 className="text-[26px] font-semibold custom-container">Bizning ajoyib foydalanuvchilarimiz nima deyishadi</h1>
         <div>
         <div className="embla overflow-hidden cursor-grab" ref={emblaRef}>      

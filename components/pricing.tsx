@@ -31,7 +31,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <div className="custom-container custom_bg pt-[60px] rounded-[20px]" id="plans">
+    <div className="custom-container custom_bg pt-[130px] pb-[60px] rounded-[20px]" id="plans">
         <div className="text-center px-[20px] space-y-[20px]">
             <h1 className="text-[26px] md:text-[32px] font-semibold">Uzbek Business Connect tariflari</h1>
             <p className="font-medium">20 dan ortiq raqamli biznes kartalar/mini-saytlar kerakmi?</p>

@@ -39,7 +39,7 @@ const users = [
 export default function UsersInfo() {
     const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000})])
   return (
-    <div className="bg-black text-white py-[100px] my-[50px]" id="users">
+    <div className="bg-black text-white pt-[130px] pb-[100px]" id="users">
         <div className="starter space-y-[20px] text-center custom-container">
             <h1 className="text-[25px] md:text-[32px] lg:text-[39px] font-semibold">Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan</h1>
             <p className="tracking-wider font-medium">Potentsial mijozlar mini-saytingizga tashrif buyurganida, ko'proq takliflarni oling va ko'proq bitimlar tuzing.</p>
