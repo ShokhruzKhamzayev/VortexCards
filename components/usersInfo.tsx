@@ -44,14 +44,16 @@ export default function UsersInfo() {
             <h1 className="text-[25px] md:text-[32px] lg:text-[39px] font-semibold">Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan</h1>
             <p className="tracking-wider font-medium">Potentsial mijozlar mini-saytingizga tashrif buyurganida, ko'proq takliflarni oling va ko'proq bitimlar tuzing.</p>
         </div>
-        <div className="embla overflow-hidden" ref={emblaRef}>      
+        <div className="embla overflow-hidden cursor-grab" ref={emblaRef}>      
             <div className="embla__container flex mt-[30px]"> 
                 {
                     users.map((user, idx) => (
-                        <div className="embla__slide w-full bg-[#1f1e20] rounded-[12px] pt-[20px] px-[30px] mx-[30px] text-center flex-[0_0_98%] md:flex-[0_0_48.333%] lg:flex-[0_0_30.333%]" key={idx}>
-                            <h1 className="mb-[10px] font-medium text-[20px]">{user.title}</h1>
-                            <div className="w-full h-[400px] relative overflow-hidden">
-                                <CustomImage src={user.image} alt={user.title} classname="object-contain"/>
+                        <div className="embla__slide w-full px-[30px] text-center flex-[0_0_98%] md:flex-[0_0_48.333%] lg:flex-[0_0_30.333%]" key={idx}>
+                            <div className="bg-[#1f1e20]  pt-[20px] px-[30px] rounded-[12px]">
+                                <h1 className="mb-[10px] font-medium text-[20px]">{user.title}</h1>
+                                <div className="w-full h-[400px] relative overflow-hidden">
+                                    <CustomImage src={user.image} alt={user.title} classname="object-contain"/>
+                                </div>
                             </div>
                         </div> 
                     ))

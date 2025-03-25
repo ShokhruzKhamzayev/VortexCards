@@ -10,6 +10,7 @@ import InfoPartTwo from "@/components/infoP2";
 import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
 import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
       <Testimonials/>
       <Pricing/>
       <Contact/>
+      <Footer/>
     </div>
   );
 }

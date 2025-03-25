@@ -1,8 +1,11 @@
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export default function Nav() {
+export default function Nav({className}: {
+  className?: string
+}) {
   return (
-    <nav className="space-x-[20px] hidden lg:block">
+    <nav className={cn("space-x-[20px] hidden lg:flex", className)}>
         <Link href={'/'}>Bosh sahifa</Link>
         <Link href={'/'}>Xarakterli</Link>
         <Link href={'/'}>Tariflar</Link>
