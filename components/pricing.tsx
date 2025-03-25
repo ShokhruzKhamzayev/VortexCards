@@ -16,7 +16,8 @@ const plans = [
         subs: "Yiliga 650 000 so'mga avtomatik yangilash",
         amenities: [
             '12 Mini portfolio', '12 NFC karta', '12 NFC stiker', '12 NFC braslet', '1 Yillik xizmat*'
-        ]
+        ],
+        promo: 'Eng mashhur tarif'
     },
     {
         title: 'Kichik jamoa',
@@ -35,20 +36,27 @@ export default function Pricing() {
             <h1 className="text-[26px] md:text-[32px] font-semibold">Uzbek Business Connect tariflari</h1>
             <p className="font-medium">20 dan ortiq raqamli biznes kartalar/mini-saytlar kerakmi?</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px] px-[30px] pt-[30px] pb-[30px] lg:pb-[60px]">
             {
                 plans.map(plan => (
-                    <div key={plan.title} className="bg-[#d461bd] py-[13px] px-[20px]">
+                    <div key={plan.title} className="bg-[#d461bd] py-[45px] px-[20px] rounded-[15px] relative">
+                        {
+                            plan.promo && (
+                                <div className="absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#1878f3] py-[10px] px-[15px] rounded-[13px] text-center">
+                                    <span className="font-medium">{plan.promo}</span>
+                                </div>
+                            )
+                        }
                         <div className="text-center">
-                            <h3>{plan.title}</h3>
-                            <h2><span>{plan.price} so'm</span></h2>
+                            <h3 className="text-[22px] font-medium">{plan.title}</h3>
+                            <h2 className="text-[23px] font-medium py-[10px]"><span className="text-[26px] font-semibold">{plan.price} </span>so'm</h2>
                             <p>{plan.subs}</p>
                         </div>
-                        <Link href={'/'}>Planni tanlang</Link>
-                        <div>
+                        <Link href={'/'} className="bg-[#c472c9] flex justify-center items-center border-slate-300 py-[12px] my-[10px] border rounded-[12px]">Planni tanlang</Link>
+                        <div className="space-y-[15px] mt-[20px]">
                             {
                                 plan.amenities.map((amenity, idx) => (
-                                    <div key={idx}>
+                                    <div className="flex items-center gap-[7px]" key={idx}>
                                         <TiInputChecked/>
                                         <span>{amenity}</span>
                                     </div>
