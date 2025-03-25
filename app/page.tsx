@@ -9,6 +9,7 @@ import { Features } from "@/components/features";
 import InfoPartTwo from "@/components/infoP2";
 import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -50,6 +51,7 @@ export default function Home() {
       <InfoPartTwo/>
       <Testimonials/>
       <Pricing/>
+      <Contact/>
     </div>
   );
 }
