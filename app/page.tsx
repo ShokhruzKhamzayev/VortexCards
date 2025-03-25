@@ -1,15 +1,13 @@
 import Header from "@/components/header";
-import Image from "next/image";
-import Link from "next/link";
 
-import InfoEntry from "@/components/infoEntry";
-import UsersInfo from "@/components/usersInfo";
-import { Features } from "@/components/features";
-import InfoPartTwo from "@/components/infoP2";
-import Testimonials from "@/components/testimonials";
-import Pricing from "@/components/pricing";
 import Contact from "@/components/contact";
+import { Features } from "@/components/features";
 import Footer from "@/components/footer";
+import InfoEntry from "@/components/infoEntry";
+import InfoPartTwo from "@/components/infoP2";
+import Pricing from "@/components/pricing";
+import Testimonials from "@/components/testimonials";
+import UsersInfo from "@/components/usersInfo";
 
 export default function Home() {
   return (

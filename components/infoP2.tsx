@@ -20,7 +20,7 @@ const cards = [
 
 export default function InfoPartTwo() {
   return (
-    <div className="pt-[130px] pb-[40px] bg-[#f5f5f7] mt-[20px]" id="usage">
+    <div className="py-[130px] mt-[20px] bg-white dark:bg-black" id="usage">
         <div className="custom-container">
             <div className="text-center space-y-[20px] py-[40px]">
                 <h1 className="text-[23px] md:text-[28px] lg:text-[35px] font-semibold text-balance">Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan</h1>
@@ -29,7 +29,7 @@ export default function InfoPartTwo() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[30px] gap-[20px]">
                 {
                     cards.map((card, idx) => (
-                        <div key={idx} className="space-y-[13px] bg-white py-[20px] px-[25px] rounded-[16px]">
+                        <div key={idx} className="space-y-[13px] bg-[#f5f5f7] dark:bg-[#1f1e20] py-[20px] px-[25px] rounded-[16px]">
                             <div className="bg-blue-700 rounded-full p-[10px] w-fit">
                                 {card.icon}
                             </div>

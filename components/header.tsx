@@ -47,8 +47,8 @@ export default function Header() {
           <h1 className="text-[26px] md:text-[35px] lg:text-[55px] font-semibold ">Sizga kerak bo'ladigan so'ngi tashrif qog'ozi!</h1>
           <p className="uppercase text-[19px] md:text-[23px] ">BIRINCHI MULOQOT NUQTASIDA O‘ZINGIZNI BRENDLANG, POZITSIYALANG VA AJRATING.</p>
           <div className="mt-[150px] flex flex-col lg:flex-row gap-[30px] flex-wrap">
-            <Link className="bg-white border text-black border-white rounded-[12px] text-center px-[15px] py-[10px]" href={'/'}>Biz bilan bog'lanish</Link>
-            <Link className="bg-transparent border text-white border-white rounded-[12px] px-[15px] py-[10px] text-center" href={'/'}>Demo versitani oling</Link>
+            <Link className="bg-white border text-black border-white rounded-[12px] text-center px-[15px] py-[10px]" href={'#contact'}>Biz bilan bog'lanish</Link>
+            <Link className="bg-transparent border text-white border-white rounded-[12px] px-[15px] py-[10px] text-center" href={'/individual/hamidov-sardorbek'}>Demo versitani oling</Link>
           </div>
           <div className="flex items-center gap-[10px] relative isolate flex-wrap">
             <div className="bg-[#ca65ce] py-[10px] px-[20px] rounded-[12px]">

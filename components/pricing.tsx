@@ -1,5 +1,17 @@
 import Link from "next/link"
 import { TiInputChecked } from "react-icons/ti"
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { DialogOverlay } from "@radix-ui/react-dialog"
+import DialogForm from "./ui/dialogForm"
 
 const plans = [
     {
@@ -52,7 +64,19 @@ export default function Pricing() {
                             <h2 className="text-[23px] font-medium py-[10px]"><span className="text-[26px] font-semibold">{plan.price} </span>so'm</h2>
                             <p>{plan.subs}</p>
                         </div>
-                        <Link href={'/'} className="bg-[#c472c9] flex justify-center items-center border-slate-300 py-[12px] my-[10px] border rounded-[12px]">Planni tanlang</Link>
+                    <Dialog>
+                    <DialogTrigger asChild>
+                        <button className="bg-[#c472c9] flex justify-center items-center border-slate-300 py-[12px] my-[10px] border rounded-[12px] w-full cursor-pointer">Planni tanlang</button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px] md:max-w-[700px] lg:max-w-[850px]">
+                        <DialogHeader>
+                        <DialogTitle>{plan.title}</DialogTitle>
+                        </DialogHeader>
+                        <div>
+                            <DialogForm/>
+                        </div>
+                    </DialogContent>
+                    </Dialog>
                         <div className="space-y-[15px] mt-[20px]">
                             {
                                 plan.amenities.map((amenity, idx) => (
