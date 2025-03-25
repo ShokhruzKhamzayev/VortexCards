@@ -24,7 +24,6 @@ export default function RootLayout({
   modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -35,7 +34,6 @@ export default function RootLayout({
         <Toaster position="bottom-center"/>
         <Provider>
           {children}
-          {modal}
         </Provider>
       </body>
     </html>
