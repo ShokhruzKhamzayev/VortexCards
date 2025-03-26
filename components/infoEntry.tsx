@@ -9,7 +9,7 @@ export default function InfoEntry() {
         </div>
         <div className="w-full lg:w-[47%] text-center lg:text-left lg:m-0">
             <div className="flex gap-[10px] items-center pb-[20px] justify-center">
-                <Image src={'/logo.jpg'} alt="our logo" width={100} height={80}/>
+                <Image src={'/logo.png'} alt="our logo" width={100} height={80}/>
                 <h1>VortexCards</h1>
             </div>
             <p><span className="font-semibold">Uzbek Business Connect kuchli marketing va qidiruv vositasi bo‘lib, u sizga birinchi aloqa nuqtasida darhol o‘zingizni esda qolarli ko‘rinishda ko‘rsatishga va sizni yagona mantiqiy tanlov sifatida ko‘rsatishga yordam beradi. </span><br /> <br /> U yuqori darajadagi istiqbollar bilan bog'lanish, marketing xabaringizni etkazish va baxtli mijozlarga aylanadigan suhbatlarda qatnashish imkonini berish uchun mo'ljallangan.</p>

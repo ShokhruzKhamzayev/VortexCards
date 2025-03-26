@@ -11,26 +11,26 @@ export default function Contact() {
               <FormContact/>
               <div className="flex justify-between mt-[25px] flex-wrap">
                 <div>
-                  <span>Social networks</span>
-                  <div className="flex items-center gap-[20px]">
-                    <a href="#">
-                      <FaTelegram/>
+                  <span>Ijtimoiy tarmoqlar</span>
+                  <div className="flex items-center gap-[20px] mt-[13px]">
+                    <a className="bg-white rounded-full p-[13px]" href="https://t.me/vortexhubb">
+                      <FaTelegram color="black" size={25}/>
                     </a>
-                    <a href="#">
-                      <FaInstagram/>
+                    <a className="bg-white rounded-full p-[13px]" href="https://www.instagram.com/vortex_hub/">
+                      <FaInstagram color="black" size={25}/>
                     </a>
                   </div>
                 </div>
                 <div>
                   <p>Telefon raqami</p>
-                  <a href="#">+998 91 986 68 98</a>
+                  <a href="tel:+998919866898" className="mt-[10px] block bg-white text-black py-[13px] px-[20px] rounded-[13px]">+998 91 986 68 98</a>
                 </div>
                 <div>
                   <p>Elektron pochta</p>
-                  <a href="#">support@vortexhub.uz</a>
+                  <a className="mt-[10px] block bg-white text-black py-[13px] px-[20px] rounded-[13px]" href="mailto:support@vortexhub.uz">support@vortexhub.uz</a>
                 </div>
               </div>
-              <a href="#" className="flex items-center justify-between text-black bg-white py-[16px] px-[25px] rounded-[16px] mt-[35px] flex-col lg:flex-row gap-[20px]">
+              <a href="https://t.me/Khamzayev_Shokhruz" className="flex items-center justify-between text-black bg-white py-[16px] px-[25px] rounded-[16px] mt-[35px] flex-col lg:flex-row gap-[20px]">
                 <div>
                   <p>Tez aloqa uchun</p>
                   <span>+998 91 986 68 98</span>

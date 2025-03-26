@@ -41,12 +41,12 @@ export default function DialogForm() {
   }}
   return (
     <form action={'#'} onSubmit={handleSubmit(submit)}>
-        <div  className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+        <div  className="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[20px]">
             <input className={`outline-none border-b py-[10px] ${errors.fullName ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Ismingiz" {...register('fullName')} />
             <input className={`outline-none border-b py-[10px] ${errors.staff ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Xodimlar soni" {...register('staff')}/>
             <input className={`outline-none border-b py-[10px] ${errors.companyName ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Kompaniya nomi" {...register('companyName')}/>
             <input className={`outline-none border-b py-[10px] ${errors.position ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Lavozim" {...register('position')} />
-            <label htmlFor="number" className={`border-b py-[10px] ${errors.number ? 'border-red-500' : "border-slate-300"}flex items-center ${errors.number ? 'border-red-500' : "border-slate-300"}`}>
+            <label htmlFor="number" className={`border-b py-[10px] flex ${errors.number ? 'border-red-500' : "border-slate-300"}flex items-center ${errors.number ? 'border-red-500' : "border-slate-300"}`}>
                 <span>+998</span>
                 <input type="number" {...register('number')} id="number" placeholder='00 000 00 00' className={`outline-none pl-[10px]`} />
             </label>

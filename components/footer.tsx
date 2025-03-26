@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="custom-container">
         <div className="top-footer flex justify-between items-center lg:border-b border-slate-600 dark:border-slate-100 py-[30px] border-0">
             <div className="flex items-center gap-[20px]">
-                <Image src={'/logo.jpg'} alt="our logo" width={80} height={80}/>
+                <Image src={'/logo.png'} alt="our logo" width={80} height={80}/>
                 <div className="hidden lg:block">
                     <Nav/>
                 </div>

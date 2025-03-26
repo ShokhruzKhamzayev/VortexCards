@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import Cards from '../public/cards.png'
 import Link from "next/link";
 
-
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const navRef = useRef(null);
@@ -27,19 +26,19 @@ export default function Header() {
 
   return (
     <div>
-          <div ref={navRef}
+      <div ref={navRef}
         className={`w-full transition-all duration-300  border-b border-slate-200  ${
           isFixed ? "fixed top-0 custom_bg shadow-md z-[9999] p-0" : "relative bg-transparent p-[10px]"
         }`}>
           <header className="custom-container flex justify-between items-center py-[15px]">
               <div className="flex items-center gap-[20px]">
-                  <Image src={'/logo.jpg'} alt="the brand logo" width={70} height={70} className="rounded-[12px]"/>
-                  <Nav/>
+                  <Image src={'/logo.png'} alt="the brand logo" width={70} height={70} className="rounded-[12px]"/>
+                  <Nav className="hidden lg:flex"/>
               </div>
               <div className="flex items-center gap-[15px]">
-                  <a href="tell:+998919866898" className="bg-[#ca65ce] rounded-[12px] py-[10px] px-[15px]">+998919866898</a>
+                  <a href="tell:+998919866898" className="bg-[#ca65ce] rounded-[12px] py-[10px] px-[15px] hidden lg:block">+998919866898</a>
                   <ThemeSwitcher/>
-              </div>
+              </div> 
           </header>
         </div>
         <main id="main" className={`custom-container py-[50px] flex items-center flex-col gap-[30px] lg:gap-0 lg:flex-row ${isFixed ? "pt-[200px]" : "pt-[50px]"}`}>

@@ -30,13 +30,13 @@ const items = [
   {
     title: "The Dawn of Innovation",
     description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Image src={'/stiker.png'} alt="sticker" width={150} height={150}/>,
+    header: <Image src={'/stiker.png'} alt="sticker" width={150} height={150} className="border border-black rounded-full dark:border-white "/>,
     icon: <FaInstagram className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "The Digital Revolution",
     description: "Dive into the transformative power of technology.",
-    header: <Image src={'/card.png'} alt="sticker" width={250} height={100}/>,
+    header: <Image src={'/card.jpg'} alt="sticker" width={250} height={100} className="border border-black dark:border-white rounded-[15px]"/>,
     icon: <FaInstagram className="h-4 w-4 text-neutral-500" />,
   },
   {
