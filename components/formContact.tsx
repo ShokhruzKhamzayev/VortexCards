@@ -18,14 +18,14 @@ export default function FormContact() {
 
     function submit(data: Form) {
       const template = `📩 New Message from VortexCards received! ✅%0A
-👤 Name: ${data.fullName}%0A
-📞 Number: ${data.number}`
+👤 FIO: ${data.fullName}%0A
+📞 Telefon raqam: ${data.number}`
 try {
   const status = axios.post(`https://api.telegram.org/bot${process.env.NEXT_PUBLIC_telegram_api!}/sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHAT_ID!}&text=${template}`, template)
   toast.promise(status, {
-      success: 'Sent',
-      loading: 'Loading...',
-      error: 'Something went wrong'
+      success: 'Yuborildi',
+      loading: 'Yuborilmoqda...',
+      error: 'Serverda xatolik!'
   })
   reset()
 } catch (err) {
