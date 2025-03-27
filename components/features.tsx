@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils";
+import { PiStickerLight } from "react-icons/pi";
+
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import {FaInstagram} from 'react-icons/fa6'
@@ -28,10 +29,10 @@ export function Features() {
 }
 const items = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
+    title: "Stiker bir nimalar",
+    description: "Bir nima.",
     header: <Image src={'/stiker.png'} alt="sticker" width={150} height={150} className="border border-black rounded-full dark:border-white "/>,
-    icon: <FaInstagram className="h-4 w-4 text-neutral-500" />,
+    icon: <PiStickerLight className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "The Digital Revolution",

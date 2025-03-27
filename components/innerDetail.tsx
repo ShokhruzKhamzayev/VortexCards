@@ -150,7 +150,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
                 SHARE MY INFO
             </Share>
-            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="https://t.me/Khamzayev_Shokhruz">GET YOUR CONTACT CARD</a>
+            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">GET YOUR CONTACT CARD</a>
             </div>
         </InfoInnerDetail>
         </div>
