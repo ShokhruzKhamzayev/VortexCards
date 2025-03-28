@@ -41,7 +41,7 @@ export default function DialogForm() {
   }}
   return (
     <form action={'#'} onSubmit={handleSubmit(submit)}>
-        <div  className="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[20px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[20px]">
             <input className={`outline-none border-b py-[10px] ${errors.fullName ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Ismingiz" {...register('fullName')} />
             <input className={`outline-none border-b py-[10px] ${errors.staff ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Xodimlar soni" {...register('staff')}/>
             <input className={`outline-none border-b py-[10px] ${errors.companyName ? 'border-red-500' : "border-slate-300"}`} type="text" placeholder="Kompaniya nomi" {...register('companyName')}/>
