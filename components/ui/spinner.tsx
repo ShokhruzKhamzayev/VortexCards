@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Spinner() {
   return (
 <div role="status" className='flex gap-[8px] min-h-[100dvh] w-full justify-center items-center'>

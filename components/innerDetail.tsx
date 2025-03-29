@@ -17,12 +17,11 @@ import Share from './share'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
-import Individual from '@/app/individual/[slug]/page'
 import { notFound } from 'next/navigation'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
-    if(!Individual) {
+    if(!person) {
         notFound()
     }
     const temp = {__html: person?.organization?.aboutOrganization.html}
