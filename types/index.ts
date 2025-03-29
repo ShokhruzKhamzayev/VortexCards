@@ -14,9 +14,7 @@ export interface InnerDetailTypo {
     avatar: {
         url: string
     },
-    aboutIndividual: {
-        html: HTMLElement
-    },
+    aboutIndividual: string,
     slug: string,
     secondaryColor: {
         hex: string

@@ -1,7 +1,7 @@
 import { fetchSpecIndividual } from '@/lib'
-import { BiHome, BiShare, BiUser } from 'react-icons/bi'
+import { BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegCalendar, FaRegHandshake, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { MdPhotoLibrary } from "react-icons/md"
@@ -9,35 +9,27 @@ import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
+import Image from 'next/image'
 import Link from 'next/link'
+import ConnectClient from './connectClient'
 import GalleryView from './galleryView'
 import Share from './share'
+import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
-import { FloatingNav } from './ui/floating-navbar'
-import ConnectClient from './connectClient'
-import Image from 'next/image'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
-    const navItems = [
-        {
-            name: 'Home',
-            icon: <BiHome size={36}/>,
-            link:'/'
-        }
-    ]
     const temp = {__html: person.organization.aboutOrganization.html}
-    const indTemp = {__html: person.aboutIndividual.html}
-   
-
     const videos = person.videos.split(',')
 
   return (
     <>
-    <FloatingNav navItems={navItems}/>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter w-full">
             <div className="w-full h-[200px]  relative">
+                <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px] border border-black dark:border-white'>
+                    <ThemeSwitcher/>
+                </div>
                 <Image src={person.banner.url} fill alt='banner for profile' className='rounded-0 md:rounded-t-[20px]'/>
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
@@ -56,11 +48,11 @@ export default async function InnerDetails({slug}: {slug: string}) {
         </div>
         <div className="custom-container">
         <div className="posAndLinks">
-            <div className='text-center space-y-[15px] mt-[90px]'>
+            <div className='text-center space-y-[7px] mt-[90px]'>
                 <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{person.fullName}</h1>
                 {
                     person.organization && (
-                        <Link href={`/organization/${person.organization.slug}`} className='text-[#f9bf41] text-[15px] block'>{person.organization.name}</Link>
+                        <Link href={`/organization/${person.organization.slug}`} className='text-yellow-600 dark:text-[#f9bf41]  text-[15px] block'>{person.organization.name}</Link>
                     )
                 }
                 <h3 className='text-[.875rem] leading-[1.25rem]'>{person.position}</h3>
@@ -141,7 +133,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
         <div>
             <h1 className='text-center font-medium text-[20px] mb-[15px]'>{person.fullName}</h1>
-            <div dangerouslySetInnerHTML={indTemp}></div>
+            <div>{person.aboutIndividual}</div>
         </div>
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>
@@ -152,7 +144,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
                 ULASHISH
             </Share>
-            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</a>
+            <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</Link>
             </div>
         </InfoInnerDetail>
         </div>

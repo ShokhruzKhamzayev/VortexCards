@@ -26,9 +26,7 @@ export async function fetchSpecIndividual(slug: string) {
                 avatar {
                     url
                 }
-                aboutIndividual {
-                    html
-                }
+                aboutIndividual
                 secondaryColor {
                     hex
                     }
