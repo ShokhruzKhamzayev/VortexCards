@@ -12,6 +12,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const {individual: person} = await fetchSpecIndividual(slug)
   return {
     title: person.fullName,
+    description: person.aboutIndividual,
+    keywords: ["VortexCards", "Visitka", 'NFC visitka'],
+    creator: "VortexHub | Shaxruzbek",
+    openGraph: {
+      title: person.fullName,
+      description: person.aboutIndividual,
+      images: person.avatar.url
+    }
   }
 }
 
