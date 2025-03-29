@@ -14,7 +14,7 @@ export default function ConnectClient({person}: {
       };
   return (
     <button className="email text-center" onClick={handleSmsShare}>
-        <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
+        <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200 mb-[6px]'>
         <FaRegHandshake size={25} color='white' />
         </div>
         Connect

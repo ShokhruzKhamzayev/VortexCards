@@ -73,12 +73,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     </div>
                     Call
                 </a>
-                <a href={`#`} className="email text-center">
-                    <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
-                    <FaRegCalendar size={25} color='white' />
-                    </div>
-                    Calendar
-                </a>
                 <ConnectClient person={organization} />
                 <a href={`https://www.linkedin.com/in/${organization}`} className="email text-center">
                     <div  style={{backgroundColor: organization.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
@@ -113,7 +107,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </a>
             <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                 <BiShare/>
-                SHARE
+                ULASHISH
             </Share>
         </div>
         <a href={`https://${organization.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
@@ -125,18 +119,22 @@ export default async function InnerDetails({slug}: {slug: string}) {
             <div dangerouslySetInnerHTML={temp}></div>
         </div>
         </InfoInnerDetail>
-        <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
+        {
+            organization.videos.length > 1 && (
+                <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                     <div className="carousel">
                         <EmblaCarousel type='video' data={videos} size='0 0 100%' />
                     </div>
                 </InfoInnerDetail>
+            )
+        }
         <InfoInnerDetail Icon={<BiUser size={30}/>}>
             <div className='grid grid-cols-2 md:grid-cols-3 gap-[20px]'>
                 {
                     organization.individual.map(organization => (
                         <Link href={`/individual/${organization.slug}`} key={organization.slug} className='w-full space-y-[10px]'>
                             <div className='relative w-[100px] h-[100px] overflow-hidden mx-auto'>
-                                <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border border-white object-contain'/>
+                                <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border-[3px] border-white object-contain'/>
                             </div>
                             <h1 className='text-center text-[13px] font-medium'>{organization.fullName}</h1>
                         </Link>
@@ -150,9 +148,9 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>
                 <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-full rounded-[12px]'>
-                    SHARE MY INFO
+                    ULASHISH
                 </Share>
-                <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="https://t.me/Khamzayev_Shokhruz">GET YOUR CONTACT CARD</a>
+                <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="https://t.me/Khamzayev_Shokhruz">O'zingizni kartangizni oling</a>
             </div>
         </InfoInnerDetail>
         </div>
