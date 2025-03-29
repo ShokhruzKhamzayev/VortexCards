@@ -19,7 +19,7 @@ import { EmblaCarousel } from './ui/carousel'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
-    const temp = {__html: person.organization.aboutOrganization.html}
+    const temp = {__html: person?.organization?.aboutOrganization.html}
     const videos = person.videos.split(',')
 
   return (
@@ -34,7 +34,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             <div className="imgAndLoc">
                 <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                 <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
-                    <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border border-white'/>
+                    <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white'/>
                 </div>
                 </div>
                 <a href={person.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
@@ -110,16 +110,16 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <a href={`https://${person.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor.hex}}>
             Website
         </a>
-        <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
         {
-            person.organization && (
+            person?.organization && (
+        <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
                 <div>
                     <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
                     <div dangerouslySetInnerHTML={temp}></div>
                 </div>
-            )
-        }
+           
         </InfoInnerDetail>
+         )}
         {
             person.partnersLogo.length > 1 && (
                 <InfoInnerDetail Icon={<FaMedal size={30}/>}>
