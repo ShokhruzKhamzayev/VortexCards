@@ -9,6 +9,7 @@ import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
+import ScrollToTop from "react-scroll-to-top";
 import Image from 'next/image'
 import Link from 'next/link'
 import ConnectClient from './connectClient'
@@ -27,7 +28,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter w-full">
             <div className="w-full h-[200px]  relative">
-                <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px] border border-black dark:border-white'>
+                <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                     <ThemeSwitcher/>
                 </div>
                 <Image src={person.banner.url} fill alt='banner for profile' className='rounded-0 md:rounded-t-[20px]'/>
@@ -156,6 +157,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </div>
         </InfoInnerDetail>
         </div>
+        <ScrollToTop smooth />
     </div>
     </>
   )

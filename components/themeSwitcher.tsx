@@ -23,10 +23,10 @@ export default function ThemeSwitcher() {
     )
 
     if (resolvedTheme === 'dark') {
-        return <FiSun onClick={() => setTheme('light')} size={32} />
+        return <FiMoon onClick={() => setTheme('light')} size={32} />
     }
 
     if (resolvedTheme === 'light') {
-        return <FiMoon onClick={() => setTheme('dark')} size={32} />
+        return <FiSun onClick={() => setTheme('dark')} size={32} />
     }
 }

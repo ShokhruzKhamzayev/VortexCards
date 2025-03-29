@@ -151,3 +151,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.scroll-to-top {
+  padding: 12px !important;
+  width: fit-content !important;
+  height: fit-content !important;
+}

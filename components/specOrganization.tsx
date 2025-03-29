@@ -1,7 +1,7 @@
 import { fetchSpecOrganization } from '@/lib'
-import { BiHome, BiShare, BiUser } from 'react-icons/bi'
+import { BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaRegCalendar, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
@@ -14,28 +14,24 @@ import { MdPhotoLibrary } from 'react-icons/md'
 import ConnectClient from './connectClient'
 import GalleryView from './galleryView'
 import Share from './share'
+import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
-import { FloatingNav } from './ui/floating-navbar'
+import ScrollToTopShared from './ui/scrollToTop'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
-    const navItems = [
-        {
-            name: 'Home',
-            icon: <BiHome size={25}/>,
-            link:'/'
-        }
-    ]
     const temp = {__html: organization.aboutOrganization.html}
     const videos = organization.videos.split(',')
 
   return (
     <>
-    <FloatingNav navItems={navItems}/>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         <div className="starter">
             <div className="banner relative">
                 <div className='w-full h-[200px] relative'>
+                    <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
+                        <ThemeSwitcher/>
+                    </div>
                 <Image src={organization.banner.url} alt='banner of the profile' fill className='rounded-0 md:rounded-t-[20px]'/>
                 </div>
                 
@@ -153,6 +149,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="https://t.me/Khamzayev_Shokhruz">O'zingizni kartangizni oling</a>
             </div>
         </InfoInnerDetail>
+        <ScrollToTopShared/>
         </div>
     </div>
     </>
