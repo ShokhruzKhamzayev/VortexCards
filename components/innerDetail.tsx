@@ -58,27 +58,31 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className="posAndLinks">
             <div className='text-center space-y-[15px] mt-[90px]'>
                 <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{person.fullName}</h1>
-                <Link href={`/organization/${person.organization.slug}`} className='text-[#f9bf41] text-[15px] block'>{person.organization.name}</Link>
+                {
+                    person.organization && (
+                        <Link href={`/organization/${person.organization.slug}`} className='text-[#f9bf41] text-[15px] block'>{person.organization.name}</Link>
+                    )
+                }
                 <h3 className='text-[.875rem] leading-[1.25rem]'>{person.position}</h3>
             </div>
             <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
+                <a href={`tel:${person.telephoneNumber}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto transition-all duration-200 hover:grayscale-75'>
+                        <IoCall size={25} color='white' />
+                    </div>
+                    Telefon
+                </a>
+                <a href={`https://instagram.com/${person.instagram}`} className="email text-center">
+                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
+                    <FaInstagram size={25} color='white' />
+                    </div>
+                    Instagram
+                </a>
                 <a href={`mailto:${person.email}`} className="email text-center">
                     <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
                     <IoMdMail size={25} color='white' />
                     </div>
                     Email
-                </a>
-                <a href={`tel:${person.telephoneNumber}`} className="email text-center">
-                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto transition-all duration-200 hover:grayscale-75'>
-                        <IoCall size={25} color='white' />
-                    </div>
-                    Call
-                </a>
-                <a href={`#`} className="email text-center">
-                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
-                    <FaRegCalendar size={25} color='white' />
-                    </div>
-                    Calendar
                 </a>
                 <ConnectClient person={person} />
                 <a href={`https://www.linkedin.com/in/${person.linkedin}`} className="email text-center">
@@ -86,12 +90,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <FaLinkedinIn size={25} color='white' />
                     </div>
                     Linkedin
-                </a>
-                <a href={`https://instagram.com/${person.instagram}`} className="email text-center">
-                    <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
-                    <FaInstagram size={25} color='white' />
-                    </div>
-                    Instagram
                 </a>
                 <a href={`https://www.youtube.com/@${person.youtube}`} className="email text-center">
                     <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mx-auto hover:grayscale-75 transition-all duration-200'>
@@ -110,21 +108,25 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <div className="share flex justify-between gap-[2px] mt-[20px]">
             <a href={person.contactDownload.url} download={person.contactDownload.url} className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor.hex, }}>
                 <RiContactsBook3Fill />
-                ADD TO CONTACTS
+                Kontaktga qo'shish
             </a>
             <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                 <BiShare/>
-                SHARE
+                ULASHISH
             </Share>
         </div>
         <a href={`https://${person.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor.hex}}>
             Website
         </a>
         <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
-        <div>
-            <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
-            <div dangerouslySetInnerHTML={temp}></div>
-        </div>
+        {
+            person.organization && (
+                <div>
+                    <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
+                    <div dangerouslySetInnerHTML={temp}></div>
+                </div>
+            )
+        }
         </InfoInnerDetail>
         <InfoInnerDetail Icon={<FaMedal size={30}/>}>
             <div className="carousel">
@@ -148,9 +150,9 @@ export default async function InnerDetails({slug}: {slug: string}) {
         <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
             <div className='pt-[10px]'>
             <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
-                SHARE MY INFO
+                ULASHISH
             </Share>
-            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">GET YOUR CONTACT CARD</a>
+            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</a>
             </div>
         </InfoInnerDetail>
         </div>
