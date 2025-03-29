@@ -17,12 +17,15 @@ import Share from './share'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
+import { notFound } from 'next/navigation'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
+    if(!organization) {
+        notFound()
+    }
     const temp = {__html: organization.aboutOrganization.html}
     const videos = organization.videos.split(',')
-
   return (
     <>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
