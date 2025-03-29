@@ -25,7 +25,7 @@ export default function DialogForm() {
   📞 Telefon raqam: ${data.number}%0A
   👥 Xodimlar soni: ${data.staff}%0A
   ℹ️ Organizatsiya nomi: ${data.companyName}%0A
-  👤 Lavozimi: ${data.position}%0A,
+  👤 Lavozimi: ${data.position}%0A
   📩 Email pochta: ${data.email}
   `
     try {
