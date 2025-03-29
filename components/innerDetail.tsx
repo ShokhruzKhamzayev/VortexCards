@@ -9,7 +9,6 @@ import { RiContactsBook3Fill } from 'react-icons/ri'
 import InfoInnerDetail from './infoInnerDetail'
 import CustomImage from './ui/customImage'
 
-import ScrollToTop from "react-scroll-to-top";
 import Image from 'next/image'
 import Link from 'next/link'
 import ConnectClient from './connectClient'
@@ -17,6 +16,7 @@ import GalleryView from './galleryView'
 import Share from './share'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
+import ScrollToTopShared from './ui/scrollToTop'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -157,7 +157,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             </div>
         </InfoInnerDetail>
         </div>
-        <ScrollToTop smooth />
+        <ScrollToTopShared/>
     </div>
     </>
   )
