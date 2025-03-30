@@ -1,13 +1,13 @@
 import { MetadataRoute } from "next";
 
-const baseUrl = 'https://cards.vortexhub.uz/'
+const baseUrl = 'https://vortexhub.uz'
 
-export async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
         {
-            url: baseUrl,
-            changeFrequency: 'monthly',
-            priority: 1,
-        },
+            url: `${baseUrl}`,
+            changeFrequency: 'never',
+            priority: 1
+        }
     ]
 }
