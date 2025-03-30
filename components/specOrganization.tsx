@@ -149,7 +149,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-full rounded-[12px]'>
                     ULASHISH
                 </Share>
-                <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="https://t.me/Khamzayev_Shokhruz">O'zingizni kartangizni oling</a>
+                <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</Link>
             </div>
         </InfoInnerDetail>
         <ScrollToTopShared/>
