@@ -8,7 +8,6 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const data = individuals.map(individual => {
         return {
             url: `${baseUrl}${individual.slug}`,
-            changeFrequency: 'monthly',
             priority: 0.5,
             images: [individual.avatar.url],
             lastModified: individual.createdAt
@@ -17,10 +16,9 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
         {
             url: baseUrl,
-            changeFrequency: 'never',
+            changeFrequency: 'monthly',
             priority: 1,
         }, 
-        // @ts-ignore
         ...data
     ]
 }
