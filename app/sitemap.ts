@@ -18,7 +18,6 @@ export async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: baseUrl,
             changeFrequency: 'monthly',
             priority: 1,
-        }, 
-        ...data
+        },
     ]
 }
