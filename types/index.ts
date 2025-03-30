@@ -33,7 +33,8 @@ export interface InnerDetailTypo {
     projects: {
       url: string
     }[],
-    textForConnection: string
+    textForConnection: string,
+    createdAt: Date
 }
 
 export interface OrganizationTypo {

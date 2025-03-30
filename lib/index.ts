@@ -102,3 +102,20 @@ export async function fetchSpecOrganization(slug: string) {
     const data = await client.request<{organization: OrganizationTypo}>(myQuery)
     return data
 } 
+
+export async function fetchAllIndividuals() {
+    const myQuery = gql`
+        query MyQuery {
+            individuals {
+                slug
+                createdAt
+                avatar {
+                url
+                }
+            }
+        }
+    `
+
+    const data = await client.request<{individuals: InnerDetailTypo[]}>(myQuery)
+    return data
+}
