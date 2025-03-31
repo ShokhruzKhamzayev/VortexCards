@@ -44,7 +44,7 @@ export default function Header() {
                   <Link href={'/'}>
                     <Image src={'/logo.png'} alt="the brand logo" width={70} height={70} className="rounded-[12px]"/>
                   </Link>
-                  <Nav setMenu={setMenu} className="hidden lg:flex"/>
+                  <Nav className="hidden lg:flex"/>
               </div>
               <div className="flex items-center gap-[15px]">
                   <a href="tell:+998919866898" className="bg-[#ca65ce] rounded-[12px] py-[10px] px-[15px] hidden lg:block">+998919866898</a>
