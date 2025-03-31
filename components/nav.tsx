@@ -1,17 +1,20 @@
+'use client'
+
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export default function Nav({className}: {
-  className?: string
+export default function Nav({className, setMenu}: {
+  className?: string,
+  setMenu: Function
 }) {
   return (
     <nav className={cn("space-x-[20px]", className)}>
-        <Link href={'#main'}>Bosh sahifa</Link>
-        <Link href={'#info'}>Ma'lumot</Link>
-        <Link href={'#plans'}>Tariflar</Link>
-        <Link href={'#users'}>Mijozlar</Link>
-        <Link href={'#usage'}>Qanday foydalanish kerak</Link>
-        <Link href={'#contact'}>Kontaktlar</Link>
+        <Link onClick={() => setMenu(false)} href={'#main'}>Bosh sahifa</Link>
+        <Link onClick={() => setMenu(false)} href={'#info'}>Ma'lumot</Link>
+        <Link onClick={() => setMenu(false)} href={'#plans'}>Tariflar</Link>
+        <Link onClick={() => setMenu(false)} href={'#users'}>Mijozlar</Link>
+        <Link onClick={() => setMenu(false)} href={'#usage'}>Qanday foydalanish kerak</Link>
+        <Link onClick={() => setMenu(false)} href={'#contact'}>Kontakt</Link>
     </nav>
   )
 }
