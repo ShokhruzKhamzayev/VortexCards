@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
     <div className="custom_bg rounded-b-[20px]">
-      <Header/>
+      <Header withMain={true}/>
     </div>
       <InfoEntry/>
       <UsersInfo/>

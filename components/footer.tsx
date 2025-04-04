@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Nav from "./nav";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -17,8 +18,8 @@ export default function Footer() {
             <Nav className="flex flex-col gap-[15px] justify-center items-center"/>
         </div>
         <div className="bottom-footer py-[20px] space-x-[20px]">
-            <a className="text-slate-500 dark:text-slate-300" href="#">Privacy Policy</a>
-            <a className="text-slate-500 dark:text-slate-300" href="#">Terms of conditions</a>
+            <Link className="text-slate-500 dark:text-slate-300" href="/privacy">Maxfiylik siyosati</Link>
+            <Link className="text-slate-500 dark:text-slate-300" href="/privacy">Foydalanish shartlari</Link>
         </div>
     </footer>
   )

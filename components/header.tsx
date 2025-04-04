@@ -8,7 +8,9 @@ import Cards from '../public/cards.png'
 import Link from "next/link";
 import { BurgerMenu } from "./ui/burgerMenu";
 
-export default function Header() {
+export default function Header({withMain}: {
+  withMain: boolean
+}) {
   const [isFixed, setIsFixed] = useState(false);
   const [menu, setMenu] = useState(false);
 
@@ -47,7 +49,7 @@ export default function Header() {
                   <Nav className="hidden lg:flex"/>
               </div>
               <div className="flex items-center gap-[15px]">
-                  <a href="tell:+998919866898" className="bg-[#ca65ce] rounded-[12px] py-[10px] px-[15px] hidden lg:block">+998919866898</a>
+                  <a href="tell:+998919866898" className="bg-[#ca65ce] rounded-[12px] py-[10px] px-[15px] hidden lg:block text-white">+998919866898</a>
                   <div className="flex items-center gap-[15px]">
                     <ThemeSwitcher/>
                     <BurgerMenu menu={menu} setMenu={setMenu}/>
@@ -55,7 +57,9 @@ export default function Header() {
               </div> 
           </header>
         </div>
-        <main id="main" className={`custom-container py-[50px] min-h-screen justify-center flex items-center flex-col gap-[30px] lg:gap-0 lg:flex-row ${isFixed ? "pt-[200px]" : "pt-[50px]"}`}>
+        {
+          withMain ? (
+            <main id="main" className={`custom-container py-[50px] min-h-screen justify-center flex items-center flex-col gap-[30px] lg:gap-0 lg:flex-row ${isFixed ? "pt-[200px]" : "pt-[50px]"}`}>
         <div className="space-y-[20px] isolate z-[20] w-full lg:w-[60%] text-center lg:text-left">
           <h1 className="text-[32px] md:text-[35px] lg:text-[55px] font-semibold ">Sizga kerak bo'ladigan so'ngi tashrif qog'ozi!</h1>
           <h2 className="text-[17x] font-bold tracking-wide">Birinchi taassurot – muvaffaqiyat kaliti!</h2>
@@ -84,6 +88,8 @@ export default function Header() {
         </div>
         <Image src={Cards} alt="cards" className="w-full lg:w-[40%] hidden lg:block"/>
       </main>
+          ) : ('')
+        }
     </div>
     
   )
