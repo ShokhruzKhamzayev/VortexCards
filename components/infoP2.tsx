@@ -3,17 +3,17 @@ import { BiMessage } from "react-icons/bi"
 const cards = [
     {
         icon: <BiMessage color="#5bacee"/>,
-        title: 'Harakatga chaqirish',
+        title: 'Ko‘proq tavsiyalar va mijozlar jalb qiling',
         desc: "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
     },
     {
         icon: <BiMessage color="#5bacee"/>,
-        title: 'Harakatga chaqirish',
+        title: 'Xaridorlar bilan bog‘lanish osonlashadi',
         desc: "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
     },
     {
         icon: <BiMessage color="#5bacee"/>,
-        title: 'Harakatga chaqirish',
+        title: 'Xaridorlar bilan bog‘lanish osonlashadi',
         desc: "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
     }
 ]

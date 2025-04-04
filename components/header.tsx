@@ -58,7 +58,8 @@ export default function Header() {
         <main id="main" className={`custom-container py-[50px] min-h-screen justify-center flex items-center flex-col gap-[30px] lg:gap-0 lg:flex-row ${isFixed ? "pt-[200px]" : "pt-[50px]"}`}>
         <div className="space-y-[20px] isolate z-[20] w-full lg:w-[60%] text-center lg:text-left">
           <h1 className="text-[32px] md:text-[35px] lg:text-[55px] font-semibold ">Sizga kerak bo'ladigan so'ngi tashrif qog'ozi!</h1>
-          <p className="text-[19px] md:text-[23px] ">Birinchi muloqot nuqtasida o'zingizni brendlang, pozitsiyalang va ajrating.</p>
+          <h2 className="text-[17x] font-bold tracking-wide">Birinchi taassurot – muvaffaqiyat kaliti!</h2>
+          <p className="text-[14px] md:text-[18px] ">VortexCards bilan zamonaviy va interaktiv tashrif qog‘oziga ega bo‘ling. Brendingizni ajoyib tarzda namoyish qiling va raqobatchilaringizdan ajralib turing!</p>
           <div className="mt-[30px] lg:mt-[150px] flex flex-col lg:flex-row gap-[30px] flex-wrap">
             <Link className="bg-white border text-black border-white rounded-[12px] text-center px-[15px] py-[10px]" href={'#contact'}>Biz bilan bog'lanish</Link>
             <Link className="bg-transparent border text-white border-white rounded-[12px] px-[15px] py-[10px] text-center" href={'/individual/hamidov-sardorbek'}>Demo versiyani oling</Link>

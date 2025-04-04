@@ -9,7 +9,7 @@ export default function Contact() {
           <div className="pb-[30px] w-full lg:w-1/2">
               <h1 className="text-[25px] font-semibold lg:text-balance mb-[40px] text-center lg:text-left">Ilova haqida ko'proq ma'lumot olish uchun biz bilan bog'laning</h1>
               <FormContact/>
-              <div className="flex justify-between mt-[25px] flex-wrap">
+              <div className="flex justify-center lg:justify-between mt-[25px] flex-wrap gap-[10px] lg:gap-0 text-center">
                 <div>
                   <span>Ijtimoiy tarmoqlar</span>
                   <div className="flex items-center gap-[20px] mt-[13px]">
