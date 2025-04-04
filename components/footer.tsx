@@ -12,7 +12,7 @@ export default function Footer() {
                     <Nav/>
                 </div>
             </div>
-            <a href="#" className="bg-[#353437] text-white py-[12px] px-[18px] rounded-[16px]">+998 91 986 68 98</a>
+            <a href="tel:+998919866898" className="bg-[#353437] text-white py-[12px] px-[18px] rounded-[16px]">+998 91 986 68 98</a>
         </div>
         <div className="block lg:hidden border-b border-slate-600 dark:border-slate-100 py-[30px] lg:border-0">
             <Nav className="flex flex-col gap-[15px] justify-center items-center"/>

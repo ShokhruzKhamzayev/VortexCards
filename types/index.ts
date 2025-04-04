@@ -34,7 +34,8 @@ export interface InnerDetailTypo {
       url: string
     }[],
     textForConnection: string,
-    createdAt: Date
+    createdAt: Date,
+    isPaid: boolean
 }
 
 export interface OrganizationTypo {
@@ -68,5 +69,6 @@ export interface OrganizationTypo {
   projects: {
     url: string
   }[],
-  textForConnection: string
+  textForConnection: string,
+  isPaid: boolean
 }

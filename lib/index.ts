@@ -45,6 +45,7 @@ export async function fetchSpecIndividual(slug: string) {
                     url
                 }
                 textForConnection
+                isPaid
             }
         }
     `
@@ -95,6 +96,7 @@ export async function fetchSpecOrganization(slug: string) {
                     url
                 }
                 textForConnection
+                isPaid
             }
         }
     `
