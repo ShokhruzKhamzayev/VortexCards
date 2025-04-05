@@ -70,5 +70,6 @@ export interface OrganizationTypo {
     url: string
   }[],
   textForConnection: string,
-  isPaid: boolean
+  isPaid: boolean,
+  createdAt: Date
 }

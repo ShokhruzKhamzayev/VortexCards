@@ -111,13 +111,25 @@ export async function fetchAllIndividuals() {
             individuals {
                 slug
                 createdAt
-                avatar {
-                url
-                }
             }
         }
     `
 
     const data = await client.request<{individuals: InnerDetailTypo[]}>(myQuery)
+    return data
+}
+
+
+export async function fetchAllOrganizations() {
+    const myQuery = gql`
+        query MyQuery {
+            organizations {
+                slug
+                createdAt
+            }
+        }
+    `
+
+    const data = await client.request<{organizations: OrganizationTypo[]}>(myQuery)
     return data
 }
