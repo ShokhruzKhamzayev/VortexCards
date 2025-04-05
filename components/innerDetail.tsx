@@ -19,6 +19,7 @@ import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
 import { notFound } from 'next/navigation'
 import IsPaid from './isPaid'
+import { Social } from './social'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -67,43 +68,25 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <h3 className='text-[.875rem] leading-[1.25rem]'>{person.position}</h3>
                         </div>
                         <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
-                            <a href={`tel:${person.telephoneNumber}`} className="email text-center">
-                                <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mb-[6px] mx-auto transition-all duration-200 hover:grayscale-75'>
-                                    <IoCall size={25} color='white' />
-                                </div>
-                                Telefon
-                            </a>
-                            <a href={`https://instagram.com/${person.instagram}`} className="email text-center">
-                                <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mb-[6px] mx-auto hover:grayscale-75 transition-all duration-200'>
+                            <Social link={`tel:${person.telephoneNumber}`} color={person.secondaryColor.hex} text={'Telefon'}>
+                                <IoCall size={25} color='white' />
+                            </Social>
+                            <Social link={person.instagram} color={person.secondaryColor.hex} text={'Instagram'}>
                                 <FaInstagram size={25} color='white' />
-                                </div>
-                                Instagram
-                            </a>
-                            <a href={`mailto:${person.email}`} className="email text-center">
-                                <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mb-[6px] mx-auto hover:grayscale-75 transition-all duration-200'>
-                                <IoMdMail size={25} color='white' />
-                                </div>
-                                Email
-                            </a>
-                            <ConnectClient person={person} />
-                            <a href={`https://www.linkedin.com/in/${person.linkedin}`} className="email text-center">
-                                <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mb-[6px] mx-auto hover:grayscale-75 transition-all duration-200'>
-                                <FaLinkedinIn size={25} color='white' />
-                                </div>
-                                Linkedin
-                            </a>
-                            <a href={`https://www.youtube.com/@${person.youtube}`} className="email text-center">
-                                <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mb-[6px] mx-auto hover:grayscale-75 transition-all duration-200'>
-                                <IoLogoYoutube size={25} color='white' />
-                                </div>
-                                Youtube
-                            </a>
-                            <a href={`https://t.me/${person.telegram}`} className="email text-center">
-                                <div  style={{backgroundColor: person.secondaryColor.hex}} className='p-[15px] w-fit rounded-full mb-[6px] mx-auto hover:grayscale-75 transition-all duration-200'>
+                            </Social>
+                            <Social link={person.telegram} color={person.secondaryColor.hex} text={'Telegram'}>
                                 <BsTelegram size={25} color='white' />
-                                </div>
-                                Telegram
-                            </a>
+                            </Social>
+                            <ConnectClient person={person} />
+                            <Social link={person.email} color={person.secondaryColor.hex} text={'Email'}>
+                                <IoMdMail size={25} color='white' />
+                            </Social>
+                            <Social link={person.linkedin} color={person.secondaryColor.hex} text={'Youtube'}>
+                                <FaLinkedinIn size={25} color='white' />
+                            </Social>
+                            <Social link={person.youtube} color={person.secondaryColor.hex} text={'YouTube'}>
+                                <IoLogoYoutube size={25} color='white' />
+                            </Social>
                         </div>
                     </div>
                     <div className="share flex justify-between gap-[2px] mt-[20px]">
@@ -126,7 +109,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
                                 <div dangerouslySetInnerHTML={temp}></div>
                             </div>
-                    
                     </InfoInnerDetail>
                 )}
                     {
@@ -175,3 +157,4 @@ export default async function InnerDetails({slug}: {slug: string}) {
     </>
   )
 }
+

@@ -1,11 +1,10 @@
 'use client'
 
-import { InnerDetailTypo, OrganizationTypo } from '@/types'
 import React from 'react'
 import { FaRegHandshake } from 'react-icons/fa6'
 
 export default function ConnectClient({person}: {
-    person: InnerDetailTypo | OrganizationTypo
+    person: any
 }) {
     const handleSmsShare = () => {
         const message = encodeURIComponent(person.textForConnection + " " + window.location.href);
