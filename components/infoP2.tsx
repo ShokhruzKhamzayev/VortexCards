@@ -1,20 +1,22 @@
 import { BiMessage } from "react-icons/bi"
+import { MdConnectWithoutContact } from "react-icons/md"
+import { PiPresentationFill } from "react-icons/pi"
 
 const cards = [
     {
-        icon: <BiMessage color="#5bacee"/>,
+        icon: <BiMessage color="#5bacee" fill="white"/>,
         title: 'Ko‘proq tavsiyalar va mijozlar jalb qiling',
         desc: "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
     },
     {
-        icon: <BiMessage color="#5bacee"/>,
+        icon: <MdConnectWithoutContact color="#5bacee" fill="white"/>,
         title: 'Xaridorlar bilan bog‘lanish osonlashadi',
-        desc: "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
+        desc: "Ushbu tezkor NFC bilan jihozlangan tashrif qog'ozlar ma'lumot va kontaklar almashishni osonlashtiradi va ishingizni yanada mukammalashtiradi."
     },
     {
-        icon: <BiMessage color="#5bacee"/>,
-        title: 'Xaridorlar bilan bog‘lanish osonlashadi',
-        desc: "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
+        icon: <PiPresentationFill color="#5bacee" fill="white"/>,
+        title: 'Ishlaringizni qiyinchiliksiz ko\'rsating',
+        desc: "Har safar telegramni ochib o'z servisingizni taqdim qilishdan charchagandirsiz. Ushbu kartalar siz xohlagan ma'lumotlarni o'z ichida saqlaydi."
     }
 ]
 

@@ -7,26 +7,14 @@ import Link from "next/link"
 
 const users = [ 
     {
-        title: 'Direktor - Uzbek Business Connect',
+        title: 'Founder - VortexHub',
     },
     {
-        title: 'Direktor - VortexHub',
+        title: 'Co-Founder - VortexHub',
     },
     {
-        title: 'Direktor - Uzbek Business Connect',
-    },
-    {
-        title: 'Direktor - Uzbek Business Connect',
-    },
-    {
-        title: 'Direktor - Uzbek Business Connect',
-    },
-    {
-        title: 'Direktor - Uzbek Business Connect',
-    },
-    {
-        title: 'Direktor - Uzbek Business Connect',
-    },
+        title: 'VortexHub',
+    }
 ]
 
 export default function UsersInfo() {
@@ -45,7 +33,7 @@ export default function UsersInfo() {
                             <div className="bg-white dark:bg-[#1f1e20]  pt-[20px] px-[30px] rounded-[12px]">
                                 <h1 className="mb-[10px] font-medium text-[20px]">{user.title}</h1>
                                 <div className="w-full h-[400px] relative overflow-hidden">
-                                    <CustomImage src={`/userPreview${idx}.png`} alt={user.title} classname="object-contain"/>
+                                    <CustomImage src={`/userPreview${idx + 1}.png`} alt={user.title} classname="object-contain"/>
                                 </div>
                             </div>
                         </div> 
