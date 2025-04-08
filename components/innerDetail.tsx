@@ -20,6 +20,7 @@ import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
+import PdfOpener from './ui/pdfOpener'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -46,6 +47,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white'/>
                             </div>
                             </div>
+                            <PdfOpener person={person}/>
                             <a href={person.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className='p-[15px] rounded-full' style={{backgroundColor: person.secondaryColor.hex}}>
                                     <FaLocationDot color='white' />
