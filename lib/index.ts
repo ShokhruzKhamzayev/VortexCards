@@ -46,6 +46,7 @@ export async function fetchSpecIndividual(slug: string) {
                 }
                 textForConnection
                 isPaid
+                slug
             }
         }
     `

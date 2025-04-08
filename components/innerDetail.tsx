@@ -11,15 +11,15 @@ import CustomImage from './ui/customImage'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import ConnectClient from './connectClient'
 import GalleryView from './galleryView'
+import IsPaid from './isPaid'
 import Share from './share'
+import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
-import { notFound } from 'next/navigation'
-import IsPaid from './isPaid'
-import { Social } from './social'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -28,7 +28,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
     }
     const temp = {__html: person?.organization?.aboutOrganization.html}
     const videos = person.videos.split(',')
-
   return (
     <>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
@@ -36,6 +35,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             person.isPaid ? (
                 <>
                     <div className="starter w-full">
+                        <Link href={`/pdf/${person.slug}`}>PDF saqlang</Link>
                         <div className="w-full h-[200px]  relative">
                             <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                 <ThemeSwitcher/>

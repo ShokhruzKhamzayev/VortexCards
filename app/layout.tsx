@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "./globals.css";
+import { Inter } from "next/font/google";
 import Provider from "@/provider/themeProvider";
 import Nextloader from 'nextjs-toploader'
+import './global.css'
 
 import { Toaster } from 'sonner' 
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
   weight: ['400', '500', '600', '700', '800', '900']
 });
@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${inter.className} antialiased`}
       >
         <Nextloader showSpinner={false} />
         <Toaster position="bottom-center"/>
