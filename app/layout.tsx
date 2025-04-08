@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Provider from "@/provider/themeProvider";
 import Nextloader from 'nextjs-toploader'
-import './global.css'
+import './globals.css'
 
 import { Toaster } from 'sonner' 
 
