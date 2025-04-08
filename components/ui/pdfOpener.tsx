@@ -1,6 +1,6 @@
 'use client'
 
-import { InnerDetailTypo } from '@/types'
+import { InnerDetailTypo, OrganizationTypo } from '@/types'
 import dynamic from 'next/dynamic'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -11,7 +11,7 @@ const PDFViewerNoSSR = dynamic(() => import('@/components/pdf/customPdf'), {
 })
 
 export default function PdfOpener({person}: {
-  person: InnerDetailTypo
+  person: InnerDetailTypo | OrganizationTypo
 }) {
     const [state, setState] = useState(false)
     const link = usePathname()

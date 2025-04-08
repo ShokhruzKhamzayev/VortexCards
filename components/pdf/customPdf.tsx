@@ -1,7 +1,6 @@
 'use client'
 
-import { InnerDetailTypo } from '@/types';
-import { Document, Link, Page, PDFViewer, StyleSheet, Text, View, Image, Svg, Path } from '@react-pdf/renderer';
+import { Document, Image, Link, Page, Path, PDFViewer, StyleSheet, Svg, Text, View } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
   page: {
@@ -13,23 +12,31 @@ const styles = StyleSheet.create({
     width: '45%',
     backgroundColor: '#222933',
     color: 'white',
-    paddingTop: '30px'
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   rightSide: {
     width: '50%',
     backgroundColor: '#fefefe',
-    paddingTop: '30px'
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: '20px'
   },
   image: {
     borderRadius: '9999px',
-    width: '50%',
+    width: '130px',
+    height: '130px',
     margin: '0px auto',
   }
 });
 
 export default function CustomPdf({state, data, link}: {
   state: boolean,
-  data: InnerDetailTypo,
+  data: any,
   link: string
 }) {
 
@@ -38,10 +45,15 @@ export default function CustomPdf({state, data, link}: {
           <Document>
               <Page  size={{width: 595, height: 300}} style={styles.page}>
                 <View style={styles.leftSide}>
-                    <View>
+                    <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                       <Image src={data.avatar.url} style={styles.image} />
-                      <Text style={{textAlign: 'center', marginTop: '30px'}}>{data.fullName}</Text>
-                      <Text style={{textAlign: 'center', marginTop: '10px', fontSize: '14px', color: 'white'}}>{data.organization.name}</Text>
+                      <Text style={{ marginTop: '30px'}}>{data.fullName ? data.fullName : data.name}</Text>
+                      {
+                        data.organization && (
+                          <Link href={`https://cards.vortexhub.uz/organization/${data.organization.slug}`} style={{marginTop: '10px', fontSize: '14px', color: '#ffffff'}}>{data.organization.name}</Link>
+                        )
+                      }
+                      
                     </View>
                 </View>
                 <View style={styles.rightSide}>
