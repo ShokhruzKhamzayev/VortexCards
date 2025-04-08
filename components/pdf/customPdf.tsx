@@ -29,7 +29,7 @@ export default function CustomPdf({slug}: {
                 <Link href='https://cards.vortexhub.uz'>Bosh sahifa</Link>
             </View>
             <View style={styles.section}>
-                <Text>Section #2</Text>
+                <Text>Ism familya</Text>
             </View>
             </Page>
         </Document>
