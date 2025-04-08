@@ -35,6 +35,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
             person.isPaid ? (
                 <>
                     <div className="starter w-full">
+                        <Link href={`/pdf/${person.slug}`}>PDF saqlang</Link>
                         <div className="w-full h-[200px]  relative">
                             <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                 <ThemeSwitcher/>
