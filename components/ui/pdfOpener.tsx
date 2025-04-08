@@ -11,7 +11,7 @@ const PDFViewerNoSSR = dynamic(() => import('@/components/pdf/customPdf'), {
 })
 
 export default function PdfOpener({person}: {
-  person: InnerDetailTypo | OrganizationTypo,
+  person: InnerDetailTypo | OrganizationTypo
 }) {
     const [state, setState] = useState(false)
     const link = usePathname()
