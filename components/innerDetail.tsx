@@ -1,7 +1,7 @@
 import { fetchSpecIndividual } from '@/lib'
 import { BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaFilePdf, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { MdPhotoLibrary } from "react-icons/md"
@@ -20,6 +20,7 @@ import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
+import PdfOpener from './ui/pdfOpener'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -35,7 +36,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
             person.isPaid ? (
                 <>
                     <div className="starter w-full">
-                        <Link href={`/pdf/${person.slug}`}>PDF saqlang</Link>
                         <div className="w-full h-[200px]  relative">
                             <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                 <ThemeSwitcher/>
@@ -47,7 +47,8 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white'/>
                             </div>
                             </div>
-                            <a href={person.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
+                            <PdfOpener person={person}/>
+                            <a href={person.location} className="location gap-[10px] absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className='p-[15px] rounded-full' style={{backgroundColor: person.secondaryColor.hex}}>
                                     <FaLocationDot color='white' />
                                 </div>

@@ -1,7 +1,7 @@
 import { InnerDetailTypo, OrganizationTypo } from '@/types'
 import {GraphQLClient, gql} from 'graphql-request'
 
-const client = new GraphQLClient(process.env.DATABASE_API!)
+export const client = new GraphQLClient(process.env.DATABASE_API!)
 
 export async function fetchSpecIndividual(slug: string) {
     const myQuery = gql`
