@@ -6,8 +6,9 @@ import { usePathname } from 'next/navigation';
 import { FaFilePdf } from 'react-icons/fa6';
 
 
-export default function DownloadPdfButton({data}: {
-  data: any
+export default function DownloadPdfButton({data, slug}: {
+  data: any,
+  slug: string
 }) {
   const customLink = usePathname()
   const handleDownload = async () => {
@@ -16,13 +17,13 @@ export default function DownloadPdfButton({data}: {
     
     const link = document.createElement('a');
     link.href = url;
-    link.download = data.slug + '.pdf';
+    link.download = slug + '.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
-
+  console.log(slug)
   return (
     <button onClick={() => handleDownload()} className="location gap-[10px] absolute top-[100%] left-1/8  translate-y-[-50%] flex items-center flex-col cursor-pointer">
         <div className='p-[15px] rounded-full' style={{backgroundColor: data.secondaryColor.hex}} >

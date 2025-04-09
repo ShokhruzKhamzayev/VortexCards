@@ -50,7 +50,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <CustomImage src={organization.avatar.url} alt={organization.name} classname='rounded-full border border-white'/>
                             </div>
                             </div>
-                            <DownloadPdfButton data={organization}/>
+                            <DownloadPdfButton data={organization} slug={slug}/>
                             <a href={organization.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className={`p-[15px] rounded-full`} style={{backgroundColor: organization.secondaryColor.hex}}>
                                     <FaLocationDot color='white' />
