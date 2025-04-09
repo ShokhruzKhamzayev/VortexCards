@@ -10,17 +10,16 @@ import CustomImage from './ui/customImage'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { MdPhotoLibrary } from 'react-icons/md'
 import ConnectClient from './connectClient'
 import GalleryView from './galleryView'
+import IsPaid from './isPaid'
 import Share from './share'
+import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
-import { notFound } from 'next/navigation'
-import IsPaid from './isPaid'
-import { Social } from './social'
-import PdfOpener from './ui/pdfOpener'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
@@ -50,7 +49,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <CustomImage src={organization.avatar.url} alt={organization.name} classname='rounded-full border border-white'/>
                             </div>
                             </div>
-                            <PdfOpener person={organization}/>
                             <a href={organization.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className={`p-[15px] rounded-full`} style={{backgroundColor: organization.secondaryColor.hex}}>
                                     <FaLocationDot color='white' />

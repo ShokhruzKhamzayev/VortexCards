@@ -1,5 +1,4 @@
 import { fetchAllIndividuals, fetchAllOrganizations } from "@/lib";
-import { url } from "inspector";
 import { MetadataRoute } from "next";
 
 const baseUrl = 'https://cards.vortexhub.uz'

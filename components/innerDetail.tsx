@@ -1,7 +1,7 @@
 import { fetchSpecIndividual } from '@/lib'
 import { BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaFilePdf, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { MdPhotoLibrary } from "react-icons/md"
@@ -20,7 +20,6 @@ import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
-import PdfOpener from './ui/pdfOpener'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -47,7 +46,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white'/>
                             </div>
                             </div>
-                            <PdfOpener person={person}/>
                             <a href={person.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className='p-[15px] rounded-full' style={{backgroundColor: person.secondaryColor.hex}}>
                                     <FaLocationDot color='white' />
@@ -97,7 +95,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         </a>
                         <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
                             <BiShare/>
-                            ULASHISH
+                            Ulashish
                         </Share>
                     </div>
                     <a href={`https://${person.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor.hex}}>
@@ -142,7 +140,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
                         <div className='pt-[10px]'>
                         <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-full rounded-[12px]'>
-                            ULASHISH
+                            Ulashish
                         </Share>
                         <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</Link>
                         </div>
