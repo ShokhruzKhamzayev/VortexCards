@@ -20,6 +20,7 @@ import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
+import DownloadPdfButton from './pdf/customDownload'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {organization} = await fetchSpecOrganization(slug)
@@ -49,6 +50,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <CustomImage src={organization.avatar.url} alt={organization.name} classname='rounded-full border border-white'/>
                             </div>
                             </div>
+                            <DownloadPdfButton data={organization}/>
                             <a href={organization.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className={`p-[15px] rounded-full`} style={{backgroundColor: organization.secondaryColor.hex}}>
                                     <FaLocationDot color='white' />
