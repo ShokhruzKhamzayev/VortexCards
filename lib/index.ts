@@ -108,8 +108,8 @@ export async function fetchSpecOrganization(slug: string) {
 
 export async function fetchAllIndividuals() {
     const myQuery = gql`
-        query MyQuery(where: {seo: true}) {
-            individuals {
+        query MyQuery {
+            individuals(where: {seo: true}) {
                 slug
                 createdAt
             }
@@ -123,8 +123,8 @@ export async function fetchAllIndividuals() {
 
 export async function fetchAllOrganizations() {
     const myQuery = gql`
-        query MyQuery(where: {seo: true}) {
-            organizations {
+        query MyQuery {
+            organizations(where: {seo: true}) {
                 slug
                 createdAt
             }
