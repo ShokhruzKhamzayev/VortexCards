@@ -5,6 +5,7 @@ import Nextloader from 'nextjs-toploader'
 import './globals.css'
 
 import { Toaster } from 'sonner' 
+import {GoogleAnalytics} from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
+        <GoogleAnalytics gaId={process.env.gaId!}/>
         <Nextloader showSpinner={false} />
         <Toaster position="bottom-center"/>
         <Provider>
