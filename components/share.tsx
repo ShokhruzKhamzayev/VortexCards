@@ -63,7 +63,7 @@ export default function Share({children, classname, secColor, fullName}: {
 
   return (
     <Drawer>
-        <DrawerTrigger className={`flex items-center gap-[15px] ${classname} p-[0.75rem] justify-center text-white dark border-b-[2px] border-white cursor-pointer hover:grayscale-75 transition-all duration-200`} style={{backgroundColor: secColor}}>
+        <DrawerTrigger className={`flex gap-[15px] ${classname} p-[0.75rem] justify-center items-center text-white border-b-[2px] border-white cursor-pointer hover:grayscale-75 transition-all duration-200`} style={{backgroundColor: secColor}}>
             {children}
         </DrawerTrigger>
         <DrawerContent className='max-w-[500px] mx-auto text-center min-h-fit'>

@@ -1,5 +1,5 @@
 import { fetchSpecIndividual } from '@/lib'
-import { BiShare, BiUser } from 'react-icons/bi'
+import { BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
 import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
@@ -15,12 +15,12 @@ import { notFound } from 'next/navigation'
 import ConnectClient from './connectClient'
 import GalleryView from './galleryView'
 import IsPaid from './isPaid'
+import DownloadPdfButton from './pdf/customDownload'
 import Share from './share'
 import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
-import DownloadPdfButton from './pdf/customDownload'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {individual: person} = await fetchSpecIndividual(slug)
@@ -96,8 +96,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             Kontaktga qo'shish
                         </a>
                         <Share fullName={person.fullName} secColor={person.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
-                            <BiShare/>
-                            Ulashish
+                            <span>Ulashish</span>
                         </Share>
                     </div>
                     <a href={`https://${person.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor.hex}}>
