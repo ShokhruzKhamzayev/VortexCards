@@ -1,0 +1,134 @@
+{
+  "kind": "collectionType",
+  "collectionName": "individuals",
+  "info": {
+    "singularName": "individual",
+    "pluralName": "individuals",
+    "displayName": "Individual",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telephoneNumber": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "fullName"
+    },
+    "partnersLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "secondaryColor": {
+      "type": "string"
+    },
+    "videos": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contactDownload": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "websiteUrl": {
+      "type": "string"
+    },
+    "textForConnection": {
+      "type": "text"
+    },
+    "aboutIndividual": {
+      "type": "text"
+    },
+    "isPaid": {
+      "type": "boolean"
+    },
+    "seo": {
+      "type": "boolean"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "individuals"
+    },
+    "links": {
+      "type": "dynamiczone",
+      "components": [
+        "link.instagram"
+      ]
+    }
+  }
+}

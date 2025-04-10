@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_link_instagrams",
+  "info": {
+    "displayName": "instagram"
+  },
+  "options": {},
+  "attributes": {
+    "iconName": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
