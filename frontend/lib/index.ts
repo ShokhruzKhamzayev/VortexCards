@@ -1,10 +1,12 @@
+'use server'
+
 import { InnerDetailTypo, OrganizationTypo } from '@/types'
 import axios from 'axios'
 import {GraphQLClient, gql} from 'graphql-request'
 
 const client = new GraphQLClient(process.env.DATABASE_API!)
 
-const baseUrl = process.env.NEXT_PUBLIC_DATABASE_API || 'http://127.0.0.1:1337/api'
+const baseUrl = process.env.DATABASE_API || 'http://127.0.0.1:1337/api'
 
 export async function fetchSpecOrganization(slug: string) {
     const myQuery = gql`
