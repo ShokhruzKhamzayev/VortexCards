@@ -23,11 +23,13 @@ import ScrollToTopShared from './ui/scrollToTop'
 import DownloadPdfButton from './pdf/customDownload'
 
 export default async function InnerDetails({slug}: {slug: string}) {
-    const {organization} = await fetchSpecOrganization(slug)
+    const {data} = await fetchSpecOrganization(slug)
+    const organization = data.data[0]
+    console.log(organization)
     if(!organization) {
         notFound()
     }
-    const videos = organization.videos.split(',')
+    const videos = organization?.videos?.split(',')
   return (
     <>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
@@ -51,7 +53,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             </div>
                             <DownloadPdfButton data={organization} slug={slug}/>
                             <a href={organization.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
-                                <div className={`p-[15px] rounded-full`} style={{backgroundColor: organization.secondaryColor.hex}}>
+                                <div className={`p-[15px] rounded-full`} style={{backgroundColor: organization.secondaryColor}}>
                                     <FaLocationDot color='white' />
                                 </div>
                                 <p className='text-[11px]'>Location</p>
@@ -63,41 +65,41 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <div className="posAndLinks">
                         <div className='text-center space-y-[15px] mt-[90px]'>
                             <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{organization.name}</h1>
-                            <h3 className='text-[#f9bf41] text-[15px] '>{organization.fieldOfOrganization}</h3>
+                            <h3 className='text-yellow-800 dark:text-[#f9bf41] text-[15px] '>{organization.fieldOfOrganization}</h3>
                         </div>
                         <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
-                            <Social link={`tel:${organization.telephoneNumber}`} color={organization.secondaryColor.hex} text={'Telefon'}>
+                            <Social link={`tel:${organization.telephoneNumber}`} color={organization.secondaryColor} text={'Telefon'}>
                                 <IoCall size={25} color='white' />
                             </Social>
-                            <Social link={organization.instagram} color={organization.secondaryColor.hex} text={'Instagram'}>
+                            <Social link={organization.instagram} color={organization.secondaryColor} text={'Instagram'}>
                                 <FaInstagram size={25} color='white' />
                             </Social>
-                            <Social link={organization.telegram} color={organization.secondaryColor.hex} text={'Telegram'}>
+                            <Social link={organization.telegram} color={organization.secondaryColor} text={'Telegram'}>
                                 <BsTelegram size={25} color='white' />
                             </Social>
                             <ConnectClient person={organization} />
-                            <Social link={organization.email} color={organization.secondaryColor.hex} text={'Email'}>
+                            <Social link={organization.email} color={organization.secondaryColor} text={'Email'}>
                                 <IoMdMail size={25} color='white' />
                             </Social>
-                            <Social link={organization.youtube} color={organization.secondaryColor.hex} text={'Youtube'}>
+                            <Social link={organization.youtube} color={organization.secondaryColor} text={'Youtube'}>
                                 <FaLinkedinIn size={25} color='white' />
                             </Social>
-                            <Social link={organization.youtube} color={organization.secondaryColor.hex} text={'YouTube'}>
+                            <Social link={organization.youtube} color={organization.secondaryColor} text={'YouTube'}>
                                 <IoLogoYoutube size={25} color='white' />
                             </Social>
                         </div>
                     </div>
                     <div className="share flex justify-between gap-[2px] mt-[20px]">
-                        <a href={organization.contactNumber.url} download={organization.contactNumber.url} className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
+                        <a href={organization.contactDownload.url}  className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor}}>
                             <RiContactsBook3Fill />
                             ADD TO CONTACTS
                         </a>
-                        <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-[30%] rounded-r-[15px]'>
+                        <Share fullName={organization.name} secColor={organization.secondaryColor} classname='w-[30%] rounded-r-[15px]'>
                             <BiShare/>
                             ULASHISH
                         </Share>
                     </div>
-                    <a href={`https://${organization.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor.hex}}>
+                    <a href={`https://${organization.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor}}>
                         Website
                     </a>
                     <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
@@ -118,7 +120,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <InfoInnerDetail Icon={<BiUser size={30}/>}>
                         <div className='grid grid-cols-2 md:grid-cols-3 gap-[20px]'>
                             {
-                                organization.individual.map(organization => (
+                                organization.individuals.map(organization => (
                                     <Link href={`/individual/${organization.slug}`} key={organization.slug} className='w-full space-y-[10px]'>
                                         <div className='relative w-[100px] h-[100px] overflow-hidden mx-auto'>
                                             <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border-[3px] border-white object-contain'/>
@@ -134,7 +136,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     </InfoInnerDetail>
                     <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
                         <div className='pt-[10px]'>
-                            <Share fullName={organization.name} secColor={organization.secondaryColor.hex} classname='w-full rounded-[12px]'>
+                            <Share fullName={organization.name} secColor={organization.secondaryColor} classname='w-full rounded-[12px]'>
                                 ULASHISH
                             </Share>
                             <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</Link>

@@ -8,7 +8,8 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const {slug} = await params
-  const {organization} = await fetchSpecOrganization(slug)
+  const {data} = await fetchSpecOrganization(slug)
+  const organization = data.data[0]
   return {
     title: organization.name,
   }

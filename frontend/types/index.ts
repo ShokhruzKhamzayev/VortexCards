@@ -37,7 +37,7 @@ export interface InnerDetailTypo {
 export interface OrganizationTypo {
     name: string,
   location: string,
-  individual: [ { fullName: string, avatar: {url: string}, slug: string } ],
+  individuals: [ { fullName: string, avatar: {url: string}, slug: string } ],
   avatar: {
     url: string
   },
@@ -51,15 +51,13 @@ export interface OrganizationTypo {
   aboutOrganization: string,
   slug: string,
   instagram: string,
-  secondaryColor: {
-    hex: string
-  },
+  secondaryColor: string,
   videos: string,
   websiteUrl: string
   banner: {
     url: string
   }
-  contactNumber: {
+  contactDownload: {
     url: string
   },
   projects: {
