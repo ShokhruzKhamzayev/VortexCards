@@ -1,23 +1,18 @@
-import Link from "next/link"
-import { TiInputChecked } from "react-icons/ti"
-import { Button } from "@/components/ui/button"
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
 } from "@/components/ui/dialog"
-import { DialogOverlay } from "@radix-ui/react-dialog"
+import { TiInputChecked } from "react-icons/ti"
 import DialogForm from "./ui/dialogForm"
 
 const plans = [
     {
-        title: 'Yagona reja',
-        price: "2,500,000",
-        subs: "Yiliga 650 000 so'mga avtomatik yangilash",
+        title: 'Faqat karta',
+        price: "350",
+        subs: "Oyiga 35.000 so'mga avtomatik yangilash",
         amenities: [
             '1 Mini portfolio', '1 NFC karta', '1 NFC stiker', '1 NFC braslet', '1 Yillik xizmat*'
         ]
