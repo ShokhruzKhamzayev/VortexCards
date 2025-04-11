@@ -1,8 +1,6 @@
 export interface InnerDetailTypo {
     fullName: string,
-    organization: { name: string, aboutOrganization: {
-        html: HTMLElement
-    }, slug: string },
+    organization: { name: string, aboutOrganization: string, slug: string },
     position: string,
     email: string,
     telephoneNumber: string,
@@ -50,7 +48,7 @@ export interface OrganizationTypo {
   telephoneNumber: string,
   website: string,
   youtube: string,
-  aboutOrganization: { html: HTMLElement },
+  aboutOrganization: string,
   slug: string,
   instagram: string,
   secondaryColor: {

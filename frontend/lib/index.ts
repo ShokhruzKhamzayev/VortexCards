@@ -87,6 +87,6 @@ export async function fetchAllOrganizations() {
 }
 
 export async function fetchSpecIndividual(slug: string) {
-    const specInd = await axios<{data: InnerDetailTypo[] }>(baseUrl + `/individuals?filter[slug][$eq]=hamidov-sardorbek&populate=*`)
+    const specInd = await axios<{data: InnerDetailTypo[] }>(baseUrl + `/individuals?filters[slug][$eq]=${slug}&populate=*`)
     return specInd
 }

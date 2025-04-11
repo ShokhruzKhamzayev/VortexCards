@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: person.aboutIndividual,
     keywords: ["VortexCards", "Visitka", 'NFC visitka'],
     creator: "VortexHub | Shaxruzbek",
-    // openGraph: {
-    //   title: person.fullName,
-    //   description: person.aboutIndividual,
-    //   images: person.avatar.url
-    // }
+    openGraph: {
+      title: person.fullName,
+      description: person.aboutIndividual,
+      images: person.avatar.url
+    }
   }
 }
 

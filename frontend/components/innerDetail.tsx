@@ -29,8 +29,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
     if(!person) {
         notFound()
     }
-    const temp = {__html: person?.organization?.aboutOrganization.html}
-    // const videos = person?.videos.split(',')
+    const videos = person?.videos?.split(',')
   return (
     <>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
@@ -101,7 +100,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <span>Ulashish</span>
                         </Share>
                     </div>
-                    <a href={`https://${person.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor}}>
+                    <a target='_blank' href={person.websiteUrl} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor}}>
                         Website
                     </a>
                     {
@@ -109,12 +108,12 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
                             <div>
                                 <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
-                                <div dangerouslySetInnerHTML={temp}></div>
+                                <div>{person.organization.aboutOrganization}</div>
                             </div>
                     </InfoInnerDetail>
                 )}
-                    {/* {
-                        person.partnersLogo.length > 1 && (
+                    {
+                        person?.partnersLogo?.length > 1 && (
                             <InfoInnerDetail Icon={<FaMedal size={30}/>}>
                                 <div className="carousel">
                                     <EmblaCarousel photos={person.partnersLogo} type='photo' size='0 0 50%'/>
@@ -123,14 +122,14 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         )
                     }
                     {
-                        person.videos.length > 1 && (
+                        person?.videos?.length > 1 && (
                             <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                                 <div className="carousel">
                                     <EmblaCarousel type='video' data={videos}  size='0 0 100%'/>
                                 </div>
                             </InfoInnerDetail>
                         )
-                    } */}
+                    }
                     <InfoInnerDetail Icon={<BiUser size={30}/>}>
                     <div>
                         <h1 className='text-center font-medium text-[20px] mb-[15px]'>{person.fullName}</h1>

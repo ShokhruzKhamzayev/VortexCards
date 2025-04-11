@@ -17,24 +17,6 @@
     "position": {
       "type": "string"
     },
-    "email": {
-      "type": "email"
-    },
-    "telephoneNumber": {
-      "type": "string"
-    },
-    "linkedin": {
-      "type": "string"
-    },
-    "instagram": {
-      "type": "string"
-    },
-    "youtube": {
-      "type": "string"
-    },
-    "telegram": {
-      "type": "string"
-    },
     "location": {
       "type": "string"
     },
@@ -124,11 +106,23 @@
       "target": "api::organization.organization",
       "inversedBy": "individuals"
     },
-    "links": {
-      "type": "dynamiczone",
-      "components": [
-        "link.instagram"
-      ]
+    "telephoneNumber": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }

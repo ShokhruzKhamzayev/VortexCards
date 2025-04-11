@@ -390,12 +390,11 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
+    email: Schema.Attribute.String;
     fullName: Schema.Attribute.String;
     instagram: Schema.Attribute.String;
     isPaid: Schema.Attribute.Boolean;
     linkedin: Schema.Attribute.String;
-    links: Schema.Attribute.DynamicZone<['link.instagram']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -460,7 +459,9 @@ export interface ApiOrganizationOrganization
       'oneToMany',
       'api::individual.individual'
     >;
+    instagram: Schema.Attribute.String;
     isPaid: Schema.Attribute.Boolean;
+    linkedin: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -477,12 +478,15 @@ export interface ApiOrganizationOrganization
     secondaryColor: Schema.Attribute.String;
     seo: Schema.Attribute.Boolean;
     slug: Schema.Attribute.UID<'name'>;
+    telegram: Schema.Attribute.String;
+    telephoneNumber: Schema.Attribute.String;
     textForConnection: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     videos: Schema.Attribute.String;
     website: Schema.Attribute.String;
+    youtube: Schema.Attribute.String;
   };
 }
 

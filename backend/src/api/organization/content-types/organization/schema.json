@@ -44,9 +44,6 @@
       "type": "uid",
       "targetField": "name"
     },
-    "email": {
-      "type": "string"
-    },
     "website": {
       "type": "string"
     },
@@ -57,34 +54,37 @@
       "type": "string"
     },
     "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "contactDownload": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "projects": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "isPaid": {
       "type": "boolean"
@@ -94,6 +94,24 @@
     },
     "textForConnection": {
       "type": "text"
+    },
+    "telephoneNumber": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }
