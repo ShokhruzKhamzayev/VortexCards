@@ -27,7 +27,6 @@ export default async function InnerDetails({slug}: {slug: string}) {
     if(!organization) {
         notFound()
     }
-    const temp = {__html: organization.aboutOrganization.html}
     const videos = organization.videos.split(',')
   return (
     <>
@@ -104,11 +103,11 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
                     <div>
                         <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
-                        <div dangerouslySetInnerHTML={temp}></div>
+                        <div>{organization.aboutOrganization}</div>
                     </div>
                     </InfoInnerDetail>
                     {
-                        organization.videos.length > 1 && (
+                        organization?.videos?.length > 1 && (
                             <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                                 <div className="carousel">
                                     <EmblaCarousel type='video' data={videos} size='0 0 100%' />
