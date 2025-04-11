@@ -13,7 +13,7 @@ import UsersInfo from "@/components/usersInfo";
 export default function Home() {
   return (
     <div>
-    <div className="custom_bg rounded-b-[20px]">
+    <div className="rounded-b-[20px]">
       <Header withMain={true}/>
     </div>
       <InfoEntry/>

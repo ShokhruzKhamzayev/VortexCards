@@ -22,7 +22,7 @@ const cards = [
 
 export default function InfoPartTwo() {
   return (
-    <div className="py-[130px] mt-[20px] bg-white dark:bg-black" id="usage">
+    <div className="py-[130px]" id="usage">
         <div className="custom-container">
             <div className="text-center space-y-[20px] py-[40px]">
                 <h1 className="text-[23px] md:text-[28px] lg:text-[35px] font-semibold text-balance">Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan</h1>

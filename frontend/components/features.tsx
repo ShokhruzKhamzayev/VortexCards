@@ -6,7 +6,7 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 export function Features() {
   return (
-    <div>
+    <div className="bg-[#f5f5f7] dark:bg-[#1f1e20] pb-[30px]">
         <div className="custom-container text-center space-y-[20px] py-[40px]">
             <h1 className="text-[23px] md:text-[28px] lg:text-[35px] font-semibold text-balance">VortexCards sizga ushbu servislarni taqdim qiladi</h1>
             <p className="tracking-wider">BIRINCHI MULOQOT NUQTASIDA O‘ZINGIZNI BRENDLANG, POZITSIYALANG VA AJRATING.</p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Provider from "@/provider/themeProvider";
 import Nextloader from 'nextjs-toploader'
 import './globals.css'
@@ -7,7 +7,7 @@ import './globals.css'
 import { Toaster } from 'sonner' 
 import {GoogleAnalytics} from '@next/third-parties/google'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ['400', '500', '600', '700', '800', '900']
 });
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <GoogleAnalytics gaId={process.env.gaId!}/>
         <Nextloader showSpinner={false} />
