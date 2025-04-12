@@ -100,12 +100,6 @@
     "seo": {
       "type": "boolean"
     },
-    "organization": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::organization.organization",
-      "inversedBy": "individuals"
-    },
     "telephoneNumber": {
       "type": "string"
     },
@@ -123,6 +117,12 @@
     },
     "email": {
       "type": "string"
+    },
+    "organizations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organization.organization",
+      "inversedBy": "individuals"
     }
   }
 }

@@ -402,8 +402,8 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
-    organization: Schema.Attribute.Relation<
-      'manyToOne',
+    organizations: Schema.Attribute.Relation<
+      'manyToMany',
       'api::organization.organization'
     >;
     partnersLogo: Schema.Attribute.Media<
@@ -456,7 +456,7 @@ export interface ApiOrganizationOrganization
     email: Schema.Attribute.String;
     fieldOfOrganization: Schema.Attribute.String;
     individuals: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::individual.individual'
     >;
     instagram: Schema.Attribute.String;

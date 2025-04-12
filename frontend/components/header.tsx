@@ -66,7 +66,7 @@ export default function Header({withMain}: {
           <p className="text-[14px] md:text-[18px] ">VortexCards bilan zamonaviy va interaktiv tashrif qog‘oziga ega bo‘ling. Brendingizni ajoyib tarzda namoyish qiling va raqobatchilaringizdan ajralib turing!</p>
           <div className="mt-[30px] lg:mt-[150px] flex flex-col lg:flex-row gap-[30px] flex-wrap">
             <Link className="bg-[#f5f5f7] text-black rounded-[12px] text-center px-[15px] py-[10px]" href={'#contact'}>Biz bilan bog'lanish</Link>
-            <Link className="bg-transparent border text-black border-black dark:text-white dark:border-white  rounded-[12px] px-[15px] py-[10px] text-center" href={'/individual/hamidov-sardorbek'}>Demo versiyani oling</Link>
+            <Link className="bg-transparent border text-black border-black dark:text-white dark:border-white  rounded-[12px] px-[15px] py-[10px] text-center" href={'/individual/shaxruzbek-xamzayev'}>Demo versiyani oling</Link>
           </div>
           <div className="flex items-center gap-[10px] relative isolate flex-wrap justify-center lg:justify-start mt-[40px] lg:mt-0">
             <div className="bg-[#1b1f3b] text-white py-[10px] px-[20px] rounded-[12px]">

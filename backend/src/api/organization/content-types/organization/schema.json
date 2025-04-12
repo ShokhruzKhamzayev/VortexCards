@@ -11,12 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "individuals": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::individual.individual",
-      "mappedBy": "organization"
-    },
     "name": {
       "type": "string"
     },
@@ -112,6 +106,12 @@
     },
     "email": {
       "type": "string"
+    },
+    "individuals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::individual.individual",
+      "mappedBy": "organizations"
     }
   }
 }
