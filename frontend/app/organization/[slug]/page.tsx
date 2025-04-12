@@ -12,6 +12,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const organization = data.data[0]
   return {
     title: organization.name,
+    description: organization.aboutOrganization,
+    keywords: ["VortexCards", "Visitka", 'NFC visitka'],
+    creator: "VortexHub | Shaxruzbek",
+    openGraph: {
+      title: organization.name,
+      description: organization.aboutOrganization,
+      images: organization.avatar.url
+    }
   }
 }
 
