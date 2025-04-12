@@ -25,7 +25,6 @@ import DownloadPdfButton from './pdf/customDownload'
 export default async function InnerDetails({slug}: {slug: string}) {
     const {data} = await fetchSpecOrganization(slug)
     const organization = data.data[0]
-    console.log(organization)
     if(!organization) {
         notFound()
     }
@@ -51,7 +50,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         <div className="imgAndLoc">
                             <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                             <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
-                                <CustomImage src={organization.avatar.url} alt={organization.name} classname='rounded-full border border-white'/>
+                                <CustomImage src={organization.avatar.url} alt={organization.name} classname='rounded-full border-[3px] border-white'/>
                             </div>
                             </div>
                             <DownloadPdfButton data={organization} slug={slug}/>
@@ -84,7 +83,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <Social link={organization.email} color={organization.secondaryColor} text={'Email'}>
                                 <IoMdMail size={25} color='white' />
                             </Social>
-                            <Social link={organization.youtube} color={organization.secondaryColor} text={'Youtube'}>
+                            <Social link={organization.linkedin} color={organization.secondaryColor} text={'LinkedIn'}>
                                 <FaLinkedinIn size={25} color='white' />
                             </Social>
                             <Social link={organization.youtube} color={organization.secondaryColor} text={'YouTube'}>

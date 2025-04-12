@@ -23,7 +23,6 @@ export default function DownloadPdfButton({data, slug}: {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
-  console.log(slug)
   return (
     <button onClick={() => handleDownload()} className="location gap-[10px] absolute top-[100%] left-1/8  translate-y-[-50%] flex items-center flex-col cursor-pointer">
         <div className='p-[15px] rounded-full' style={{backgroundColor: data.secondaryColor}} >

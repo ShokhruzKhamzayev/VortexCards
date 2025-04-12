@@ -1,6 +1,6 @@
 export interface InnerDetailTypo {
     fullName: string,
-    organization: { name: string, aboutOrganization: string, slug: string },
+    organizations: { name: string, aboutOrganization: string, slug: string }[],
     position: string,
     email: string,
     telephoneNumber: string,
@@ -65,5 +65,6 @@ export interface OrganizationTypo {
   }[],
   textForConnection: string,
   isPaid: boolean,
-  createdAt: Date
+  createdAt: Date,
+  linkedin: string,
 }

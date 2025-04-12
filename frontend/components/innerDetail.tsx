@@ -25,7 +25,6 @@ import ScrollToTopShared from './ui/scrollToTop'
 export default async function InnerDetails({slug}: {slug: string}) {
     const {data} = await fetchSpecIndividual(slug)
     const person = data.data[0]
-    console.log(person)
     if(!person) {
         notFound()
     }
@@ -66,11 +65,24 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <div className="posAndLinks">
                         <div className='text-center space-y-[7px] mt-[90px]'>
                             <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{person.fullName}</h1>
-                            {
-                                person.organization && (
-                                    <Link href={`/organization/${person.organization.slug}`} className='text-yellow-600 dark:text-[#f9bf41]  text-[15px] block'>{person.organization.name}</Link>
-                                )
-                            }
+                            <div className='flex flex-wrap items-center gap-[5px] justify-center'>
+                                {
+                                    person?.organizations && (
+                                        person?.organizations.length > 1 ? (
+                                            person.organizations.map((organization, idx) => (
+                                                <div key={idx} className='flex items-center gap-[5px]'>
+                                                    <Link href={`/organization/${organization.slug}`} className='text-yellow-600 dark:text-[#f9bf41]  text-[15px] block'>{organization.name}</Link>
+                                                    <span>
+                                                        {person.organizations.length == idx + 1 ? "" : " •"}
+                                                    </span>
+                                                </div>
+                                            ))   
+                                        ) : (
+                                            <Link href={`/organization/${person.organizations[0].slug}`} className='text-yellow-600 dark:text-[#f9bf41]  text-[15px] block'>{person.organizations[0].name}</Link>
+                                        )
+                                    )
+                                }
+                            </div>
                             <h3 className='text-[.875rem] leading-[1.25rem]'>{person.position}</h3>
                         </div>
                         <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
@@ -87,7 +99,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <Social link={person.email} color={person.secondaryColor} text={'Email'}>
                                 <IoMdMail size={25} color='white' />
                             </Social>
-                            <Social link={person.linkedin} color={person.secondaryColor} text={'Youtube'}>
+                            <Social link={person.linkedin} color={person.secondaryColor} text={'LinkedIn'}>
                                 <FaLinkedinIn size={25} color='white' />
                             </Social>
                             <Social link={person.youtube} color={person.secondaryColor} text={'YouTube'}>
@@ -108,13 +120,13 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         Website
                     </a>
                     {
-                        person?.organization && (
-                    <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
-                            <div>
-                                <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
-                                <div>{person.organization.aboutOrganization}</div>
-                            </div>
-                    </InfoInnerDetail>
+                        person?.organizations && (
+                            <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
+                                    <div>
+                                        <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
+                                        <div>{person.organizations[0].aboutOrganization}</div>
+                                    </div>
+                            </InfoInnerDetail>
                 )}
                     {
                         person?.partnersLogo?.length > 1 && (
