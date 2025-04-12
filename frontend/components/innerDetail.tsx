@@ -41,7 +41,11 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                 <ThemeSwitcher/>
                             </div>
-                            <Image src={person.banner.url} fill alt='banner for profile' className='rounded-0 md:rounded-t-[20px]'/>
+                            {
+                                person?.banner && (
+                                    <Image src={person.banner.url} fill alt='banner for profile' className='rounded-0 md:rounded-t-[20px]'/>
+                                )
+                            }
                         <div className="imgAndLoc">
                             <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                             <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>

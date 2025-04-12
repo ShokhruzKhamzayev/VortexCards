@@ -42,9 +42,12 @@ export default async function InnerDetails({slug}: {slug: string}) {
                                 <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                     <ThemeSwitcher/>
                                 </div>
-                            <Image src={organization.banner.url} alt='banner of the profile' fill className='rounded-0 md:rounded-t-[20px]'/>
+                                {
+                                    organization?.banner && (
+                                        <Image src={organization.banner.url} alt='banner of the profile' fill className='rounded-0 md:rounded-t-[20px]'/>
+                                    )
+                                }
                             </div>
-                            
                         <div className="imgAndLoc">
                             <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                             <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
@@ -99,7 +102,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             ULASHISH
                         </Share>
                     </div>
-                    <a href={`https://${organization.websiteUrl}`} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor}}>
+                    <a href={organization.website} target='_blank' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor}}>
                         Website
                     </a>
                     <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
