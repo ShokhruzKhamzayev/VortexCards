@@ -67,7 +67,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{person.fullName}</h1>
                             <div className='flex flex-wrap items-center gap-[5px] justify-center'>
                                 {
-                                    person?.organizations && (
+                                    person?.organizations.length >= 1 && (
                                         person?.organizations.length > 1 ? (
                                             person.organizations.map((organization, idx) => (
                                                 <div key={idx} className='flex items-center gap-[5px]'>
@@ -120,7 +120,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         Website
                     </a>
                     {
-                        person?.organizations && (
+                        person?.organizations.length >= 1 && (
                             <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
                                     <div>
                                         <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
