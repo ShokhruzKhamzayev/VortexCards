@@ -11,8 +11,10 @@ type sitemapTypo = {
 }[]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const {individuals} = await fetchAllIndividuals()
-    const {organizations} = await fetchAllOrganizations()
+    const {data} = await fetchAllIndividuals()
+    const {data: org} = await fetchAllOrganizations()
+    const individuals = data.data
+    const organizations = org.data
     const modifiedIndividuals: sitemapTypo = individuals.map(individual => ({
         url: `${baseUrl}/individual/${individual.slug}`,
         changeFrequency: 'monthly',
