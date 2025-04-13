@@ -119,20 +119,24 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             </InfoInnerDetail>
                         )
                     }
-                    <InfoInnerDetail Icon={<BiUser size={30}/>}>
-                        <div className='grid grid-cols-2 md:grid-cols-3 gap-[20px]'>
-                            {
-                                organization.individuals.map(organization => (
-                                    <Link href={`/individual/${organization.slug}`} key={organization.slug} className='w-full space-y-[10px]'>
-                                        <div className='relative w-[100px] h-[100px] overflow-hidden mx-auto'>
-                                            <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border-[3px] border-white object-contain'/>
-                                        </div>
-                                        <h1 className='text-center text-[13px] font-medium'>{organization.fullName}</h1>
-                                    </Link>
-                                ))
-                            }
-                        </div>
-                    </InfoInnerDetail>
+                    {
+                        organization?.individuals.length >= 1 && (
+                            <InfoInnerDetail Icon={<BiUser size={30}/>}>
+                                <div className='grid grid-cols-2 md:grid-cols-3 gap-[20px]'>
+                                    {
+                                        organization.individuals.map(organization => (
+                                            <Link href={`/individual/${organization.slug}`} key={organization.slug} className='w-full space-y-[10px]'>
+                                                <div className='relative w-[100px] h-[100px] overflow-hidden mx-auto'>
+                                                    <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border-[3px] border-white object-contain'/>
+                                                </div>
+                                                <h1 className='text-center text-[13px] font-medium'>{organization.fullName}</h1>
+                                            </Link>
+                                        ))
+                                    }
+                                </div>
+                            </InfoInnerDetail>
+                        )
+                    }
                     <InfoInnerDetail Icon={<MdPhotoLibrary size={30}/>}>
                         <GalleryView photos={organization.projects}/>
                     </InfoInnerDetail>
