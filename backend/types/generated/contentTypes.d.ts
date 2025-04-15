@@ -444,7 +444,6 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
-    numId: Schema.Attribute.UID;
     organizations: Schema.Attribute.Relation<
       'manyToMany',
       'api::organization.organization'
@@ -517,7 +516,6 @@ export interface ApiOrganizationOrganization
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
     name: Schema.Attribute.String;
-    numId: Schema.Attribute.UID;
     projects: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

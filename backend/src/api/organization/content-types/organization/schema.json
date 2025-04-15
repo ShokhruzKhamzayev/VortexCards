@@ -113,9 +113,6 @@
       "target": "api::individual.individual",
       "mappedBy": "organizations"
     },
-    "numId": {
-      "type": "uid"
-    },
     "generate_num_id": {
       "type": "relation",
       "relation": "oneToOne",

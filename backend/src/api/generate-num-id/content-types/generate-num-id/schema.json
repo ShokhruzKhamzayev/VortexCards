@@ -14,16 +14,16 @@
     "numId": {
       "type": "uid"
     },
-    "individual": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::individual.individual",
-      "inversedBy": "generate_num_id"
-    },
     "organization": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::organization.organization",
+      "inversedBy": "generate_num_id"
+    },
+    "individual": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::individual.individual",
       "inversedBy": "generate_num_id"
     }
   }

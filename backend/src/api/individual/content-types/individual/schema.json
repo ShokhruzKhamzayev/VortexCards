@@ -124,9 +124,6 @@
       "target": "api::organization.organization",
       "inversedBy": "individuals"
     },
-    "numId": {
-      "type": "uid"
-    },
     "generate_num_id": {
       "type": "relation",
       "relation": "oneToOne",
