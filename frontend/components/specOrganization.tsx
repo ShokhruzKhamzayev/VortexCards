@@ -31,7 +31,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
     const videos = organization?.videos?.split(',')
   return (
     <>
-        <div className='max-w-[500px] md:px-[20px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
+        <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         {
             organization.isPaid ? (
                 <>
@@ -63,7 +63,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         </div>
                         </div>
                     </div>
-                    <div className="custom-container">
+                    <div className="max-w-[90%] mx-auto">
                     <div className="posAndLinks">
                         <div className='text-center space-y-[15px] mt-[90px]'>
                             <h1 className='font-[700] text-[1.875rem] leading-[2.25rem] text-balance'>{organization.name}</h1>
