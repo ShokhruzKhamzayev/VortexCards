@@ -123,6 +123,15 @@
       "relation": "manyToMany",
       "target": "api::organization.organization",
       "inversedBy": "individuals"
+    },
+    "numId": {
+      "type": "uid"
+    },
+    "generate_num_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::generate-num-id.generate-num-id",
+      "mappedBy": "individual"
     }
   }
 }

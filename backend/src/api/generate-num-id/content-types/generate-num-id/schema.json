@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "generate_num_ids",
+  "info": {
+    "singularName": "generate-num-id",
+    "pluralName": "generate-num-ids",
+    "displayName": "Generate Num Id",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "numId": {
+      "type": "uid"
+    },
+    "individual": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::individual.individual",
+      "inversedBy": "generate_num_id"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "generate_num_id"
+    }
+  }
+}

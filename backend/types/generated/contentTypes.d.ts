@@ -369,6 +369,44 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGenerateNumIdGenerateNumId
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'generate_num_ids';
+  info: {
+    description: '';
+    displayName: 'Generate Num Id';
+    pluralName: 'generate-num-ids';
+    singularName: 'generate-num-id';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    individual: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::individual.individual'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::generate-num-id.generate-num-id'
+    > &
+      Schema.Attribute.Private;
+    numId: Schema.Attribute.UID;
+    organization: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::organization.organization'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
   collectionName: 'individuals';
   info: {
@@ -392,6 +430,10 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     email: Schema.Attribute.String;
     fullName: Schema.Attribute.String;
+    generate_num_id: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::generate-num-id.generate-num-id'
+    >;
     instagram: Schema.Attribute.String;
     isPaid: Schema.Attribute.Boolean;
     linkedin: Schema.Attribute.String;
@@ -402,6 +444,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
+    numId: Schema.Attribute.UID;
     organizations: Schema.Attribute.Relation<
       'manyToMany',
       'api::organization.organization'
@@ -455,6 +498,10 @@ export interface ApiOrganizationOrganization
       Schema.Attribute.Private;
     email: Schema.Attribute.String;
     fieldOfOrganization: Schema.Attribute.String;
+    generate_num_id: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::generate-num-id.generate-num-id'
+    >;
     individuals: Schema.Attribute.Relation<
       'manyToMany',
       'api::individual.individual'
@@ -470,6 +517,7 @@ export interface ApiOrganizationOrganization
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
     name: Schema.Attribute.String;
+    numId: Schema.Attribute.UID;
     projects: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -999,6 +1047,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::generate-num-id.generate-num-id': ApiGenerateNumIdGenerateNumId;
       'api::individual.individual': ApiIndividualIndividual;
       'api::organization.organization': ApiOrganizationOrganization;
       'plugin::content-releases.release': PluginContentReleasesRelease;
