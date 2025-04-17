@@ -1,5 +1,5 @@
 import InnerDetails from '@/components/innerDetail'
-import { fetchSpecIndividual } from '@/lib'
+import { fetchAllIndividuals, fetchSpecIndividual } from '@/lib'
 import { Metadata } from 'next'
 import React from 'react'
 
@@ -22,6 +22,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: person.avatar.url
     }
   }
+}
+
+export const revalidate = 3600
+
+export const dynamicParams = true
+
+export async function generateStaticParams() {
+  const {data} = await fetchAllIndividuals()
+  return data.data.map((ind) => ({slug: ind.slug}))
 }
 
 export default async function Individual({params}: PageProps) {
