@@ -31,7 +31,8 @@ export interface InnerDetailTypo {
     }[],
     textForConnection: string,
     createdAt: Date,
-    isPaid: boolean
+    isPaid: boolean,
+    facebook: string
 }
 
 export interface OrganizationTypo {
@@ -67,4 +68,8 @@ export interface OrganizationTypo {
   isPaid: boolean,
   createdAt: Date,
   linkedin: string,
+  facebook: string,
+  partnersLogo: {
+    url: string
+  }[],
 }

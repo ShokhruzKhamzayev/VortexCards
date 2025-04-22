@@ -1,7 +1,7 @@
 import { fetchSpecOrganization } from '@/lib'
 import { BiShare, BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaFacebook, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { RiContactsBook3Fill } from 'react-icons/ri'
@@ -76,6 +76,9 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <Social link={organization.instagram} color={organization.secondaryColor} text={'Instagram'}>
                                 <FaInstagram size={25} color='white' />
                             </Social>
+                            <Social link={`tel:${organization.facebook}`} color={organization.secondaryColor} text={'Facebook'}>
+                                <FaFacebook size={25} color='white' />
+                            </Social>
                             <Social link={organization.telegram} color={organization.secondaryColor} text={'Telegram'}>
                                 <BsTelegram size={25} color='white' />
                             </Social>
@@ -110,6 +113,15 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         <div>{organization.aboutOrganization}</div>
                     </div>
                     </InfoInnerDetail>
+                    {
+                        organization?.partnersLogo?.length > 1 && (
+                            <InfoInnerDetail Icon={<FaMedal size={30}/>}>
+                                <div className="carousel">
+                                    <EmblaCarousel photos={organization.partnersLogo} type='photo' size='0 0 50%'/>
+                                </div>
+                            </InfoInnerDetail>
+                        )
+                    }
                     {
                         organization?.videos?.length > 1 && (
                             <InfoInnerDetail Icon={<FaVideo  size={30}/>}>

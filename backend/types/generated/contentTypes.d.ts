@@ -429,6 +429,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.String;
+    facebook: Schema.Attribute.String;
     fullName: Schema.Attribute.String;
     generate_num_id: Schema.Attribute.Relation<
       'oneToOne',
@@ -496,6 +497,7 @@ export interface ApiOrganizationOrganization
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.String;
+    facebook: Schema.Attribute.String;
     fieldOfOrganization: Schema.Attribute.String;
     generate_num_id: Schema.Attribute.Relation<
       'oneToOne',
@@ -516,6 +518,10 @@ export interface ApiOrganizationOrganization
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
     name: Schema.Attribute.String;
+    partnersLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     projects: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

@@ -118,6 +118,20 @@
       "relation": "oneToOne",
       "target": "api::generate-num-id.generate-num-id",
       "mappedBy": "organization"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "partnersLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

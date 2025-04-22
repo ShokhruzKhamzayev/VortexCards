@@ -1,7 +1,7 @@
 import { fetchSpecIndividual } from '@/lib'
 import { BiUser } from 'react-icons/bi'
 import { BsTelegram } from 'react-icons/bs'
-import { FaBuilding, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
+import { FaBuilding, FaFacebook, FaInstagram, FaLinkedinIn, FaLocationDot, FaMedal, FaRegShareFromSquare, FaVideo } from 'react-icons/fa6'
 import { IoMdMail } from 'react-icons/io'
 import { IoCall, IoLogoYoutube } from 'react-icons/io5'
 import { MdPhotoLibrary } from "react-icons/md"
@@ -91,6 +91,9 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             </Social>
                             <Social link={person.instagram} color={person.secondaryColor} text={'Instagram'}>
                                 <FaInstagram size={25} color='white' />
+                            </Social>
+                            <Social link={`tel:${person.facebook}`} color={person.secondaryColor} text={'Facebook'}>
+                                <FaFacebook size={25} color='white' />
                             </Social>
                             <Social link={person.telegram} color={person.secondaryColor} text={'Telegram'}>
                                 <BsTelegram size={25} color='white' />
