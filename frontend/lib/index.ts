@@ -22,6 +22,6 @@ export async function fetchSpecIndividual(slug: string) {
 }
 
 export async function fetchSpecOrganization(slug: string) {
-    const specOrg = await axios<{data: OrganizationTypo[] }>(baseUrl + `/organizations?filters[slug][$eq]=${slug}&populate[avatar]=true&populate[individuals][populate]=avatar&populate[banner]=true&populate[contactDownload]=true&populate[projects]=true`)
+    const specOrg = await axios<{data: OrganizationTypo[] }>(baseUrl + `/organizations?filters[slug][$eq]=${slug}&populate[avatar]=true&populate[individuals][populate]=avatar&populate[banner]=true&populate[contactDownload]=true&populate[projects]=true&populate[partnersLogo]=true`)
     return specOrg
 }
