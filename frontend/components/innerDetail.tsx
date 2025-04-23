@@ -92,7 +92,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                             <Social link={person.instagram} color={person.secondaryColor} text={'Instagram'}>
                                 <FaInstagram size={25} color='white' />
                             </Social>
-                            <Social link={`tel:${person.facebook}`} color={person.secondaryColor} text={'Facebook'}>
+                            <Social link={person.facebook} color={person.secondaryColor} text={'Facebook'}>
                                 <FaFacebook size={25} color='white' />
                             </Social>
                             <Social link={person.telegram} color={person.secondaryColor} text={'Telegram'}>
