@@ -114,7 +114,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     </div>
                     </InfoInnerDetail>
                     {
-                        organization?.partnersLogo?.length > 1 && (
+                        organization?.partnersLogo?.length >= 1 && (
                             <InfoInnerDetail Icon={<FaMedal size={30}/>}>
                                 <div className="carousel">
                                     <EmblaCarousel photos={organization.partnersLogo} type='photo' size='0 0 50%'/>
@@ -123,7 +123,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                         )
                     }
                     {
-                        organization?.videos?.length > 1 && (
+                        organization?.videos?.length >= 1 && (
                             <InfoInnerDetail Icon={<FaVideo  size={30}/>}>
                                 <div className="carousel">
                                     <EmblaCarousel type='video' data={videos} size='0 0 100%' />
