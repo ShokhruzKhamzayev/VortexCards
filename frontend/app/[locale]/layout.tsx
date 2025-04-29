@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import Provider from "@/provider/themeProvider";
-import Nextloader from 'nextjs-toploader'
-import './globals.css'
+import type { Metadata } from "next";
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { Poppins } from "next/font/google";
+import Nextloader from 'nextjs-toploader';
+import './globals.css';
 
-import { Toaster } from 'sonner' 
-import {GoogleAnalytics} from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Toaster } from 'sonner';
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,22 +34,30 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${poppins.className} antialiased`}
       >
+        <NextIntlClientProvider>
+          <Provider>
+            {children}
+          </Provider>
+        </NextIntlClientProvider>
         <GoogleAnalytics gaId={process.env.gaId!}/>
         <Nextloader showSpinner={false} />
         <Toaster position="bottom-center"/>
-        <Provider>
-          {children}
-        </Provider>
       </body>
     </html>
   );

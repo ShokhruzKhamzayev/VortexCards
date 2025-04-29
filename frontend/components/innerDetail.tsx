@@ -21,6 +21,7 @@ import { Social } from './social'
 import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
+import {LocaleSwitcher} from './langSwitcher'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {data} = await fetchSpecIndividual(slug)
@@ -37,6 +38,10 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <>
                     <div className="starter w-full">
                         <div className="w-full h-[200px]  relative">
+                            <div className='absolute top-[10px] left-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
+                                <LocaleSwitcher/>
+                            </div>
+                            
                             <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                 <ThemeSwitcher/>
                             </div>

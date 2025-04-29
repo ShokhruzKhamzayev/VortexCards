@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic';
 
-import animation from '../public/animation.json'
+import animation from '../../public/animation.json'
 import Link from 'next/link';
 const Lottie = dynamic(() => import("react-lottie-player"), { ssr: false });
 

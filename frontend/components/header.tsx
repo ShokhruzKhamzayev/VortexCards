@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import Cards from '../public/cards.png'
 import Link from "next/link";
 import { BurgerMenu } from "./ui/burgerMenu";
+import { useTranslations } from "next-intl";
 
 export default function Header({withMain}: {
   withMain: boolean
@@ -15,6 +16,8 @@ export default function Header({withMain}: {
   const [menu, setMenu] = useState(false);
 
   const navRef = useRef(null);
+  const t = useTranslations();
+  console.log(t('home'))
 
   useEffect(() => {
     if(menu) {

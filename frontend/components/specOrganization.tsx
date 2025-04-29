@@ -21,6 +21,7 @@ import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
 import DownloadPdfButton from './pdf/customDownload'
+import { LocaleSwitcher } from './langSwitcher'
 
 export default async function InnerDetails({slug}: {slug: string}) {
     const {data} = await fetchSpecOrganization(slug)
@@ -38,6 +39,10 @@ export default async function InnerDetails({slug}: {slug: string}) {
                     <div className="starter">
                         <div className="banner relative">
                             <div className='w-full h-[200px] relative'>
+                                <div className='absolute top-[10px] left-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
+                                    <LocaleSwitcher/>
+                                </div>
+                                
                                 <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                     <ThemeSwitcher/>
                                 </div>
