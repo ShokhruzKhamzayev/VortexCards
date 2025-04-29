@@ -1,7 +1,9 @@
 import { YouTubeEmbed } from "@next/third-parties/google"
 import Image from "next/image"
+import { getTranslations } from 'next-intl/server';
 
-export default function InfoEntry() {
+export default async function InfoEntry() {
+  const t = await getTranslations('home.infoVideo');
   return (
     <div className="custom-container flex justify-between items-center pt-[130px] pb-[80px] flex-col lg:flex-row gap-[30px]" id="info">
         <div className="relative w-full lg:w-[47%]">
@@ -12,7 +14,7 @@ export default function InfoEntry() {
                 <Image src={'/logo.png'} alt="our logo" width={100} height={80}/>
                 <h1>VortexCards</h1>
             </div>
-            <p><span className="font-semibold">VortexCards kuchli marketing va qidiruv vositasi bo‘lib, u sizga birinchi aloqa nuqtasida darhol o‘zingizni esda qolarli ko‘rinishda ko‘rsatishga va sizni yagona mantiqiy tanlov sifatida ko‘rsatishga yordam beradi. </span><br /> <br /> U yuqori darajadagi istiqbollar bilan bog'lanish, marketing xabaringizni etkazish va baxtli mijozlarga aylanadigan suhbatlarda qatnashish imkonini berish uchun mo'ljallangan.</p>
+            <p><span className="font-semibold">{t("text")}</span><br /> <br /> {t("textCon")}</p>
             
         </div>
     </div>

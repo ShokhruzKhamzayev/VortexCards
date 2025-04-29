@@ -1,6 +1,104 @@
 {
-    "home": "Home",
-    "about": "About Us",
-    "contact": "Contact",
-    "loadMore": "Load More"
+  "home": {
+    "nav": {
+      "main": "Home",
+      "info": "Information",
+      "plan": "Plans",
+      "cliets": "Clients",
+      "how": "How to Use",
+      "contact": "Contact"
+    },
+    "entry": {
+      "header": "The last business card you'll ever need!",
+      "subheader": "First impression is the key to success!",
+      "text": "Get a modern and interactive business card with VortexCards. Showcase your brand in a stunning way and stand out from the competition!",
+      "links": {
+        "contact": "Contact us",
+        "demo": "Get a demo"
+      },
+      "components": {
+        "socials": "Social media",
+        "website": "Website",
+        "portfolio": "Portfolio",
+        "mini": "Mini-site",
+        "services": "Services"
+      }
+    },
+    "infoVideo": {
+      "text": "VortexCards is a powerful marketing and discovery tool that helps you make a memorable impression at the first point of contact and present yourself as the only logical choice.",
+      "textCon": "It is designed to help you connect with high-level prospects, deliver your marketing message, and participate in conversations that lead to happy clients."
+    },
+    "clients": {
+      "title": "Designed to help you earn more",
+      "subheader": "When potential clients visit your mini-site, receive more inquiries and close more deals.",
+      "clientPages": {
+        "1": {
+          "title": "Founder - VortexHub"
+        },
+        "2": {
+          "title": "Founder - VortexHub"
+        },
+        "3": {
+          "title": "Founder - VortexHub"
+        }
+      },
+      "cta": {
+        "text": "We handle content creation and business card development.",
+        "button": "Contact us"
+      }
+    },
+    "fullInfo": {
+      "title": "VortexCards offers you these services",
+      "subheader": "BRAND, POSITION, AND DIFFERENTIATE YOURSELF AT THE FIRST POINT OF CONTACT.",
+      "cards": {
+        "first": {
+          "title": "Smart Branding",
+          "desc": "Share your digital business card anywhere"
+        },
+        "second": {
+          "title": "Smart Branding",
+          "desc": "Share your digital business card anywhere"
+        },
+        "third": {
+          "title": "Smart Branding",
+          "desc": "Share your digital business card anywhere"
+        },
+        "fourth": {
+          "title": "Smart Branding",
+          "desc": "Share your digital business card anywhere"
+        },
+        "fifth": {
+          "title": "Smart Branding",
+          "desc": "Share your digital business card anywhere"
+        }
+      }
+    },
+    "profit": {
+      "title": "Designed to help you earn more",
+      "subheader": "When potential clients visit your mini-site, receive more inquiries and close more deals.",
+      "list": {
+        "first": {
+          "title": "Get more referrals and attract clients",
+          "text": "Allow potential and existing clients to email, call, and text you with one click."
+        },
+        "second": {
+          "title": "Easier customer connection",
+          "text": "These fast NFC-enabled cards simplify information and contact sharing, improving your workflow."
+        },
+        "third": {
+          "title": "Show your work effortlessly",
+          "text": "Tired of opening Telegram every time to present your service? These cards store the info you want to share."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "What our amazing users say",
+      "testimonials": {
+        "first": {
+          "testimonial": "A very useful and necessary product, especially in my work where I have frequent meetings and negotiations with partners. I think this is a very relevant solution that aligns with modern trends and technologies."
+        }
+      }
+    },
+    "pricing": {}
   }
+}

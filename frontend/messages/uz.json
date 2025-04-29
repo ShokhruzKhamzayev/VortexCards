@@ -1,7 +1,107 @@
 {
-    "home": "Bosh sahifa",
-    "about": "Biz haqimizda",
-    "contact": "Aloqa",
-    "loadMore": "Ko'proq yuklash"
+  "home": {
+    "nav": {
+      "main" : "Bosh sahifa",
+      "info": "Ma'lumot",
+      "plan": "Tariflar",
+      "cliets": "Mijozlar",
+      "how": "Qanday foydalanish kerak",
+      "contact": "Kontakt"
+    },
+    "entry": {
+      "header": "Sizga kerak bo'ladigan so'ngi tashrif qog'ozi!",
+      "subheader": "Birinchi taassurot – muvaffaqiyat kaliti!",
+      "text": "VortexCards bilan zamonaviy va interaktiv tashrif qog‘oziga ega bo‘ling. Brendingizni ajoyib tarzda namoyish qiling va raqobatchilaringizdan ajralib turing!",
+      "links": {
+        "contact": "Biz bilan bog'lanish",
+        "demo": "Demo versiyani olish"
+      },
+      "components": {
+        "socials": "Ijtimoiy tarmoqlar",
+        "website": "Veb-sayt",
+        "portfolio": "Portfolio",
+        "mini": "Mini-sayt",
+        "services": "Xizmatlar"
+      }
+    },
+    "infoVideo": {
+      "text": "VortexCards kuchli marketing va qidiruv vositasi bo‘lib, u sizga birinchi aloqa nuqtasida darhol o‘zingizni esda qolarli ko‘rinishda ko‘rsatishga va sizni yagona mantiqiy tanlov sifatida ko‘rsatishga yordam beradi.",
+      "textCon": "U yuqori darajadagi istiqbollar bilan bog'lanish, marketing xabaringizni etkazish va baxtli mijozlarga aylanadigan suhbatlarda qatnashish imkonini berish uchun mo'ljallangan."
+    },
+    "clients": {
+      "title": "Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan",
+      "subheader": "Potentsial mijozlar mini-saytingizga tashrif buyurganida, ko'proq takliflarni oling va ko'proq bitimlar tuzing.",
+      "clientPages": {
+        "1": {
+          "title": "Founder - VortexHub"
+        },
+        "2": {
+          "title": "Founder - VortexHub"
+        },
+        "3": {
+          "title": "Founder - VortexHub"
+        }
+      },
+      "cta": {
+        "text": "Biz kontentni to‘ldirish va tashrif qog‘ozini yaratish bilan shug‘ullanamiz.",
+        "button": "Biz bilan bog'lanish"
+      }
+    },
+    "fullInfo": {
+      "title": "VortexCards sizga ushbu servislarni taqdim qiladi",
+      "subheader": "BIRINCHI MULOQOT NUQTASIDA O‘ZINGIZNI BRENDLANG, POZITSIYALANG VA AJRATING.",
+      "cards": {
+        "first": {
+          "title" : "Smart brendlash",
+          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+        },
+        "second": {
+          "title" : "Smart brendlash",
+          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+        },
+        
+        "third": {
+          "title" : "Smart brendlash",
+          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+        },
+        "fourth": {
+          "title" : "Smart brendlash",
+          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+        },
+        "fifth": {
+          "title" : "Smart brendlash",
+          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+        }
+      }
+    },
+    "profit" : {
+      "title": "Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan",
+      "subheader": "Potentsial mijozlar mini-saytingizga tashrif buyurganida, ko'proq takliflarni oling va ko'proq bitimlar tuzing.",
+      "list": {
+        "first": {
+          "title": "Ko‘proq tavsiyalar va mijozlar jalb qiling",
+          "text": "Potentsial va hozirgi mijozlaringizga bir tugmani bosish orqali sizga elektron pochta xabarlari, qo'ng'iroqlar va matnli xabarlar yuborishiga ruxsat bering."
+        },
+        "second": {
+          "title": "Xaridorlar bilan bog‘lanish osonlashadi",
+          "text": "Ushbu tezkor NFC bilan jihozlangan tashrif qog'ozlar ma'lumot va kontaklar almashishni osonlashtiradi va ishingizni yanada mukammalashtiradi."
+        },
+        "third": {
+          "title": "Ishlaringizni qiyinchiliksiz ko'rsating",
+          "text": "Har safar telegramni ochib o'z servisingizni taqdim qilishdan charchagandirsiz. Ushbu kartalar siz xohlagan ma'lumotlarni o'z ichida saqlaydi."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Bizning ajoyib foydalanuvchilarimiz nima deyishadi",
+      "testimonials": {
+        "first": {
+          "testimonial": "Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim."
+        }
+      }      
+    },
+    "pricing": {
+      
+    }
   }
-  
+}

@@ -1,20 +1,21 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import Image from 'next/image';
 
 export function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams<{locale: string}>()
 
   const changeLanguage = (lang: string) => {
     const segments = pathname.split('/');
@@ -24,21 +25,24 @@ export function LocaleSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button>
-          ochish
+          <Image src={`/${params.locale}.png`} alt='Uzbekistan' width={28} height={28} className='rounded-full'/>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-fit">
-        <DropdownMenuLabel>Tilni tanlang</DropdownMenuLabel>
-        <DropdownMenuSeparator />
+      <DropdownMenuContent className="w-fit z-[999999999]">
         <DropdownMenuGroup>
-          <DropdownMenuItem onClick={() => changeLanguage('uz')}>
-            Uzbek
+          <DropdownMenuItem onClick={() => changeLanguage('uz')} className='flex items-center gap-[10px]'>
+            <Image src={'/uz.png'} alt='Uzbekistan' width={28} height={28} className='rounded-full '/>
+            <span>O'zbek</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => changeLanguage('ru')}>
-            Russian
+          <DropdownMenuSeparator/>
+          <DropdownMenuItem onClick={() => changeLanguage('ru')} className='flex items-center gap-[10px]'>
+            <Image src={'/ru.png'} alt='Russian' width={28} height={28} className='rounded-full '/>
+            <span>Русский</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => changeLanguage('en')}>
-            English
+          <DropdownMenuSeparator/>
+          <DropdownMenuItem onClick={() => changeLanguage('en')} className='flex items-center gap-[10px]'>
+            <Image src={'/en.png'} alt='English' width={28} height={28} className='rounded-full '/>
+            <span>English</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

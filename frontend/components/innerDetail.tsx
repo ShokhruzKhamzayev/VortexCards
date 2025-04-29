@@ -38,7 +38,7 @@ export default async function InnerDetails({slug}: {slug: string}) {
                 <>
                     <div className="starter w-full">
                         <div className="w-full h-[200px]  relative">
-                            <div className='absolute top-[10px] left-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
+                            <div className='absolute top-[10px] left-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px] h-[48px]'>
                                 <LocaleSwitcher/>
                             </div>
                             
