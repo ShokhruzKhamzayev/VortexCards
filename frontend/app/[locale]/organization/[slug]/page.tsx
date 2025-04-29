@@ -23,15 +23,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export const revalidate = 3600
-
-export const dynamicParams = true 
-
-export async function generateStaticParams() {
-  const {data} = await fetchAllOrganizations()
-  return data.data.map((org) => ({slug: org.slug}))
-}
-
 export default async function Organization({params}: PageProps) {
   const {slug} = await params
   return (
