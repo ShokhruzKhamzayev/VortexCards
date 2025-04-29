@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Nav from "./nav";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-export default function Footer() {
+export default async function Footer() {
+    const t = await getTranslations("home.footer")
   return (
     <footer className="custom-container">
         <div className="top-footer flex justify-between items-center lg:border-b border-slate-600 dark:border-slate-100 py-[30px] border-0">
@@ -18,8 +20,8 @@ export default function Footer() {
             <Nav className="flex flex-col gap-[15px] justify-center items-center"/>
         </div>
         <div className="bottom-footer py-[20px] space-x-[20px]">
-            <Link className="text-slate-500 dark:text-slate-300" href="/privacy">Maxfiylik siyosati</Link>
-            <Link className="text-slate-500 dark:text-slate-300" href="/privacy">Foydalanish shartlari</Link>
+            <Link className="text-slate-500 dark:text-slate-300" href="/privacy">{t("privacy")}</Link>
+            <Link className="text-slate-500 dark:text-slate-300" href="/privacy">{t("terms")}</Link>
         </div>
     </footer>
   )

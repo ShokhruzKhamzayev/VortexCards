@@ -3,51 +3,71 @@
 import Autoplay from "embla-carousel-autoplay"
 import useEmblaCarousel from "embla-carousel-react"
 import CustomImage from "./ui/customImage"
-
-const testimonials = [
-    {
-        img: '/testimonials1.png',
-        fullName: 'Bakhodir Ayupov',
-        position: 'CEO of IT Park University',
-        comment: 'Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim.'
-    },
-    {
-        img: '/testimonials1.png',
-        fullName: 'Bakhodir Ayupov',
-        position: 'CEO of IT Park University',
-        comment: 'Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim.'
-    },
-    {
-        img: '/testimonials1.png',
-        fullName: 'Bakhodir Ayupov',
-        position: 'CEO of IT Park University',
-        comment: 'Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim.'
-    },
-    {
-        img: '/testimonials1.png',
-        fullName: 'Bakhodir Ayupov',
-        position: 'CEO of IT Park University',
-        comment: 'Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim.'
-    },
-    {
-        img: '/testimonials1.png',
-        fullName: 'Bakhodir Ayupov',
-        position: 'CEO of IT Park University',
-        comment: 'Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim.'
-    },
-    {
-        img: '/testimonials1.png',
-        fullName: 'Bakhodir Ayupov',
-        position: 'CEO of IT Park University',
-        comment: 'Juda foydali va zarur mahsulot, ayniqsa, mening ish faoliyatimda, doimiy uchrashuvlar va hamkorlar bilan muzokaralarni inobatga olsak. Menimcha, bu zamonaviy tendensiyalar va texnologiyalarga mos keladigan juda dolzarb yechim.'
-    },
-]
+import { useTranslations } from "next-intl"
 
 export default function Testimonials() {
     const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000})])
+    const t = useTranslations('home.testimonials')
+
+    const testimonials = [
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+        {
+            img: '/testimonials1.png',
+            fullName: 'Bakhodir Ayupov',
+            position: 'CEO of IT Park University',
+            comment: t("testimonials.first.testimonial")
+        },
+    ]
   return (
     <div className="py-[40px] mb-[50px]">
-        <h1 className="text-[26px] font-semibold custom-container">Bizning ajoyib foydalanuvchilarimiz nima deyishadi</h1>
+        <h1 className="text-[26px] font-semibold custom-container">{t("title")}</h1>
         <div>
         <div className="embla overflow-hidden cursor-grab" ref={emblaRef}>      
             <div className="embla__container flex mt-[30px]">

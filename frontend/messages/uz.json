@@ -32,14 +32,14 @@
       "title": "Ko'proq daromad olishingizga yordam berish uchun mo'ljallangan",
       "subheader": "Potentsial mijozlar mini-saytingizga tashrif buyurganida, ko'proq takliflarni oling va ko'proq bitimlar tuzing.",
       "clientPages": {
-        "1": {
-          "title": "Founder - VortexHub"
+        "first": {
+          "title": "Co-Founder - VortexHub"
         },
-        "2": {
-          "title": "Founder - VortexHub"
+        "second": {
+          "title": "Co-Founder - VortexHub"
         },
-        "3": {
-          "title": "Founder - VortexHub"
+        "third": {
+          "title": "VortexHub"
         }
       },
       "cta": {
@@ -56,21 +56,21 @@
           "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
         },
         "second": {
-          "title" : "Smart brendlash",
-          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+          "title" : "Jalb qiluvchi dizayn",
+          "desc": "Karta brendingizni ta’sirchan qiladi"
         },
         
         "third": {
-          "title" : "Smart brendlash",
-          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+          "title" : "NFC texnologiyasi",
+          "desc": "Bir tegish bilan aloqalarni o‘rnatish"
         },
         "fourth": {
-          "title" : "Smart brendlash",
-          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+          "title" : "QR kod",
+          "desc": "Telefon kamerasi orqali tezkor kirish."
         },
         "fifth": {
-          "title" : "Smart brendlash",
-          "desc": "Raqamli tashrif kartangizni istalgan joyda baham ko‘ring"
+          "title" : "Oson kontakt almashish",
+          "desc": "O'z websaytingizga raqamingizni biriktiramiz, endi raqam va ismlar aytib almashish tarixda qoldi."
         }
       }
     },
@@ -101,7 +101,68 @@
       }      
     },
     "pricing": {
-      
+      "title": "VortexCards tariflari",
+      "button": "Planni tanlang",
+      "subheader": "20 dan ortiq raqamli biznes kartalar/mini-saytlar kerakmi?",
+      "plans": {
+        "first": {
+          "title": "Faqat karta",
+          "price": "350000 so'm",
+          "renewal": "Oyiga 35.000 so'mga avtomatik yangilash",
+          "benefits": {
+            "first": "1 Mini portfolio",
+            "second": "1 NFC karta",
+            "third": "1 NFC stiker",
+            "fourth": "1 NFC braslet",
+            "fifth": "1 Yillik xizmat*"
+          }
+        },
+        "second": {
+          "title": "To'liq to'plam",
+          "price": "400000 so'm",
+          "renewal": "Oyiga 35.000 so'mga avtomatik yangilash",
+          "benefits": {
+            "first": "1 Mini portfolio",
+            "second": "1 NFC karta",
+            "third": "1 NFC stiker",
+            "fourth": "1 NFC braslet",
+            "fifth": "1 Yillik xizmat*"
+          },
+          "promo": "Eng mashhur tarif"
+        },
+        "third": {
+          "title": "Premium tarif",
+          "price": "600000 so'm",
+          "renewal": "Oyiga 35.000 so'mga avtomatik yangilash",
+          "benefits": {
+            "first": "1 Mini portfolio",
+            "second": "1 NFC karta",
+            "third": "1 NFC stiker",
+            "fourth": "1 NFC braslet",
+            "fifth": "1 Yillik xizmat*"
+          }
+        }
+      }
+    },
+    "contact": {
+      "title" : "Ilova haqida ko'proq ma'lumot olish uchun biz bilan bog'laning",
+      "placeholders": {
+        "name": "Sizning ismingiz"
+      },
+      "reminders": {
+        "text": "*So'rovni qoldirish orqali siz maxfiylik qoidalariga rozilik bildirasiz",
+        "button": "Biz bilan bog'lanish"
+      },
+      "helpers": {
+        "socials": "Ijtimoiy tarmoqlar",
+        "number": "Telefon raqam",
+        "mail": "Elektron pochta",
+        "fast": "Tez aloqa uchun"
+      }
+    },
+    "footer": {
+      "privacy": "Maxfiylik siyosati",
+      "terms": "Foydalanish shartlari"
     }
   }
 }

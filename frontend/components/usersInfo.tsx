@@ -6,20 +6,21 @@ import CustomImage from "./ui/customImage"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 
-const users = [ 
-    {
-        title: 'Founder - VortexHub',
-    },
-    {
-        title: 'Co-Founder - VortexHub',
-    },
-    {
-        title: 'VortexHub',
-    }
-]
 
 export default function UsersInfo() {
     const t = useTranslations('home.clients')
+
+    const users = [ 
+        {
+            title: t("clientPages.first.title"),
+        },
+        {
+            title: t("clientPages.second.title"),
+        },
+        {
+            title: t("clientPages.third.title"),
+        }
+    ]
     const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay({delay: 3000})])
   return (
     <div className="bg-[#f5f5f7] dark:bg-black text-black dark:text-white pt-[130px] pb-[100px]" id="users">
@@ -33,7 +34,7 @@ export default function UsersInfo() {
                     users.map((user, idx) => (
                         <div className="embla__slide w-full px-[30px] text-center flex-[0_0_98%] md:flex-[0_0_48.333%] lg:flex-[0_0_30.333%]" key={idx}>
                             <div className="bg-white dark:bg-[#1f1e20]  pt-[20px] px-[30px] rounded-[12px]">
-                                <h1 className="mb-[10px] font-medium text-[20px]">{t('clientPages.1.title')}</h1>
+                                <h1 className="mb-[10px] font-medium text-[20px]">{user.title}</h1>
                                 <div className="w-full h-[400px] relative overflow-hidden">
                                     <CustomImage src={`/userPreview${idx + 1}.png`} alt={user.title} classname="object-contain"/>
                                 </div>

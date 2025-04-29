@@ -5,19 +5,19 @@
       "info": "Information",
       "plan": "Plans",
       "cliets": "Clients",
-      "how": "How to Use",
+      "how": "How to use",
       "contact": "Contact"
     },
     "entry": {
       "header": "The last business card you'll ever need!",
       "subheader": "First impression is the key to success!",
-      "text": "Get a modern and interactive business card with VortexCards. Showcase your brand in a stunning way and stand out from the competition!",
+      "text": "Get a modern and interactive business card with VortexCards. Showcase your brand in an amazing way and stand out from your competitors!",
       "links": {
         "contact": "Contact us",
-        "demo": "Get a demo"
+        "demo": "Get demo version"
       },
       "components": {
-        "socials": "Social media",
+        "socials": "Social networks",
         "website": "Website",
         "portfolio": "Portfolio",
         "mini": "Mini-site",
@@ -25,69 +25,69 @@
       }
     },
     "infoVideo": {
-      "text": "VortexCards is a powerful marketing and discovery tool that helps you make a memorable impression at the first point of contact and present yourself as the only logical choice.",
-      "textCon": "It is designed to help you connect with high-level prospects, deliver your marketing message, and participate in conversations that lead to happy clients."
+      "text": "VortexCards is a powerful marketing and search tool that helps you immediately present yourself in a memorable way at the first point of contact and positions you as the only logical choice.",
+      "textCon": "It's designed to help you connect with high-quality prospects, deliver your marketing message, and engage in conversations that turn into happy customers."
     },
     "clients": {
       "title": "Designed to help you earn more",
-      "subheader": "When potential clients visit your mini-site, receive more inquiries and close more deals.",
+      "subheader": "Get more offers and close more deals when potential clients visit your mini-site.",
       "clientPages": {
-        "1": {
-          "title": "Founder - VortexHub"
+        "first": {
+          "title": "Co-Founder - VortexHub"
         },
-        "2": {
-          "title": "Founder - VortexHub"
+        "second": {
+          "title": "Co-Founder - VortexHub"
         },
-        "3": {
-          "title": "Founder - VortexHub"
+        "third": {
+          "title": "VortexHub"
         }
       },
       "cta": {
-        "text": "We handle content creation and business card development.",
+        "text": "We handle content filling and business card creation.",
         "button": "Contact us"
       }
     },
     "fullInfo": {
-      "title": "VortexCards offers you these services",
+      "title": "VortexCards provides you these services",
       "subheader": "BRAND, POSITION, AND DIFFERENTIATE YOURSELF AT THE FIRST POINT OF CONTACT.",
       "cards": {
         "first": {
-          "title": "Smart Branding",
+          "title": "Smart branding",
           "desc": "Share your digital business card anywhere"
         },
         "second": {
-          "title": "Smart Branding",
-          "desc": "Share your digital business card anywhere"
+          "title": "Engaging design",
+          "desc": "The card makes your brand impactful"
         },
         "third": {
-          "title": "Smart Branding",
-          "desc": "Share your digital business card anywhere"
+          "title": "NFC technology",
+          "desc": "Establish connections with one touch"
         },
         "fourth": {
-          "title": "Smart Branding",
-          "desc": "Share your digital business card anywhere"
+          "title": "QR code",
+          "desc": "Quick access through phone camera."
         },
         "fifth": {
-          "title": "Smart Branding",
-          "desc": "Share your digital business card anywhere"
+          "title": "Easy contact exchange",
+          "desc": "We link your number to your website, exchanging numbers and names verbally is now history."
         }
       }
     },
     "profit": {
       "title": "Designed to help you earn more",
-      "subheader": "When potential clients visit your mini-site, receive more inquiries and close more deals.",
+      "subheader": "Get more offers and close more deals when potential clients visit your mini-site.",
       "list": {
         "first": {
-          "title": "Get more referrals and attract clients",
-          "text": "Allow potential and existing clients to email, call, and text you with one click."
+          "title": "Attract more referrals and clients",
+          "text": "Allow your potential and current clients to send you emails, calls, and text messages with a single button press."
         },
         "second": {
-          "title": "Easier customer connection",
-          "text": "These fast NFC-enabled cards simplify information and contact sharing, improving your workflow."
+          "title": "Connecting with customers becomes easier",
+          "text": "These quick NFC-equipped business cards make information and contact exchange easier and perfect your business."
         },
         "third": {
-          "title": "Show your work effortlessly",
-          "text": "Tired of opening Telegram every time to present your service? These cards store the info you want to share."
+          "title": "Showcase your work effortlessly",
+          "text": "You're probably tired of opening Telegram every time to present your service. These cards contain all the information you want."
         }
       }
     },
@@ -95,10 +95,73 @@
       "title": "What our amazing users say",
       "testimonials": {
         "first": {
-          "testimonial": "A very useful and necessary product, especially in my work where I have frequent meetings and negotiations with partners. I think this is a very relevant solution that aligns with modern trends and technologies."
+          "testimonial": "A very useful and necessary product, especially in my work activities, considering the constant meetings and negotiations with partners. I think this is a very relevant solution that matches modern trends and technologies."
         }
       }
     },
-    "pricing": {}
+    "pricing": {
+      "title": "VortexCards plans",
+      "subheader": "Need more than 20 digital business cards/mini-sites?",
+      "button": "Choose plan",
+      "plans": {
+        "first": {
+          "title": "Card only",
+          "price": "350,000 UZS",
+          "renewal": "Automatic renewal for 35,000 UZS per month",
+          "benefits": {
+            "first": "1 Mini portfolio",
+            "second": "1 NFC card",
+            "third": "1 NFC sticker",
+            "fourth": "1 NFC bracelet",
+            "fifth": "1 Year service*"
+          }
+        },
+        "second": {
+          "title": "Complete set",
+          "price": "400,000 UZS",
+          "renewal": "Automatic renewal for 35,000 UZS per month",
+          "benefits": {
+            "first": "1 Mini portfolio",
+            "second": "1 NFC card",
+            "third": "1 NFC sticker",
+            "fourth": "1 NFC bracelet",
+            "fifth": "1 Year service*"
+          },
+          "promo": "Most popular plan"
+        },
+        "third": {
+          "title": "Premium plan",
+          "price": "600,000 UZS",
+          "renewal": "Automatic renewal for 35,000 UZS per month",
+          "benefits": {
+            "first": "1 Mini portfolio",
+            "second": "1 NFC card",
+            "third": "1 NFC sticker",
+            "fourth": "1 NFC bracelet",
+            "fifth": "1 Year service*"
+          }
+        }
+      }
+    },
+    "contact": {
+      "title": "Contact us for more information about the application",
+      "placeholders": {
+        "name": "Your name"
+      },
+      "reminders": {
+        "text": "*By submitting a request, you agree to the privacy policy",
+        "button": "Contact us"
+      },
+      "helpers": {
+        "socials": "Social networks",
+        "number": "Phone number",
+        "mail": "Email",
+        "fast": "For quick contact"
+      }
+    },
+    "footer": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
   }
 }
