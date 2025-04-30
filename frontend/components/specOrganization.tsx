@@ -22,6 +22,7 @@ import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
 import DownloadPdfButton from './pdf/customDownload'
 import { LocaleSwitcher } from './langSwitcher'
+import { getTranslations } from 'next-intl/server'
 
 export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
     const {data} = await fetchSpecOrganization(slug, locale)
@@ -29,6 +30,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
     if(!organization) {
         notFound()
     }
+    const t = await getTranslations('innerPages')
     const videos = organization?.videos?.split(',')
   return (
     <>
@@ -39,10 +41,9 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                     <div className="starter">
                         <div className="banner relative">
                             <div className='w-full h-[200px] relative'>
-                                <div className='absolute top-[10px] left-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
+                               <div className='absolute top-[10px] left-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px] h-[48px]'>
                                     <LocaleSwitcher/>
                                 </div>
-                                
                                 <div className='absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]'>
                                     <ThemeSwitcher/>
                                 </div>
@@ -75,46 +76,45 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             <h3 className='text-yellow-800 dark:text-[#f9bf41] text-[15px] '>{organization.fieldOfOrganization}</h3>
                         </div>
                         <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
-                            <Social link={`tel:${organization.telephoneNumber}`} color={organization.secondaryColor} text={'Telefon'}>
+                            <Social link={`tel:${organization.telephoneNumber}`} color={organization.secondaryColor} text={t("links.tell")}>
                                 <IoCall size={25} color='white' />
                             </Social>
-                            <Social link={organization.instagram} color={organization.secondaryColor} text={'Instagram'}>
+                            <Social link={organization.instagram} color={organization.secondaryColor} text={t("links.insta")}>
                                 <FaInstagram size={25} color='white' />
                             </Social>
-                            <Social link={organization.facebook} color={organization.secondaryColor} text={'Facebook'}>
+                            <Social link={organization.facebook} color={organization.secondaryColor} text={t("links.facebook")}>
                                 <FaFacebook size={25} color='white' />
                             </Social>
-                            <Social link={organization.telegram} color={organization.secondaryColor} text={'Telegram'}>
+                            <Social link={organization.telegram} color={organization.secondaryColor} text={t("links.tg")}>
                                 <BsTelegram size={25} color='white' />
                             </Social>
                             <ConnectClient person={organization} />
-                            <Social link={organization.email} color={organization.secondaryColor} text={'Email'}>
+                            <Social link={organization.email} color={organization.secondaryColor} text={t("links.mail")}>
                                 <IoMdMail size={25} color='white' />
                             </Social>
-                            <Social link={organization.linkedin} color={organization.secondaryColor} text={'LinkedIn'}>
+                            <Social link={organization.linkedin} color={organization.secondaryColor} text={t("links.linkedin")}>
                                 <FaLinkedinIn size={25} color='white' />
                             </Social>
-                            <Social link={organization.youtube} color={organization.secondaryColor} text={'YouTube'}>
+                            <Social link={organization.youtube} color={organization.secondaryColor} text={t("links.yt")}>
                                 <IoLogoYoutube size={25} color='white' />
                             </Social>
                         </div>
                     </div>
-                    <div className="share flex justify-between gap-[2px] mt-[20px]">
-                        <a href={organization.contactDownload.url}  className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor}}>
+                     <div className="share flex justify-between gap-[2px] mt-[20px]">
+                        <a href={organization.contactDownload.url} download={organization.contactDownload.url} className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor }}>
                             <RiContactsBook3Fill />
-                            ADD TO CONTACTS
+                            {t("actions.addContacts")}
                         </a>
                         <Share fullName={organization.name} secColor={organization.secondaryColor} classname='w-[30%] rounded-r-[15px]'>
-                            <BiShare/>
-                            ULASHISH
+                            <span>{t("actions.share")}</span>
                         </Share>
                     </div>
                     <a href={organization.website} target='_blank' className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: organization.secondaryColor}}>
-                        Website
+                        {t("actions.website")}
                     </a>
                     <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
                     <div>
-                        <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
+                        <h1 className='text-center font-medium text-[20px] mb-[15px]'>{t("about.aboutUs")}</h1>
                         <div>{organization.aboutOrganization}</div>
                     </div>
                     </InfoInnerDetail>
@@ -160,9 +160,9 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                     <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
                         <div className='pt-[10px]'>
                             <Share fullName={organization.name} secColor={organization.secondaryColor} classname='w-full rounded-[12px]'>
-                                ULASHISH
+                                {t("actions.share")}
                             </Share>
-                            <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</Link>
+                            <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">{t("getCard")}</Link>
                         </div>
                     </InfoInnerDetail>
                     <ScrollToTopShared/>

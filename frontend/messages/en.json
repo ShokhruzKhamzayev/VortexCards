@@ -187,6 +187,18 @@
     "about": {
       "aboutUs": "About us"
     },
-    "getCard": "Get your own card"
-  }
+    "getCard": "Get your own card",
+    "share": {
+      "copy": "Copy",
+      "shareCard": "Share business card",
+      "sms": "Via SMS",
+      "email": "Via Email",
+      "other": "Others"
+    }
+    },
+    "loading": "Loading",
+    "notFound": {
+      "title": "You are lost on the Internet!",
+      "button": "Return to homepage"
+    }
 }

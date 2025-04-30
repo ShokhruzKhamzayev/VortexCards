@@ -15,6 +15,7 @@ import { TiMessages } from "react-icons/ti"
 import { MdEmail } from 'react-icons/md'
 import { toast } from 'sonner'
 import CustomImage from './ui/customImage'
+import { useTranslations } from 'next-intl'
 export default function Share({children, classname, secColor, fullName}: {
     children: React.ReactNode,
     classname?: string,
@@ -55,12 +56,11 @@ export default function Share({children, classname, secColor, fullName}: {
     const pathname = usePathname() || '';
     const customLink = `https://cards.vortexhub.uz${pathname}`
     
-    const copylink = (e: any) => {
+    const copylink = () => {
         navigator.clipboard.writeText(customLink)
         toast.success("Havola ko'chirildi!")
     }
-
-
+    const t = useTranslations('innerPages.share')
   return (
     <Drawer>
         <DrawerTrigger className={`flex gap-[15px] ${classname} p-[0.75rem] justify-center items-center text-white border-b-[2px] border-white cursor-pointer hover:grayscale-75 transition-all duration-200`} style={{backgroundColor: secColor}}>
@@ -70,13 +70,13 @@ export default function Share({children, classname, secColor, fullName}: {
             <DrawerHeader className='space-y-[20px] pb-[50px]'>
                 <DrawerTitle className='text-[25px] font-semibold'>{fullName}</DrawerTitle>
                     <div className='relative max-w-full w-[200px] h-[200px] overflow-hidden mx-auto'>
-                        <CustomImage src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${customLink}`} alt='qr code of the profile' />
+                      <CustomImage src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${customLink}`} alt='qr code of the profile' />
                     </div>
                 <DrawerDescription onClick={copylink} className='flex items-center gap-[10px] justify-center'>
-                        <FaRegCopy />
-                        Nusxalash
+                  <FaRegCopy />
+                  {t("copy")}
                 </DrawerDescription>
-                <h3 className='text-center font-medium text-[16px] mb-[20px]'>Vizitkani ulashish</h3>
+                <h3 className='text-center font-medium text-[16px] mb-[20px]'>{t("shareCard")}</h3>
                 <div className='flex justify-between items-center px-[30px]'>
                 <button
                     onClick={handleSmsShare}
@@ -85,7 +85,7 @@ export default function Share({children, classname, secColor, fullName}: {
                     <div className='p-[10px] rounded-full w-fit mx-auto' style={{backgroundColor: secColor, color: 'white'}}>
                         <TiMessages size={32} className='text-white'/> 
                     </div>
-                    <p className='my-[10px] block text-black dark:text-white'>SMS orqali</p>              
+                    <p className='my-[10px] block text-black dark:text-white'>{t("sms")}</p>              
                 </button>
                 <EmailShareButton
                     url={customLink}
@@ -95,7 +95,7 @@ export default function Share({children, classname, secColor, fullName}: {
                     <div className='p-[10px] rounded-full w-fit mx-auto cursor-pointer' style={{backgroundColor: secColor}}>
                         <MdEmail size={32} className='text-white' />
                     </div>
-                    <p className='my-[10px] block text-black dark:text-white '>Email orqali</p>
+                    <p className='my-[10px] block text-black dark:text-white '>{t("email")}</p>
                 </EmailShareButton>
                 <button
                     onClick={handleShare}
@@ -104,7 +104,7 @@ export default function Share({children, classname, secColor, fullName}: {
                         <div className='p-[10px] rounded-full w-fit mx-auto' style={{backgroundColor: secColor}}>
                             <FaShareAlt size={32} className='text-white'/>
                         </div>
-                        <p className='my-[10px] block text-black dark:text-white '>Boshqalar</p>
+                        <p className='my-[10px] block text-black dark:text-white '>{t("other")}</p>
                     </button>
                 </div>
             </DrawerHeader>

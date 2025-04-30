@@ -188,6 +188,18 @@
     "about": {
       "aboutUs": "Biz haqimizda"
     },
-    "getCard": "O'zingizni kartangizni oling"
+    "getCard": "O'zingizni kartangizni oling",
+    "share": {
+      "copy": "Nusxalash",
+      "shareCard": "Tashrif qog‘ozini ulashish",
+      "sms": "SMS orqali",
+      "email": "Email orqali",
+      "other": "Boshqalar"
+    }
+  },
+  "loading": "Yuklanmoqda",
+  "notFound": {
+    "title": "Internetda yo'qolib qoldingiz!",
+    "button": "Bosh sahifaga qaytish"
   }
 }
