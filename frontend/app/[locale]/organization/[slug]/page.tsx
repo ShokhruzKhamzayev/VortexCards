@@ -1,14 +1,14 @@
 import InnerOrganization from "@/components/specOrganization"
-import { fetchAllOrganizations, fetchSpecOrganization } from "@/lib"
+import { fetchSpecOrganization } from "@/lib"
 import { Metadata } from "next"
 
 type PageProps = {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string, locale: string }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const {slug} = await params
-  const {data} = await fetchSpecOrganization(slug)
+  const {slug, locale} = await params
+  const {data} = await fetchSpecOrganization(slug, locale)
   const organization = data.data[0]
   return {
     title: organization.name,
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Organization({params}: PageProps) {
-  const {slug} = await params
+  const {slug, locale} = await params
   return (
-    <InnerOrganization slug={slug}/>
+    <InnerOrganization slug={slug} locale={locale}/>
   )
 }

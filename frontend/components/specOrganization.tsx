@@ -23,8 +23,8 @@ import ScrollToTopShared from './ui/scrollToTop'
 import DownloadPdfButton from './pdf/customDownload'
 import { LocaleSwitcher } from './langSwitcher'
 
-export default async function InnerDetails({slug}: {slug: string}) {
-    const {data} = await fetchSpecOrganization(slug)
+export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
+    const {data} = await fetchSpecOrganization(slug, locale)
     const organization = data.data[0]
     if(!organization) {
         notFound()
