@@ -171,7 +171,13 @@
     },
     "links": {
       "tell": "Phone",
-      "connect": "Connect"
+      "connect": "Connect",
+      "insta": "Instagram",
+      "facebook": "Facebook",
+      "tg": "Telegram",
+      "mail": "Email",
+      "linkedin": "LinkedIn",
+      "yt": "YouTube"
     },
     "actions": {
       "addContacts": "Add to contacts",

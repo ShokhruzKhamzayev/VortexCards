@@ -96,23 +96,23 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             <Social link={`tel:${person.telephoneNumber}`} color={person.secondaryColor} text={t("links.tell")}>
                                 <IoCall size={25} color='white' />
                             </Social>
-                            <Social link={person.instagram} color={person.secondaryColor} text={'Instagram'}>
+                            <Social link={person.instagram} color={person.secondaryColor} text={t("links.insta")}>
                                 <FaInstagram size={25} color='white' />
                             </Social>
-                            <Social link={person.facebook} color={person.secondaryColor} text={'Facebook'}>
+                            <Social link={person.facebook} color={person.secondaryColor} text={t("links.facebook")}>
                                 <FaFacebook size={25} color='white' />
                             </Social>
-                            <Social link={person.telegram} color={person.secondaryColor} text={'Telegram'}>
+                            <Social link={person.telegram} color={person.secondaryColor} text={t("links.tg")}>
                                 <BsTelegram size={25} color='white' />
                             </Social>
                             <ConnectClient person={person} />
-                            <Social link={person.email} color={person.secondaryColor} text={'Email'}>
+                            <Social link={person.email} color={person.secondaryColor} text={t("links.mail")}>
                                 <IoMdMail size={25} color='white' />
                             </Social>
-                            <Social link={person.linkedin} color={person.secondaryColor} text={'LinkedIn'}>
+                            <Social link={person.linkedin} color={person.secondaryColor} text={t("links.linkedin")}>
                                 <FaLinkedinIn size={25} color='white' />
                             </Social>
-                            <Social link={person.youtube} color={person.secondaryColor} text={'YouTube'}>
+                            <Social link={person.youtube} color={person.secondaryColor} text={t("links.yt")}>
                                 <IoLogoYoutube size={25} color='white' />
                             </Social>
                         </div>

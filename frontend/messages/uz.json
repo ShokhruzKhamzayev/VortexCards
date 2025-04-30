@@ -172,7 +172,13 @@
     },
     "links": {
       "tell": "Telefon",
-      "connect": "Bog'lanish"
+      "connect": "Bog'lanish",
+      "insta": "Instagram",
+      "facebook": "Facebook",
+      "tg": "Telegram",
+      "mail": "Email",
+      "linkedin": "LinkedIn",
+      "yt": "YouTube"
     },
     "actions": {
       "addContacts": "Kontaktga qo'shish",
