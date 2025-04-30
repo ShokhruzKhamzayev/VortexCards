@@ -3,12 +3,12 @@ import { fetchSpecIndividual } from '@/lib'
 import { Metadata } from 'next'
 
 type PageProps = {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string, locale: string }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const {slug} = await params
-  const {data} = await fetchSpecIndividual(slug)
+  const {slug, locale} = await params
+  const {data} = await fetchSpecIndividual(slug, locale)
   const person = data.data[0]
   return {
     title: person.fullName,
@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Individual({params}: PageProps) {
-    const {slug} = await params
+    const {slug, locale} = await params
   return (
     <div>
-        <InnerDetails slug={slug}/>
+        <InnerDetails slug={slug} locale={locale}/>
     </div>
   )
 }

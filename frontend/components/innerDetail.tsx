@@ -23,8 +23,8 @@ import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
 import {LocaleSwitcher} from './langSwitcher'
 
-export default async function InnerDetails({slug}: {slug: string}) {
-    const {data} = await fetchSpecIndividual(slug)
+export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
+    const {data} = await fetchSpecIndividual(slug, locale)
     const person = data.data[0]
     if(!person) {
         notFound()

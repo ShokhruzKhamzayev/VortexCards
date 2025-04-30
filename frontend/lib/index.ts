@@ -16,12 +16,12 @@ export async function fetchAllOrganizations() {
     return allOrg
 }
 
-export async function fetchSpecIndividual(slug: string) {
-    const specInd = await axios<{data: InnerDetailTypo[] }>(baseUrl + `/individuals?filters[slug][$eq]=${slug}&populate=*`)
+export async function fetchSpecIndividual(slug: string, locale: string) {
+    const specInd = await axios<{data: InnerDetailTypo[] }>(baseUrl + `/individuals?filters[slug][$eq]=${slug}&locale=${locale}&populate[avatar]=true&populate[partnersLogo]=true&populate[projects]=true&populate[contactDownload]=true&populate[organizations]=true`)
     return specInd
 }
 
-export async function fetchSpecOrganization(slug: string) {
-    const specOrg = await axios<{data: OrganizationTypo[] }>(baseUrl + `/organizations?filters[slug][$eq]=${slug}&populate[avatar]=true&populate[individuals][populate]=avatar&populate[banner]=true&populate[contactDownload]=true&populate[projects]=true&populate[partnersLogo]=true`)
+export async function fetchSpecOrganization(slug: string, locale: string) {
+    const specOrg = await axios<{data: OrganizationTypo[] }>(baseUrl + `/organizations?filters[slug][$eq]=${slug}&locale=${locale}&populate[avatar]=true&populate[individuals][populate]=avatar&populate[banner]=true&populate[contactDownload]=true&populate[projects]=true&populate[partnersLogo]=true`)
     return specOrg
 }
