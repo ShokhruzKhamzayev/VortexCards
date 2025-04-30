@@ -15,7 +15,6 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@localazy/strapi-plugin": "^1.0.1",
     "@strapi/plugin-cloud": "5.12.4",
     "@strapi/plugin-users-permissions": "5.12.4",
     "@strapi/provider-upload-cloudinary": "^5.12.4",

@@ -164,5 +164,24 @@
       "privacy": "Maxfiylik siyosati",
       "terms": "Foydalanish shartlari"
     }
+  },
+  "innerPages": {
+    "starter": {
+      "download": "Yuklash",
+      "location": "Joylashuv"
+    },
+    "links": {
+      "tell": "Telefon",
+      "connect": "Bog'lanish"
+    },
+    "actions": {
+      "addContacts": "Kontaktga qo'shish",
+      "share": "Ulashish",
+      "website": "Web sahifa"
+    },
+    "about": {
+      "aboutUs": "Biz haqimizda"
+    },
+    "getCard": "O'zingizni kartangizni oling"
   }
 }

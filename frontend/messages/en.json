@@ -163,5 +163,24 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Use"
     }
+  },
+  "innerPages": {
+    "starter": {
+      "download": "Download",
+      "location": "Location"
+    },
+    "links": {
+      "tell": "Phone",
+      "connect": "Connect"
+    },
+    "actions": {
+      "addContacts": "Add to contacts",
+      "share": "Share",
+      "website": "Website"
+    },
+    "about": {
+      "aboutUs": "About us"
+    },
+    "getCard": "Get your own card"
   }
 }

@@ -22,6 +22,7 @@ import ThemeSwitcher from './themeSwitcher'
 import { EmblaCarousel } from './ui/carousel'
 import ScrollToTopShared from './ui/scrollToTop'
 import {LocaleSwitcher} from './langSwitcher'
+import { getTranslations } from 'next-intl/server'
 
 export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
     const {data} = await fetchSpecIndividual(slug, locale)
@@ -29,6 +30,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
     if(!person) {
         notFound()
     }
+    const t = await getTranslations('innerPages')
     const videos = person?.videos?.split(',')
   return (
     <>
@@ -57,11 +59,11 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             </div>
                             </div>
                             <DownloadPdfButton data={person} slug={slug}/>
-                            <a href={person.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
+                            <a href={person.location} className="location gap-[10px] absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className='p-[15px] rounded-full' style={{backgroundColor: person.secondaryColor}}>
                                     <FaLocationDot color='white' />
                                 </div>
-                                <p className='text-[11px]'>Location</p>
+                                <p className='text-[11px]'>{t("starter.location")}</p>
                             </a>
                         </div>
                         </div>
@@ -91,7 +93,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             <h3 className='text-[.875rem] leading-[1.25rem]'>{person.position}</h3>
                         </div>
                         <div className='grid grid-cols-4 gap-[30px] mt-[30px]'>
-                            <Social link={`tel:${person.telephoneNumber}`} color={person.secondaryColor} text={'Telefon'}>
+                            <Social link={`tel:${person.telephoneNumber}`} color={person.secondaryColor} text={t("links.tell")}>
                                 <IoCall size={25} color='white' />
                             </Social>
                             <Social link={person.instagram} color={person.secondaryColor} text={'Instagram'}>
@@ -118,20 +120,20 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                     <div className="share flex justify-between gap-[2px] mt-[20px]">
                         <a href={person.contactDownload.url} download={person.contactDownload.url} className='flex items-center gap-[0.5rem] w-[70%] rounded-l-[10px] p-[0.75rem] justify-center text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor }}>
                             <RiContactsBook3Fill />
-                            Kontaktga qo'shish
+                            {t("actions.addContacts")}
                         </a>
                         <Share fullName={person.fullName} secColor={person.secondaryColor} classname='w-[30%] rounded-r-[15px]'>
-                            <span>Ulashish</span>
+                            <span>{t("actions.share")}</span>
                         </Share>
                     </div>
                     <a target='_blank' href={person.websiteUrl} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor}}>
-                        Website
+                        {t("actions.website")}
                     </a>
                     {
                         person?.organizations.length >= 1 && (
                             <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
                                     <div>
-                                        <h1 className='text-center font-medium text-[20px] mb-[15px]'>Biz haqimizda</h1>
+                                        <h1 className='text-center font-medium text-[20px] mb-[15px]'>{t("about.aboutUs")}</h1>
                                         <div>{person.organizations[0].aboutOrganization}</div>
                                     </div>
                             </InfoInnerDetail>
@@ -166,9 +168,9 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                     <InfoInnerDetail Icon={<FaRegShareFromSquare size={30}/>}>
                         <div className='pt-[10px]'>
                         <Share fullName={person.fullName} secColor={person.secondaryColor} classname='w-full rounded-[12px]'>
-                            Ulashish
+                            {t("actions.share")}
                         </Share>
-                        <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">O'zingizni kartangizni oling</Link>
+                        <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">{t("getCard")}</Link>
                         </div>
                     </InfoInnerDetail>
                     </div>
