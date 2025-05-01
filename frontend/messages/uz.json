@@ -201,5 +201,91 @@
   "notFound": {
     "title": "Internetda yo'qolib qoldingiz!",
     "button": "Bosh sahifaga qaytish"
+  },
+  "privacy": {
+    "starter": {
+      "privacy": "Maxfiylik siyosati",
+      "terms": "Foydalanish shartlari"
+    },
+    "terms": {
+      "first": {
+        "title": "1. Umumiy shartlar",
+        "content": "Ushbu veb-saytdan foydalanish orqali siz quyidagi shartlarga rozilik bildirasiz. Agar ushbu shartlarga rozi bo‘lmasangiz, iltimos, xizmatlarimizdan foydalanmang."
+      },
+      "second": {
+        "title": "2. Xizmatdan foydalanish huquqi",
+        "list1": "Foydalanuvchi o‘z shaxsiy ma’lumotlarini to‘g‘ri va haqqoniy kiritishi kerak",
+        "list2": "Xizmat faqat qonuniy va maqsadga muvofiq ishlatilishi lozim"
+      },
+      "third": {
+        "title": "3. Foydalanuvchining majburiyatlari",
+        "list1": "Shaxsiy ma’lumotlaringizni xavfsiz saqlash",
+        "list2": "Xizmatdan foydalanishda hech qanday zararli yoki noqonuniy faoliyat yuritmaslik"
+      },
+      "fourth": {
+        "title": "4. Xizmatlarning cheklovlari",
+        "text": "VortexCards quyidagi holatlarda foydalanuvchining hisobini to‘xtatish yoki bekor qilish huquqiga ega:",
+        "list1": "Soxta yoki firibgarlik maqsadida xizmatdan foydalanish",
+        "list2": "Uchinchilarga zarar yetkazuvchi kontent joylash",
+        "list3": "Veb-sayt yoki tizim xavfsizligiga tahdid qilish"
+      },
+      "fifth": {
+        "title": "5. Intellektual mulk huquqlari",
+        "content": "Ushbu veb-saytda joylashgan barcha matnlar, rasmlar, logotiplar va dizaynlar VortexCards’ga tegishli. Foydalanuvchilar ushbu materiallardan faqat shaxsiy yoki notijorat maqsadlarda foydalanishlari mumkin."
+      },
+      "sixth": {
+        "title": "6. Javobgarlik cheklovi",
+        "content": "Biz xizmatlarimizning doimiy ishlashiga va ma’lumotlarning to‘g‘riligiga harakat qilamiz, biroq texnik nosozliklar yoki uchinchi tomon ta’siridan kelib chiqqan muammolar uchun javobgar emasmiz."
+      },
+      "seventh": {
+        "title": "7. Shartlarning o‘zgarishi",
+        "content": "VortexCards istalgan vaqtda ushbu shartlarni o‘zgartirish huquqini saqlab qoladi. O‘zgarishlar veb-saytda e’lon qilingan kundan boshlab kuchga kiradi."
+      },
+      "eighth": {
+        "title": "8. Biz bilan bog‘lanish",
+        "content": "Agar sizda ushbu shartlar bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘lanishingiz mumkin:"
+      }
+    },
+    "privacy": {
+      "first": {
+        "title": "1. Kirish",
+        "content": "Ushbu maxfiylik siyosati VortexCards foydalanuvchilarining shaxsiy ma’lumotlarini qanday to‘plashimiz, saqlashimiz va ishlatishimiz haqida tushuncha beradi. Biz sizning maxfiyligingizni hurmat qilamiz va shaxsiy ma’lumotlaringiz xavfsizligini ta’minlashga harakat qilamiz."
+      },
+      "second": {
+        "title": "2. Qanday ma’lumotlarni yig‘amiz?",
+        "content": "Biz quyidagi ma’lumotlarni yig‘ishimiz mumkin:",
+        "list1": "Ism, familiya",
+        "list2": "Telefon raqami va elektron pochta manzili",
+        "list3": "Tashkilot nomi va lavozim",
+        "list4": "Veb-saytingiz yoki ijtimoiy tarmoq profilingiz ma’lumotlari",
+        "list5": "IP-manzil va qurilma ma’lumotlari"
+      },
+      "third": {
+        "title": "3. Ma’lumotlaringiz qanday ishlatiladi?",
+        "content": "Biz foydalanuvchilarning shaxsiy ma’lumotlarini quyidagi maqsadlarda ishlatamiz:",
+        "list1": "Profilingizni yaratish va xizmatimizdan foydalanish imkonini berish",
+        "list2": "Aloqa o‘rnatish va xizmat ko‘rsatish sifatini yaxshilash",
+        "list3": "Yangi xizmatlar va aksiyalar haqida xabar berish"
+      },
+      "fourth": {
+        "title": "4. Shaxsiy ma’lumotlaringizni uchinchi tomon bilan bo‘lishamizmi?",
+        "content": "Yo‘q, sizning shaxsiy ma’lumotlaringiz uchinchi shaxslar bilan sizning ruxsatingizsiz ulashilmaydi. Faqat qonuniy talab bo‘lsa yoki xavfsizlik choralarini ta’minlash uchun tegishli organlarga taqdim etilishi mumkin."
+      },
+      "fifth": {
+        "title": "5. Cookie fayllardan foydalanish",
+        "content": "Biz veb-saytimiz tajribasini yaxshilash uchun cookie-fayllardan foydalanamiz. Siz istalgan vaqtda cookie sozlamalarini o‘zgartirishingiz mumkin."
+      },
+      "sixth": {
+        "title": "6. Foydalanuvchi huquqlari",
+        "content": "Siz quyidagi huquqlarga egasiz:",
+        "list1": "O‘z ma’lumotlaringizni ko‘rish, o‘zgartirish yoki o‘chirish",
+        "list2": "Bizning marketing xabarlarimizdan voz kechish",
+        "list3": "Ma’lumotlaringizni o‘chirishni talab qilish"
+      },
+      "seventh": {
+        "title": "7. Biz bilan bog‘lanish",
+        "content": "Agar sizda ushbu shartlar bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘lanishingiz mumkin:"
+      }
+    }
   }
 }

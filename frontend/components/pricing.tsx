@@ -57,7 +57,7 @@ export default async function Pricing() {
                         }
                         <div className="text-center">
                             <h3 className="text-[22px] font-medium">{plan.title}</h3>
-                            <h2 className="text-[23px] font-medium py-[10px]"><span className="text-[26px] font-semibold">{plan.price} </span>so'm</h2>
+                            <h2 className="text-[23px] font-medium py-[10px]"><span className="text-[26px] font-semibold">{plan.price} </span></h2>
                             <p>{plan.subs}</p>
                         </div>
                     <Dialog>

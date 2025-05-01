@@ -123,6 +123,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  ul {
+    @apply list-disc list-inside
+  }
 }
 
 html {

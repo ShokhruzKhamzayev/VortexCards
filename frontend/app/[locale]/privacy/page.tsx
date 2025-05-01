@@ -1,161 +1,162 @@
 import Footer from "@/components/footer"
 import Header from "@/components/header"
+import { getTranslations } from "next-intl/server"
 
-const content = {
-  terms: [
-    {
-      title: '1. Umumiy shartlar',
-      desc: (
-        <p>Ushbu veb-saytdan foydalanish orqali siz quyidagi shartlarga rozilik bildirasiz. Agar ushbu shartlarga rozi bo‘lmasangiz, iltimos, xizmatlarimizdan foydalanmang.</p>
-      )
-    },
-    {
-      title: '2. Xizmatdan foydalanish huquqi',
-      desc: (
-        <ul>
-          <li>Foydalanuvchi o‘z shaxsiy ma’lumotlarini to‘g‘ri va haqqoniy kiritishi kerak</li>
-          <li>Xizmat faqat qonuniy va maqsadga muvofiq ishlatilishi lozim</li>
-        </ul>
-      )
-    },
-    {
-      title: '3. Foydalanuvchining majburiyatlari',
-      desc: (
-        <ul>
-          <li>Xizmatimizdan faqat qonuniy maqsadlarda foydalanish</li>
-          <li>Shaxsiy ma’lumotlaringizni xavfsiz saqlash</li>
-          <li>Xizmatdan foydalanishda hech qanday zararli yoki noqonuniy faoliyat yuritmaslik</li>
-        </ul>
-      )
-    },
-    {
-      title: '4. Xizmatlarning cheklovlari',
-      desc: (
-        <>
-          <p>Uzbek Business Connect quyidagi holatlarda foydalanuvchining hisobini to‘xtatish yoki bekor qilish huquqiga ega:</p>
-          <ul>
-            <li>Soxta yoki firibgarlik maqsadida xizmatdan foydalanish</li>
-            <li>Uchinchilarga zarar yetkazuvchi kontent joylash</li>
-            <li>Veb-sayt yoki tizim xavfsizligiga tahdid qilish</li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '5. Intellektual mulk huquqlari',
-      desc: (
-        <p>Ushbu veb-saytda joylashgan barcha matnlar, rasmlar, logotiplar va dizaynlar Uzbek Business Connect’ga tegishli. Foydalanuvchilar ushbu materiallardan faqat shaxsiy yoki notijorat maqsadlarda foydalanishlari mumkin.</p>
-      )
-    },
-    {
-      title: '6. Javobgarlik cheklovi',
-      desc: (
-        <p>Biz xizmatlarimizning doimiy ishlashiga va ma’lumotlarning to‘g‘riligiga harakat qilamiz, biroq texnik nosozliklar yoki uchinchi tomon ta’siridan kelib chiqqan muammolar uchun javobgar emasmiz.</p>
-      )
-    },
-    {
-      title: '7. Shartlarning o‘zgarishi',
-      desc: (
-        <p>Uzbek Business Connect istalgan vaqtda ushbu shartlarni o‘zgartirish huquqini saqlab qoladi. O‘zgarishlar veb-saytda e’lon qilingan kundan boshlab kuchga kiradi.</p>
-      )
-    },
-    {
-      title: '8. Biz bilan bog‘lanish',
-      desc: (
-        <>
-          <p>Agar sizda ushbu shartlar bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘lanishingiz mumkin:
-          </p>
-          <div className="flex flex-col gap-[10px]">
-            <a href="mailto:support@vortexhub.uz">📩 support@vortexhub.uz</a>
-            <a href="tel:+998919866898">📞 +998 91 986 68 98</a>
-          </div>
-        </>
-      )
-    },
-  ],
-  privacy: [
-    {
-      title: '1. Kirish',
-      desc: (
-        <p>Ushbu maxfiylik siyosati Uzbek Business Connect foydalanuvchilarining shaxsiy ma’lumotlarini qanday to‘plashimiz, saqlashimiz va ishlatishimiz haqida tushuncha beradi. Biz sizning maxfiyligingizni hurmat qilamiz va shaxsiy ma’lumotlaringiz xavfsizligini ta’minlashga harakat qilamiz.</p>
-      )
-    },
-    {
-      title: '2. Qanday ma’lumotlarni yig‘amiz?',
-      desc: (
-        <>
-          <p>Biz quyidagi ma’lumotlarni yig‘ishimiz mumkin:</p>
-          <ul>
-            <li>Ism, familiya</li>
-            <li>Telefon raqami va elektron pochta manzili</li>
-            <li>Tashkilot nomi va lavozim</li>
-            <li>Veb-saytingiz yoki ijtimoiy tarmoq profilingiz ma’lumotlari</li>
-            <li>IP-manzil va qurilma ma’lumotlari</li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '3. Ma’lumotlaringiz qanday ishlatiladi?',
-      desc: (
-        <>
-          <p>Biz foydalanuvchilarning shaxsiy ma’lumotlarini quyidagi maqsadlarda ishlatamiz:</p>
-          <ul>
-            <li>Profilingizni yaratish va xizmatimizdan foydalanish imkonini berish</li>
-            <li>Aloqa o‘rnatish va xizmat ko‘rsatish sifatini yaxshilash</li>
-            <li>Yangi xizmatlar va aksiyalar haqida xabar berish</li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '4. Shaxsiy ma’lumotlaringizni uchinchi tomon bilan bo‘lishamizmi?',
-      desc: (
-        <p>Yo‘q, sizning shaxsiy ma’lumotlaringiz uchinchi shaxslar bilan sizning ruxsatingizsiz ulashilmaydi. Faqat qonuniy talab bo‘lsa yoki xavfsizlik choralarini ta’minlash uchun tegishli organlarga taqdim etilishi mumkin.</p>
-      )
-    },
-    {
-      title: '5. Cookie fayllardan foydalanish',
-      desc: (
-        <p>Biz veb-saytimiz tajribasini yaxshilash uchun cookie-fayllardan foydalanamiz. Siz istalgan vaqtda cookie sozlamalarini o‘zgartirishingiz mumkin.</p>
-      )
-    },
-    {
-      title: '6. Foydalanuvchi huquqlari',
-      desc: (
-        <>
-          <p>Siz quyidagi huquqlarga egasiz:</p>
-          <ul>
-            <li>O‘z ma’lumotlaringizni ko‘rish, o‘zgartirish yoki o‘chirish</li>
-            <li>Bizning marketing xabarlarimizdan voz kechish</li>
-            <li>Ma’lumotlaringizni o‘chirishni talab qilish</li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '8. Biz bilan bog‘lanish',
-      desc: (
-        <>
-          <p>Agar sizda ushbu shartlar bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘lanishingiz mumkin:
-          </p>
-          <div className="flex flex-col gap-[10px]">
-            <a href="#">📩 support@uzbusinessconnect.uz</a>
-            <a href="#">📞 +998 (XX) XXX-XX-XX</a>
-          </div>
-        </>
-      )
-    }
-  ]
-}
 
-export default function Privacy() {
+export default async function Privacy() {
+  const t = await getTranslations('privacy')
+  const content = {
+    terms: [
+      {
+        title: t("terms.first.title"),
+        desc: (
+          <p>{t("terms.first.content")}</p>
+        )
+      },
+      {
+        title: t("terms.second.title"),
+        desc: (
+          <ul>
+            <li>{t("terms.second.list1")}</li>
+            <li>{t("terms.second.list2")}</li>
+          </ul>
+        )
+      },
+      {
+        title: t("terms.third.title"),
+        desc: (
+          <ul>
+            <li>{t("terms.third.list1")}</li>
+            <li>{t("terms.third.list2")}</li>
+          </ul>
+        )
+      },
+      {
+        title: t("terms.fourth.title"),
+        desc: (
+          <>
+            <p>{t("terms.fourth.text")}</p>
+            <ul>
+              <li>{t("terms.fourth.list1")}</li>
+              <li>{t("terms.fourth.list2")}</li>
+              <li>{t("terms.fourth.list3")}</li>
+            </ul>
+          </>
+        )
+      },
+      {
+        title: t("terms.fifth.title"),
+        desc: (
+          <p>{t("terms.fifth.content")}</p>
+        )
+      },
+      {
+        title: t("terms.sixth.title"),
+        desc: (
+          <p>{t("terms.sixth.content")}</p>
+        )
+      },
+      {
+        title: t("terms.seventh.title"),
+        desc: (
+          <p>{t('terms.seventh.content')}</p>
+        )
+      },
+      {
+        title: t('terms.eighth.title'),
+        desc: (
+          <>
+            <p>{t('terms.eighth.content')}
+            </p>
+            <div className="flex flex-col gap-[10px] mt-[10px]">
+              <a href="mailto:support@vortexhub.uz">📩 support@vortexhub.uz</a>
+              <a href="tel:+998919866898">📞 +998 91 986 68 98</a>
+            </div>
+          </>
+        )
+      },
+    ],
+    privacy: [
+      {
+        title: t("privacy.first.title"),
+        desc: (
+          <p>{t("privacy.first.content")}</p>
+        )
+      },
+      {
+        title: t("privacy.second.title"),
+        desc: (
+          <>
+            <p>{t("privacy.second.content")}</p>
+            <ul className="my-[10px]">
+              <li>{t("privacy.second.list1")}</li>
+              <li>{t("privacy.second.list2")}</li>
+              <li>{t("privacy.second.list3")}</li>
+              <li>{t("privacy.second.list4")}</li>
+              <li>{t("privacy.second.list5")}</li>
+            </ul>
+          </>
+        )
+      },
+      {
+        title: t("privacy.third.title"),
+        desc: (
+          <>
+            <p>{t("privacy.third.content")}</p>
+            <ul>
+              <li>{t("privacy.third.list1")}</li>
+              <li>{t("privacy.third.list2")}</li>
+              <li>{t("privacy.third.list3")}</li>
+            </ul>
+          </>
+        )
+      },
+      {
+        title: t("privacy.fourth.title"),
+        desc: (
+          <p>{t("privacy.fourth.content")}</p>
+        )
+      },
+      {
+        title: t("privacy.fifth.title"),
+        desc: (
+          <p>{t("privacy.fifth.content")}</p>
+        )
+      },
+      {
+        title: t("privacy.sixth.title"),
+        desc: (
+          <>
+            <p>{t("privacy.sixth.content")}</p>
+            <ul>
+              <li>{t("privacy.sixth.list1")}</li>
+              <li>{t("privacy.sixth.list2")}</li>
+              <li>{t("privacy.sixth.list3")}</li>
+            </ul>
+          </>
+        )
+      },
+      {
+        title: t("privacy.seventh.title"),
+        desc: (
+          <>
+            <p>{t("privacy.seventh.content")}
+            </p>
+            <div className="flex flex-col gap-[10px] mt-[10px]">
+              <a href="#">📩 support@uzbusinessconnect.uz</a>
+              <a href="#">📞 +998 (XX) XXX-XX-XX</a>
+            </div>
+          </>
+        )
+      }
+    ]
+  }
   return (
     <div>
         <Header withMain={false}/>
         <div className="flex items-start justify-between custom-container py-[40px]">
           <div className="w-[48%]">
-            <h1 className="text-center text-3xl font-bold mb-[15px]">Maxfiylik siyosati</h1>
+            <h1 className="text-center text-3xl font-bold mb-[15px]">{t("starter.privacy")}</h1>
             {
               content.privacy.map(cnt => (
                 <div key={cnt.title} className="py-[10px]">
@@ -168,7 +169,7 @@ export default function Privacy() {
             }
           </div>
           <div className="w-[48%]">
-            <h1 className="text-center text-3xl font-bold mb-[15px]">Foydalanish shartlari</h1>
+            <h1 className="text-center text-3xl font-bold mb-[15px]">{t("starter.terms")}</h1>
             {
               content.terms.map(trm => (
                 <div key={trm.title} className="py-[10px]">

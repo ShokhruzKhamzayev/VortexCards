@@ -200,5 +200,91 @@
     "notFound": {
       "title": "You are lost on the Internet!",
       "button": "Return to homepage"
+    },
+    "privacy": {
+      "starter": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use"
+      },
+      "terms": {
+        "first": {
+          "title": "1. General Terms",
+          "content": "By using this website, you agree to the following terms. If you do not agree to these terms, please do not use our services."
+        },
+        "second": {
+          "title": "2. Right to Use the Service",
+          "list1": "Users must enter their personal information correctly and truthfully",
+          "list2": "The service must be used only for legal and appropriate purposes"
+        },
+        "third": {
+          "title": "3. User Obligations",
+          "list1": "Keep your personal information secure",
+          "list2": "Do not engage in any harmful or illegal activities when using the service"
+        },
+        "fourth": {
+          "title": "4. Service Limitations",
+          "text": "VortexCards reserves the right to suspend or cancel a user's account in the following cases:",
+          "list1": "Using the service for fraudulent purposes",
+          "list2": "Posting content that harms third parties",
+          "list3": "Threatening the security of the website or system"
+        },
+        "fifth": {
+          "title": "5. Intellectual Property Rights",
+          "content": "All texts, images, logos, and designs located on this website belong to VortexCards. Users may use these materials only for personal or non-commercial purposes."
+        },
+        "sixth": {
+          "title": "6. Limitation of Liability",
+          "content": "We strive to ensure the continuous operation of our services and the accuracy of information, however, we are not responsible for problems arising from technical malfunctions or third-party influences."
+        },
+        "seventh": {
+          "title": "7. Changes to Terms",
+          "content": "VortexCards reserves the right to change these terms at any time. Changes come into effect from the day they are published on the website."
+        },
+        "eighth": {
+          "title": "8. Contact Us",
+          "content": "If you have questions regarding these terms, you can contact us:"
+        }
+      },
+      "privacy": {
+        "first": {
+          "title": "1. Introduction",
+          "content": "This privacy policy explains how VortexCards collects, stores, and uses personal information of users. We respect your privacy and strive to ensure the security of your personal information."
+        },
+        "second": {
+          "title": "2. What Information Do We Collect?",
+          "content": "We may collect the following information:",
+          "list1": "First and last name",
+          "list2": "Phone number and email address",
+          "list3": "Organization name and position",
+          "list4": "Your website or social network profile information",
+          "list5": "IP address and device information"
+        },
+        "third": {
+          "title": "3. How Is Your Information Used?",
+          "content": "We use users' personal information for the following purposes:",
+          "list1": "Creating your profile and allowing you to use our service",
+          "list2": "Establishing communication and improving service quality",
+          "list3": "Informing about new services and promotions"
+        },
+        "fourth": {
+          "title": "4. Do We Share Your Personal Information with Third Parties?",
+          "content": "No, your personal information will not be shared with third parties without your permission. It may only be provided to relevant authorities if legally required or to ensure security measures."
+        },
+        "fifth": {
+          "title": "5. Use of Cookies",
+          "content": "We use cookies to improve the experience on our website. You can change your cookie settings at any time."
+        },
+        "sixth": {
+          "title": "6. User Rights",
+          "content": "You have the following rights:",
+          "list1": "View, modify, or delete your information",
+          "list2": "Opt out of our marketing messages",
+          "list3": "Request deletion of your information"
+        },
+        "seventh": {
+          "title": "7. Contact Us",
+          "content": "If you have questions regarding these terms, you can contact us:"
+        }
+      }
     }
 }
