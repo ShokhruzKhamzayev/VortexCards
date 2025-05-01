@@ -247,6 +247,9 @@
           "localized": true
         }
       }
+    },
+    "excerpt": {
+      "type": "text"
     }
   }
 }

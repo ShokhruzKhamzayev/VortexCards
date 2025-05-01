@@ -459,6 +459,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    excerpt: Schema.Attribute.Text;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -641,6 +642,7 @@ export interface ApiOrganizationOrganization
           localized: true;
         };
       }>;
+    excerpt: Schema.Attribute.Text;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
