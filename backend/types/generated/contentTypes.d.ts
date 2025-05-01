@@ -424,12 +424,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    aboutIndividual: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    aboutIndividual: Schema.Attribute.RichText;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -607,12 +602,7 @@ export interface ApiOrganizationOrganization
     };
   };
   attributes: {
-    aboutOrganization: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    aboutOrganization: Schema.Attribute.Blocks;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

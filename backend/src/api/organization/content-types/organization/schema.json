@@ -24,14 +24,6 @@
         }
       }
     },
-    "aboutOrganization": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "avatar": {
       "type": "media",
       "multiple": false,
@@ -250,6 +242,9 @@
     },
     "excerpt": {
       "type": "text"
+    },
+    "aboutOrganization": {
+      "type": "blocks"
     }
   }
 }

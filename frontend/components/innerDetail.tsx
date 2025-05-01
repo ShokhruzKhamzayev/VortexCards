@@ -123,7 +123,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             {t("actions.addContacts")}
                         </a>
                         <Share fullName={person.fullName} secColor={person.secondaryColor} classname='w-[30%] rounded-r-[15px]'>
-                            <span>{t("actions.share")}</span>
+                            <span className='text-[14px]'>{t("actions.share")}</span>
                         </Share>
                     </div>
                     <a target='_blank' href={person.websiteUrl} className='w-full flex justify-center items-center p-[0.75rem] rounded-[15px] mt-[10px] text-white border-b-[2px] border-white hover:grayscale-75 transition-all duration-200' style={{backgroundColor: person.secondaryColor}}>

@@ -156,14 +156,6 @@
         }
       }
     },
-    "aboutIndividual": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "isPaid": {
       "type": "boolean",
       "pluginOptions": {
@@ -250,6 +242,9 @@
     },
     "excerpt": {
       "type": "text"
+    },
+    "aboutIndividual": {
+      "type": "richtext"
     }
   }
 }
