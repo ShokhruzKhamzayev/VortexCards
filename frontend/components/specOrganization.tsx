@@ -62,11 +62,11 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             </div>
                             </div>
                             <DownloadPdfButton data={organization} slug={slug}/>
-                            <a href={organization.location} className="location absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
+                            <a href={organization.location} className="location gap-[10px] absolute top-[100%] right-1/8  translate-y-[-50%] flex items-center flex-col">
                                 <div className={`p-[15px] rounded-full`} style={{backgroundColor: organization.secondaryColor}}>
                                     <FaLocationDot color='white' />
                                 </div>
-                                <p className='text-[11px]'>Location</p>
+                                <p className='text-[11px]'>{t("starter.location")}</p>
                             </a>
                         </div>
                         </div>
