@@ -602,7 +602,12 @@ export interface ApiOrganizationOrganization
     };
   };
   attributes: {
-    aboutOrganization: Schema.Attribute.Blocks;
+    aboutOrganization: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
