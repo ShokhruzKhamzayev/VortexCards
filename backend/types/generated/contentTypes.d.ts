@@ -456,14 +456,14 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     email: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     excerpt: Schema.Attribute.Text;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     fullName: Schema.Attribute.String &
@@ -479,7 +479,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     instagram: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     isPaid: Schema.Attribute.Boolean &
@@ -491,7 +491,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     linkedin: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -502,7 +502,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     organizations: Schema.Attribute.Relation<
@@ -537,7 +537,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     secondaryColor: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     seo: Schema.Attribute.Boolean &
@@ -550,13 +550,13 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     telegram: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     telephoneNumber: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     textForConnection: Schema.Attribute.Text &
@@ -571,19 +571,19 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     videos: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     websiteUrl: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     youtube: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
   };
@@ -639,14 +639,14 @@ export interface ApiOrganizationOrganization
     email: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     excerpt: Schema.Attribute.Text;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     fieldOfOrganization: Schema.Attribute.String &
@@ -666,7 +666,7 @@ export interface ApiOrganizationOrganization
     instagram: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     isPaid: Schema.Attribute.Boolean &
@@ -678,7 +678,7 @@ export interface ApiOrganizationOrganization
     linkedin: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -689,7 +689,7 @@ export interface ApiOrganizationOrganization
     location: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     name: Schema.Attribute.String &
@@ -720,7 +720,7 @@ export interface ApiOrganizationOrganization
     secondaryColor: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     seo: Schema.Attribute.Boolean &
@@ -733,13 +733,13 @@ export interface ApiOrganizationOrganization
     telegram: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     telephoneNumber: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     textForConnection: Schema.Attribute.Text &
@@ -754,19 +754,19 @@ export interface ApiOrganizationOrganization
     videos: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     website: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     youtube: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
   };

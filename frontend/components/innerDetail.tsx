@@ -56,7 +56,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                         <div className="imgAndLoc">
                             <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                             <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
-                                <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white'/>
+                                <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white object-cover'/>
                             </div>
                             </div>
                             <DownloadPdfButton data={person} slug={slug}/>
