@@ -22,12 +22,13 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "avatar": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -36,7 +37,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -96,14 +97,14 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
     "contactDownload": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -112,14 +113,14 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
     "projects": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -128,7 +129,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -136,17 +137,19 @@
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "required": true
     },
     "seo": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "required": true
     },
     "textForConnection": {
       "type": "text",
@@ -154,7 +157,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "telephoneNumber": {
       "type": "string",
@@ -162,7 +166,8 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true
     },
     "instagram": {
       "type": "string",
@@ -236,12 +241,18 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
     "excerpt": {
-      "type": "text"
+      "type": "text",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "aboutOrganization": {
       "type": "richtext",
@@ -249,7 +260,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     }
   }
 }

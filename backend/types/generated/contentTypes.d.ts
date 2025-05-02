@@ -425,29 +425,32 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
   };
   attributes: {
     aboutIndividual: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+    avatar: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     contactDownload: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Schema.Attribute.DateTime;
@@ -459,7 +462,13 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    excerpt: Schema.Attribute.Text;
+    excerpt: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -467,6 +476,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
         };
       }>;
     fullName: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -483,9 +493,10 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
         };
       }>;
     isPaid: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     linkedin: Schema.Attribute.String &
@@ -500,6 +511,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
       'api::individual.individual'
     >;
     location: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -515,10 +527,11 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     position: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -528,9 +541,10 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
@@ -541,12 +555,13 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
         };
       }>;
     seo: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    slug: Schema.Attribute.UID<'fullName'>;
+    slug: Schema.Attribute.UID<'fullName'> & Schema.Attribute.Required;
     telegram: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -554,6 +569,7 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
         };
       }>;
     telephoneNumber: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -608,29 +624,32 @@ export interface ApiOrganizationOrganization
   };
   attributes: {
     aboutOrganization: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     contactDownload: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Schema.Attribute.DateTime;
@@ -642,7 +661,13 @@ export interface ApiOrganizationOrganization
           localized: false;
         };
       }>;
-    excerpt: Schema.Attribute.Text;
+    excerpt: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -670,9 +695,10 @@ export interface ApiOrganizationOrganization
         };
       }>;
     isPaid: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     linkedin: Schema.Attribute.String &
@@ -693,6 +719,7 @@ export interface ApiOrganizationOrganization
         };
       }>;
     name: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -704,16 +731,17 @@ export interface ApiOrganizationOrganization
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     projects: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
@@ -724,9 +752,10 @@ export interface ApiOrganizationOrganization
         };
       }>;
     seo: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     slug: Schema.Attribute.UID<'name'>;
@@ -737,12 +766,14 @@ export interface ApiOrganizationOrganization
         };
       }>;
     telephoneNumber: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     textForConnection: Schema.Attribute.Text &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

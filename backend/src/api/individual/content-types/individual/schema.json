@@ -22,7 +22,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "position": {
       "type": "string",
@@ -30,7 +31,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "location": {
       "type": "string",
@@ -38,27 +40,27 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true
     },
     "avatar": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
     "slug": {
       "type": "uid",
-      "targetField": "fullName"
+      "targetField": "fullName",
+      "required": true
     },
     "partnersLogo": {
       "type": "media",
@@ -72,7 +74,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -95,7 +97,7 @@
     "projects": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -104,7 +106,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -120,14 +122,14 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
     "contactDownload": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -136,7 +138,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -160,17 +162,19 @@
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "required": true
     },
     "seo": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "required": true
     },
     "telephoneNumber": {
       "type": "string",
@@ -178,7 +182,8 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true
     },
     "instagram": {
       "type": "string",
@@ -241,7 +246,13 @@
       }
     },
     "excerpt": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
     },
     "aboutIndividual": {
       "type": "richtext",
@@ -249,7 +260,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     }
   }
 }
