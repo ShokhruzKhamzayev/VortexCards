@@ -23,6 +23,7 @@ import ScrollToTopShared from './ui/scrollToTop'
 import DownloadPdfButton from './pdf/customDownload'
 import { LocaleSwitcher } from './langSwitcher'
 import { getTranslations } from 'next-intl/server'
+import Markdown from 'react-markdown'
 
 export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
     const {data} = await fetchSpecOrganization(slug, locale)
@@ -32,6 +33,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
     }
     const t = await getTranslations('innerPages')
     const videos = organization?.videos?.split(',')
+    console.log(organization.excerpt)
   return (
     <>
         <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
@@ -115,7 +117,9 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                     <InfoInnerDetail Icon={<FaBuilding  size={30}/>}>
                     <div>
                         <h1 className='text-center font-medium text-[20px] mb-[15px]'>{t("about.aboutUs")}</h1>
-                        <div>{organization.aboutOrganization}</div>
+                        <Markdown>
+                            {organization.aboutOrganization}
+                        </Markdown>
                     </div>
                     </InfoInnerDetail>
                     {

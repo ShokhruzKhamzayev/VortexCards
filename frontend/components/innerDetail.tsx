@@ -33,7 +33,6 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
     }
     const t = await getTranslations('innerPages')
     const videos = person?.videos?.split(',')
-    console.log(person.organizations[0].aboutOrganization)
   return (
     <>
         <div className='max-w-[500px] mx-auto md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
@@ -136,9 +135,9 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             <InfoInnerDetail Icon={<FaBuilding size={30}/>}>
                                     <div>
                                         <h1 className='text-center font-medium text-[20px] mb-[15px]'>{t("about.aboutUs")}</h1>
-                                        {/* <Markdown>
+                                        <Markdown>
                                             {person.organizations[0].aboutOrganization}
-                                        </Markdown> */}
+                                        </Markdown>
                                     </div>
                             </InfoInnerDetail>
                 )}
