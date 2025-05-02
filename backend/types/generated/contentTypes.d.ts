@@ -424,7 +424,12 @@ export interface ApiIndividualIndividual extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    aboutIndividual: Schema.Attribute.RichText;
+    aboutIndividual: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
