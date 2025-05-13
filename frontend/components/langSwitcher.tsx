@@ -20,6 +20,7 @@ export function LocaleSwitcher() {
   const changeLanguage = (lang: string) => {
     const segments = pathname.split('/');
     router.push(pathname.replace(segments[1], lang))
+    router.refresh()
   };
   return (
     <DropdownMenu>
