@@ -16,20 +16,21 @@ import { MdEmail } from 'react-icons/md'
 import { toast } from 'sonner'
 import CustomImage from './ui/customImage'
 import { useTranslations } from 'next-intl'
+
 export default function Share({children, classname, secColor, fullName}: {
     children: React.ReactNode,
     classname?: string,
     secColor: string,
     fullName: string,
 }) {
-    const [isShareSupported, setIsShareSupported] = useState(false);
-
-    useEffect(() => {
-        // @ts-ignore
-      if (navigator.share) {
-        setIsShareSupported(true);
-      }
-    }, []);
+  const [isShareSupported, setIsShareSupported] = useState(false);
+  const t = useTranslations('innerPages.share')
+  useEffect(() => {
+      // @ts-ignore
+    if (navigator.share) {
+      setIsShareSupported(true);
+    }
+  }, []);
 
     const handleSmsShare = () => {
         const message = encodeURIComponent("Salom! Ushbu vizitkani tekshirib ko'ring: " + window.location.href);
@@ -58,9 +59,8 @@ export default function Share({children, classname, secColor, fullName}: {
     
     const copylink = () => {
         navigator.clipboard.writeText(customLink)
-        toast.success("Havola ko'chirildi!")
+        toast.success(t("copied"))
     }
-    const t = useTranslations('innerPages.share')
   return (
     <Drawer>
         <DrawerTrigger className={`flex gap-[15px] ${classname} p-[0.75rem] justify-center items-center text-white border-b-[2px] border-white cursor-pointer hover:grayscale-75 transition-all duration-200`} style={{backgroundColor: secColor}}>

@@ -194,7 +194,8 @@
       "shareCard": "Tashrif qog‘ozini ulashish",
       "sms": "SMS orqali",
       "email": "Email orqali",
-      "other": "Boshqalar"
+      "other": "Boshqalar",
+      "copied": "Havola ko'chirildi"
     }
   },
   "loading": "Yuklanmoqda",
@@ -287,5 +288,14 @@
         "content": "Agar sizda ushbu shartlar bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘lanishingiz mumkin:"
       }
     }
-  }
+  },
+  "planForm": {
+    "name": "Ismingiz",
+    "comName": "Kompaniya nomi",
+    "staff": "Xodimlar soni",
+    "position": "Lavozim",
+    "email": "Email pochta",
+    "send": "Yuborish"
+  },
+  "copied": "Havola ko'chirildi"
 }

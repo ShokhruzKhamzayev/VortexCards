@@ -165,6 +165,7 @@
         }
       },
       "innerPages": {
+        "copied": "Link copied",
         "starter": {
           "download": "Download",
           "location": "Location"
@@ -193,7 +194,8 @@
           "shareCard": "Share business card",
           "sms": "Via SMS",
           "email": "Via Email",
-          "other": "Others"
+          "other": "Others",
+          "copied": "Link copied"
         }
         },
         "loading": "Loading",
@@ -286,5 +288,13 @@
               "content": "If you have questions regarding these terms, you can contact us:"
             }
           }
+        },
+        "planForm": {
+          "name": "Name",
+          "comName": "Company name",
+          "staff": "Number of employees",
+          "position": "Position",
+          "email": "Email address",
+          "send": "Send"
         }
     }
