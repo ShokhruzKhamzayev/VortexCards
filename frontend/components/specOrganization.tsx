@@ -166,7 +166,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                             <Share fullName={organization.name} secColor={organization.secondaryColor} classname='w-full rounded-[12px]'>
                                 {t("actions.share")}
                             </Share>
-                            <Link className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href="/#contact">{t("getCard")}</Link>
+                            <a className='bg-transparent border border-slate-800 dark:border-slate-100  rounded-[12px] py-[8px] px-[15px] w-fit mx-auto block my-[20px]' href={`/${locale}#contact`}>{t("getCard")}</a>
                         </div>
                     </InfoInnerDetail>
                     <ScrollToTopShared/>
