@@ -58,7 +58,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                         <div className="imgAndLoc">
                             <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                             <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
-                                <CustomImage src={organization.avatar.url} alt={organization.name} classname='rounded-full border-[3px] border-white'/>
+                                <CustomImage load='eager' src={organization.avatar.url} alt={organization.name} classname='rounded-full border-[3px] border-white'/>
                             </div>
                             </div>
                             <DownloadPdfButton data={organization} slug={slug}/>
@@ -148,7 +148,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                                         organization.individuals.map(organization => (
                                             <Link href={`/individual/${organization.slug}`} key={organization.slug} className='w-full space-y-[10px]'>
                                                 <div className='relative w-[100px] h-[100px] overflow-hidden mx-auto'>
-                                                    <CustomImage src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border-[3px] border-white object-contain'/>
+                                                    <CustomImage load='lazy' src={organization.avatar.url} alt={organization.fullName} classname='rounded-full border-[3px] border-white object-contain'/>
                                                 </div>
                                                 <h1 className='text-center text-[13px] font-medium'>{organization.fullName}</h1>
                                             </Link>

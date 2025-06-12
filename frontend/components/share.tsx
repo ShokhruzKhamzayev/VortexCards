@@ -70,7 +70,7 @@ export default function Share({children, classname, secColor, fullName}: {
             <DrawerHeader className='space-y-[20px] pb-[50px]'>
                 <DrawerTitle className='text-[25px] font-semibold'>{fullName}</DrawerTitle>
                     <div className='relative max-w-full w-[200px] h-[200px] overflow-hidden mx-auto'>
-                      <CustomImage src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${customLink}`} alt='qr code of the profile' />
+                      <CustomImage load='eager' src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${customLink}`} alt='qr code of the profile' />
                     </div>
                 <DrawerDescription onClick={copylink} className='flex items-center gap-[10px] justify-center'>
                   <FaRegCopy />
