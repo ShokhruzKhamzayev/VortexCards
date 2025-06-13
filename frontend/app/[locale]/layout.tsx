@@ -9,6 +9,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { Toaster } from 'sonner';
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default async function RootLayout({
         <GoogleAnalytics gaId={process.env.gaId!}/>
         <Nextloader showSpinner={false} />
         <Toaster position="bottom-center"/>
+        <SpeedInsights/>
       </body>
     </html>
   );
