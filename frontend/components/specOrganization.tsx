@@ -24,6 +24,7 @@ import DownloadPdfButton from './pdf/customDownload'
 import { LocaleSwitcher } from './langSwitcher'
 import { getTranslations } from 'next-intl/server'
 import Markdown from 'react-markdown'
+import MotionDiv from './animationMotion'
 
 export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
     const {data} = await fetchSpecOrganization(slug, locale)
@@ -36,7 +37,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
     console.log(organization.excerpt)
   return (
     <>
-        <div className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
+        <MotionDiv className='max-w-[500px] mx-auto  md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         {
             organization.isPaid ? (
                 <>
@@ -176,7 +177,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                 <IsPaid slug={organization.slug}/>
             )
         }
-    </div>
+    </MotionDiv>
     </>
   )
 }

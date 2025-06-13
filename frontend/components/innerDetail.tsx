@@ -24,6 +24,7 @@ import ScrollToTopShared from './ui/scrollToTop'
 import {LocaleSwitcher} from './langSwitcher'
 import { getTranslations } from 'next-intl/server'
 import Markdown from 'react-markdown'
+import MotionDiv from './animationMotion'
 
 export default async function InnerDetails({slug, locale}: {slug: string, locale: string}) {
     const {data} = await fetchSpecIndividual(slug, locale)
@@ -35,7 +36,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
     const videos = person?.videos?.split(',')
   return (
     <>
-        <div className='max-w-[500px] mx-auto md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
+        <MotionDiv className='max-w-[500px] mx-auto md:my-[30px] rounded-[20px] bg-slate-50 dark:bg-black shadow-0 md:shadow-lg shadow-slate-800 dark:shadow-slate-200 pb-[10px]'>
         {
             person.isPaid ? (
                 <>
@@ -56,7 +57,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
                         <div className="imgAndLoc">
                             <div className='absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full'>
                             <div className='w-[140px] h-[140px] rounded-full relative overflow-hidden'>
-                                <CustomImage src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white object-cover'/>
+                                <CustomImage load='eager' src={person.avatar.url} alt={person.fullName} classname='rounded-full border-[3px] border-white object-cover'/>
                             </div>
                             </div>
                             <DownloadPdfButton data={person} slug={slug}/>
@@ -187,7 +188,7 @@ export default async function InnerDetails({slug, locale}: {slug: string, locale
             )
         }
         <ScrollToTopShared/>
-    </div>
+    </MotionDiv>
     </>
   )
 }
