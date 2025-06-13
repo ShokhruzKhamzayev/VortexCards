@@ -77,7 +77,7 @@ export default function Testimonials() {
                             <div className="py-[10px] px-[15px]  bg-[#f5f5f7] dark:bg-[#1f1e20] rounded-[16px]">
                             <div className="w-full flex items-center gap-[10px]">
                                 <div className="relative w-[70px] h-[70px]">
-                                    <CustomImage src={testimonial.img} alt={testimonial.fullName} classname="rounded-full "/>
+                                    <CustomImage load="lazy" src={testimonial.img} alt={testimonial.fullName} classname="rounded-full "/>
                                 </div>
                                 <div>
                                     <h3 className="text-[16px] font-semibold">{testimonial.fullName}</h3>
