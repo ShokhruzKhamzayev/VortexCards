@@ -44,7 +44,7 @@ export default async function Contact() {
               </a>
           </div>
           <div className="relative w-full lg:w-1/2 h-[400px] overflow-hidden hidden lg:block">
-              <CustomImage src={'/contact_photo.png'} alt="contact menu photo" classname="object-contain"/>
+              <CustomImage load="lazy" src={'/contact_photo.png'} alt="contact menu photo" classname="object-contain"/>
           </div>
       </div>
     </div>
