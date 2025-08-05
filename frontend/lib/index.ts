@@ -3,7 +3,7 @@
 import { InnerDetailTypo, OrganizationTypo } from '@/types'
 import axios from 'axios'
 
-const baseUrl = process.env.DATABASE_API_TEST 
+const baseUrl = process.env.DATABASE_API 
 
 export async function fetchAllIndividuals() {
     const allInd = await axios<{data: InnerDetailTypo[]}>(baseUrl + '/individuals?filters[seo][$eq]=true')
