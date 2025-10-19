@@ -1,8 +1,7 @@
-import { fetchSpecIndividual } from "@/lib";
+import { staticUser } from "@/db/staticDb";
 import { BiUser } from "react-icons/bi";
 import { BsTelegram } from "react-icons/bs";
 import {
-  FaBuilding,
   FaFacebook,
   FaInstagram,
   FaLinkedinIn,
@@ -13,27 +12,40 @@ import {
 } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { IoCall, IoLogoYoutube } from "react-icons/io5";
-import { MdPhotoLibrary } from "react-icons/md";
 import { RiContactsBook3Fill } from "react-icons/ri";
 import InfoInnerDetail from "./infoInnerDetail";
 import CustomImage from "./ui/customImage";
 
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import Markdown from "react-markdown";
+import MotionDiv from "./animationMotion";
 import ConnectClient from "./connectClient";
-import GalleryView from "./galleryView";
 import IsPaid from "./isPaid";
+import { LocaleSwitcher } from "./langSwitcher";
 import DownloadPdfButton from "./pdf/customDownload";
 import Share from "./share";
 import { Social } from "./social";
 import ThemeSwitcher from "./themeSwitcher";
 import { EmblaCarousel } from "./ui/carousel";
 import ScrollToTopShared from "./ui/scrollToTop";
-import { LocaleSwitcher } from "./langSwitcher";
-import { getTranslations } from "next-intl/server";
-import Markdown from "react-markdown";
-import MotionDiv from "./animationMotion";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const person = staticUser;
+  return {
+    title: person.fullName,
+    description: person.excerpt,
+    keywords: ["VortexCards", "Visitka", "NFC visitka"],
+    creator: "VortexHub | Shaxruzbek",
+    openGraph: {
+      title: person.fullName,
+      description: person.excerpt,
+      images: person.avatar.url,
+    },
+  };
+}
 
 export default async function InnerDetails({
   slug,
@@ -42,8 +54,7 @@ export default async function InnerDetails({
   slug: string;
   locale: string;
 }) {
-  const { data } = await fetchSpecIndividual(slug, locale);
-  const person = data.data[0];
+  const person = staticUser;
   if (!person) {
     notFound();
   }
@@ -63,14 +74,6 @@ export default async function InnerDetails({
                 <div className="absolute top-[10px] right-[10px] z-[30] bg-white rounded-full dark:bg-black p-[10px]">
                   <ThemeSwitcher />
                 </div>
-                {person?.banner && (
-                  <Image
-                    src={person.banner.url}
-                    fill
-                    alt="banner for profile"
-                    className="rounded-0 md:rounded-t-[20px]"
-                  />
-                )}
                 <div className="imgAndLoc">
                   <div className="absolute top-[100%] left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center rounded-full">
                     <div className="w-[140px] h-[140px] rounded-full relative overflow-hidden">
@@ -105,7 +108,7 @@ export default async function InnerDetails({
                     {person.fullName}
                   </h1>
                   <div className="flex flex-wrap items-center gap-[5px] justify-center">
-                    {person?.organizations.length >= 1 &&
+                    {/* {person?.organizations.length >= 1 &&
                       (person?.organizations.length > 1 ? (
                         person.organizations.map((organization, idx) => (
                           <div
@@ -132,7 +135,7 @@ export default async function InnerDetails({
                         >
                           {person.organizations[0].name}
                         </Link>
-                      ))}
+                      ))} */}
                   </div>
                   <h3 className="text-[.875rem] leading-[1.25rem]">
                     {person.position}
@@ -217,7 +220,7 @@ export default async function InnerDetails({
               >
                 {t("actions.website")}
               </a>
-              {person?.organizations.length >= 1 && (
+              {/* {person?.organizations.length >= 1 && (
                 <InfoInnerDetail Icon={<FaBuilding size={30} />}>
                   <div>
                     <h1 className="text-center font-medium text-[20px] mb-[15px]">
@@ -228,7 +231,7 @@ export default async function InnerDetails({
                     </Markdown>
                   </div>
                 </InfoInnerDetail>
-              )}
+              )} */}
               {person?.partnersLogo?.length >= 1 && (
                 <InfoInnerDetail Icon={<FaMedal size={30} />}>
                   <div className="carousel">
@@ -257,9 +260,9 @@ export default async function InnerDetails({
                   </div>
                 </div>
               </InfoInnerDetail>
-              <InfoInnerDetail Icon={<MdPhotoLibrary size={30} />}>
+              {/* <InfoInnerDetail Icon={<MdPhotoLibrary size={30} />}>
                 <GalleryView photos={person.projects} />
-              </InfoInnerDetail>
+              </InfoInnerDetail> */}
               <InfoInnerDetail Icon={<FaRegShareFromSquare size={30} />}>
                 <div className="pt-[10px]">
                   <Share
